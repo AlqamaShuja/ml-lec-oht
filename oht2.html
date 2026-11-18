@@ -234,6 +234,11 @@ footer.ft .wrap{padding-block:24px 34px}
 .subnav .n{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;opacity:.8;margin-right:7px}
 @media print{.subnav{display:none}.lecgrp[hidden]{display:block!important}}
 .qp .qn .src{color:var(--danger);background:var(--danger-soft);border:1px solid var(--danger);border-radius:999px;padding:2px 9px;font-size:10px;letter-spacing:.07em;text-transform:uppercase;font-weight:600}
+.qfilter{align-items:center;margin-top:30px;padding:14px 16px;border:1px dashed var(--rule);border-radius:12px;background:var(--surface)}
+.qfilter .flbl{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.qfilter button.zero{opacity:.45}
+.qfilter .qcount{font-family:var(--font-mono);font-size:11.5px;color:var(--accent);margin-left:auto;white-space:nowrap}
+@media print{.qfilter{display:none}[data-lec][hidden]{display:block!important}}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
 @media print{
@@ -2954,6 +2959,16 @@ LECTURE 8 &mdash; LOSS FUNCTIONS
     <p style="margin-bottom:0;margin-top:12px"><b>Paper ka mizaaj:</b> <b>nau ke nau sawal numerical</b> hain &mdash; ek bhi khaali theory ka nahi. Sirf Q-7 ke teesre hisse mein "why" poocha gaya hai. Aur <b>chhe sawal (Q1&ndash;Q6) Lecture-6 se</b> hain, yaani poore paper ka do tihai. Lecture-8 se do (Q7, Q8), Lecture-7 se ek (Q9). <b>Yaani is paper ka asal wazan neural networks aur perceptron par hai.</b></p>
   </div>
 
+
+  <div class="subnav qfilter" role="group" aria-label="Chapter filter">
+    <span class="flbl">Chapter filter</span>
+    <button type="button" data-f="all" aria-selected="true"><span class="n">ALL</span>Sab (9)</button>
+    <button type="button" data-f="6" aria-selected="false"><span class="n">LEC 6</span>Neural Net (6)</button>
+    <button type="button" data-f="7" aria-selected="false"><span class="n">LEC 7</span>Classifiers (1)</button>
+    <button type="button" data-f="8" aria-selected="false"><span class="n">LEC 8</span>Boolean (2)</button>
+    <span class="qcount"></span>
+  </div>
+
   <div class="part-head" id="realq" style="margin-top:44px">
     <div class="lbl">Asli Paper &mdash; OHT-II, November 2026</div>
     <h2>Q1&ndash;Q9, poore hal ke saath</h2>
@@ -2961,7 +2976,7 @@ LECTURE 8 &mdash; LOSS FUNCTIONS
   </div>
 
   <!-- Q1 -->
-  <div class="qblock" id="rq1">
+  <div class="qblock" id="rq1" data-lec="6">
     <div class="qhead">
       <div class="qtag"><span class="pill">Asli Q1</span><span class="pill m">6 marks</span><span class="pill t">3-layer forward pass + biases</span></div>
       <h3>Hidden activations <code>z<sup>1</sup></code>, <code>z<sup>2</sup></code> aur output <code>&#375;</code></h3>
@@ -3041,7 +3056,7 @@ ReLU       : (0.5, 0)        &larr; -0.5 zero ho gaya</div>
   </div>
 
   <!-- Q2 -->
-  <div class="qblock" id="rq2">
+  <div class="qblock" id="rq2" data-lec="6">
     <div class="qhead">
       <div class="qtag"><span class="pill">Asli Q2</span><span class="pill m">6 marks</span><span class="pill t">activation functions</span></div>
       <h3>Ek neuron, teen activation functions</h3>
@@ -3122,7 +3137,7 @@ ReLU       : (0.5, 0)        &larr; -0.5 zero ho gaya</div>
   </div>
 
   <!-- Q3 -->
-  <div class="qblock" id="rq3">
+  <div class="qblock" id="rq3" data-lec="6">
     <div class="qhead">
       <div class="qtag"><span class="pill">Asli Q3</span><span class="pill m">6 marks</span><span class="pill t">perceptron, augmented vector</span></div>
       <h3>Do sequential updates &mdash; <code>w<sup>(1)</sup></code> aur <code>w<sup>(2)</sup></code></h3>
@@ -3218,7 +3233,7 @@ x&#8322; par: -0.5 - 0.6 - 1.1 = -2.2,  margin +2.2  &#10003;</div>
   </div>
 
   <!-- Q4 -->
-  <div class="qblock" id="rq4">
+  <div class="qblock" id="rq4" data-lec="6">
     <div class="qhead">
       <div class="qtag"><span class="pill">Asli Q4</span><span class="pill m">6 marks</span><span class="pill t">biological neuron model</span></div>
       <h3>Neuron fire karta hai ya nahi?</h3>
@@ -3265,7 +3280,7 @@ Ghalat : 0.90 + 0.40 - 0.80 = 0.50  &lt; 1.80  &rarr; nahi   (output 0)</div>
   </div>
 
   <!-- Q5 -->
-  <div class="qblock" id="rq5">
+  <div class="qblock" id="rq5" data-lec="6">
     <div class="qhead">
       <div class="qtag"><span class="pill">Asli Q5</span><span class="pill m">6 marks</span><span class="pill t">MCQ &mdash; distance + classification</span></div>
       <h3>2D perceptron &mdash; origin se faasla aur do points</h3>
@@ -3338,7 +3353,7 @@ Q: ( -1 - 10)/5 = -2.2  &rarr; nahi, aur BOHAT SAAF taur par nahi</div>
   </div>
 
   <!-- Q6 -->
-  <div class="qblock" id="rq6">
+  <div class="qblock" id="rq6" data-lec="6">
     <div class="qhead">
       <div class="qtag"><span class="pill">Asli Q6</span><span class="pill m">6 marks</span><span class="pill t">ReLU vs linear activation</span></div>
       <h3>Two-layer network &mdash; ReLU ke saath aur bagair</h3>
@@ -3408,7 +3423,7 @@ f(x) = [0, -1.0] &middot; [4.0, 1.0] = -1.0     &#10003; wohi jawab</div>
   </div>
 
   <!-- Q7 -->
-  <div class="qblock" id="rq7">
+  <div class="qblock" id="rq7" data-lec="8">
     <div class="qhead">
       <div class="qtag"><span class="pill">Asli Q7</span><span class="pill m">6 marks</span><span class="pill t">hubristic loss, kappa, convexity</span></div>
       <h3>Cost-sensitive hubristic loss &mdash; aur sigmoid se behtar kyun</h3>
@@ -3480,7 +3495,7 @@ f(x) = [0, -1.0] &middot; [4.0, 1.0] = -1.0     &#10003; wohi jawab</div>
   </div>
 
   <!-- Q8 -->
-  <div class="qblock" id="rq8">
+  <div class="qblock" id="rq8" data-lec="8">
     <div class="qhead">
       <div class="qtag"><span class="pill">Asli Q8</span><span class="pill m">6 marks</span><span class="pill t">hyperplane + signed distance</span></div>
       <h3>Decision hyperplane, signed distance, aur un-embedded class</h3>
@@ -3566,7 +3581,7 @@ b se faasla&#178;: (1-0)&#178; + (3+2)&#178; = 1 + 25 = 26
   </div>
 
   <!-- Q9 -->
-  <div class="qblock" id="rq9">
+  <div class="qblock" id="rq9" data-lec="7">
     <div class="qhead">
       <div class="qtag"><span class="pill">Asli Q9</span><span class="pill m">6 marks</span><span class="pill t">3-class confusion matrix</span></div>
       <h3>Accuracy, precision aur recall &mdash; <code>N = 200</code></h3>
@@ -3744,6 +3759,16 @@ QADAM 5   EK LINE ki WAJAH likho    &mdash; "ReLU ne doosra neuron band kar diya
     <p style="margin-bottom:0"><strong>Waqt:</strong> 10 sawal, 60 minute &mdash; yaani <strong>6 minute per sawal</strong>. Numerical sawal 4&ndash;5 minute mein ho jaate hain, to conceptual ke liye waqt bach jaata hai. Kisi ek sawal par 8 minute se zyada na lagayein.</p>
   </div>
 
+
+  <div class="subnav qfilter" role="group" aria-label="Chapter filter">
+    <span class="flbl">Chapter filter</span>
+    <button type="button" data-f="all" aria-selected="true"><span class="n">ALL</span>Sab (4)</button>
+    <button type="button" data-f="6" aria-selected="false"><span class="n">LEC 6</span>Neural Net (3)</button>
+    <button type="button" data-f="7" aria-selected="false" class="zero" title="Sample paper mein Lecture-7 ka ek bhi sawal nahi tha"><span class="n">LEC 7</span>Classifiers (0)</button>
+    <button type="button" data-f="8" aria-selected="false"><span class="n">LEC 8</span>Boolean (1)</button>
+    <span class="qcount"></span>
+  </div>
+
   <div class="part-head" id="ohtq" style="margin-top:44px">
     <div class="lbl">OHT-II Sample Paper &mdash; November 2026</div>
     <h2>Chaaron sawal, poore hal ke saath</h2>
@@ -3751,7 +3776,7 @@ QADAM 5   EK LINE ki WAJAH likho    &mdash; "ReLU ne doosra neuron band kar diya
   </div>
 
   <!-- Q1 -->
-  <div class="qblock" id="oq1">
+  <div class="qblock" id="oq1" data-lec="6">
     <div class="qhead">
       <div class="qtag"><span class="pill">OHT-II Q-1</span><span class="pill m">6 marks</span><span class="pill t">forward pass, ReLU</span></div>
       <h3>2-layer network ka forward pass &mdash; <code>z</code>, <code>h</code>, aur <code>f(x)</code></h3>
@@ -3816,7 +3841,7 @@ jama         =  1.60</div>
   </div>
 
   <!-- Q2 -->
-  <div class="qblock" id="oq2">
+  <div class="qblock" id="oq2" data-lec="6">
     <div class="qhead">
       <div class="qtag"><span class="pill">OHT-II Q-2</span><span class="pill m">6 marks</span><span class="pill t">parameter counting</span></div>
       <h3>MLP mein kitne trainable parameters hain?</h3>
@@ -3876,7 +3901,7 @@ JAMA    :   960  +    52           =  1,012</div>
   </div>
 
   <!-- Q3 -->
-  <div class="qblock" id="oq3">
+  <div class="qblock" id="oq3" data-lec="6">
     <div class="qhead">
       <div class="qtag"><span class="pill">OHT-II Q-3</span><span class="pill m">6 marks</span><span class="pill t">perceptron margin &amp; update</span></div>
       <h3>Perceptron &mdash; margin aur updated weight vector</h3>
@@ -3946,7 +3971,7 @@ jama          = -0.20</div>
   </div>
 
   <!-- Q4 -->
-  <div class="qblock" id="oq4">
+  <div class="qblock" id="oq4" data-lec="8">
     <div class="qhead">
       <div class="qtag"><span class="pill">OHT-II Q-4</span><span class="pill m">6 marks</span><span class="pill t">hinge loss, square loss, kappa</span></div>
       <h3>Cost-sensitive hinge loss, square loss, aur square loss ki kharabi</h3>
@@ -4035,7 +4060,7 @@ DONO KO SQUARE LOSS BARABAR BURA SAMAJHTA HAI!</div>
       <li><strong>Aakhir mein "why" aata hai</strong> &mdash; Q-4 ka teesra hissa. Sirf hisaab kaafi nahi, wajah bhi chahiye.</li>
       <li><strong>Verification maangi jaati hai</strong> &mdash; Q-3 ke official solution mein verification ki line likhi hui hai. Numerical ke baad hamesha check kar ke dikhayein.</li>
     </ol>
-    <p style="margin-bottom:0"><strong>Lecture 7 par khaas dhyan dein:</strong> chaaron sample sawal Lecture 6 (Q-1,2,3) aur Lecture 8 (Q-4) se hain. <strong>Lecture 7 se ek bhi nahi</strong> &mdash; yaani confusion matrix, error rate, precision/recall, Neyman-Pearson metric, aur embedding/un-embedding se sawal aane ka imkaan <em>zyada</em> hai, kam nahi. <a href="#panel-prof">Practice Questions</a> mein in sab par sawal diye gaye hain.</p>
+    <p style="margin-bottom:0"><strong>Lecture 7 par khaas dhyan dein:</strong> chaaron sample sawal Lecture 6 (Q-1,2,3) aur Lecture 8 (Q-4) se hain. <strong>Lecture 7 se ek bhi nahi</strong> (oopar <b>chapter filter</b> mein "LEC 7 (0)" isi liye khaali hai) &mdash; yaani confusion matrix, error rate, precision/recall, Neyman-Pearson metric, aur embedding/un-embedding se sawal aane ka imkaan <em>zyada</em> hai, kam nahi. <a href="#panel-prof">Practice Questions</a> mein in sab par sawal diye gaye hain.</p>
   </div>
 
 </div>
@@ -4080,12 +4105,21 @@ DONO KO SQUARE LOSS BARABAR BURA SAMAJHTA HAI!</div>
     <p style="margin-bottom:0;margin-top:12px">Har sawal par <span class="mk" style="display:inline">full bank #N</span> likha hai &mdash; is ka matlab hai ke wohi sawal <a href="#panel-prof">Extra Practice</a> tab mein number <code>N</code> par hai, agar us qism ki aur mashq chahiye.</p>
   </div>
 
-  <div class="part-head" id="mdA" style="margin-top:52px;border-top-width:4px">
+  <div class="subnav qfilter" role="group" aria-label="Chapter filter">
+    <span class="flbl">Chapter filter</span>
+    <button type="button" data-f="all" aria-selected="true"><span class="n">ALL</span>Sab (37)</button>
+    <button type="button" data-f="6" aria-selected="false"><span class="n">LEC 6</span>Neural Net (20)</button>
+    <button type="button" data-f="7" aria-selected="false"><span class="n">LEC 7</span>Classifiers (8)</button>
+    <button type="button" data-f="8" aria-selected="false"><span class="n">LEC 8</span>Boolean (9)</button>
+    <span class="qcount"></span>
+  </div>
+
+  <div class="part-head" id="mdA" data-lec="6" style="margin-top:52px;border-top-width:4px">
     <div class="lbl">Section A &mdash; sawal 1&ndash;20</div>
     <h2>Neural Network &mdash; numericals</h2>
     <p>Paper mein yahan se <b>6 sawal</b> aayenge (36 marks). Ye bees sawal NN ki <b>har qism</b> cover karte hain. Agar waqt bilkul kam ho, to <b>sirf ye bees karein</b> &mdash; baaqi sab chhod dein.</p>
   </div>
-<div class="qp" id="md1"><p class="qn"><span>1</span><span class="mk">6 marks</span><span class="mk">full bank #27</span><span class="mk">asli Q1 jaisa</span></p>
+<div class="qp" id="md1" data-lec="6"><p class="qn"><span>1</span><span class="mk">6 marks</span><span class="mk">full bank #27</span><span class="mk">asli Q1 jaisa</span></p>
     <p>A 3-layer network with ReLU hidden layers and a <b>linear output layer</b> has <code>x = [2.0, 1.0]<sup>T</sup></code>, <code>W<sub>1</sub> = [[1.0, &minus;1.0], [0.5, 2.0]]</code>, <code>b<sub>1</sub> = [0.5, &minus;3.0]</code>, <code>W<sub>2</sub> = [[2.0, 0.5], [&minus;1.0, 1.0]]</code>, <code>b<sub>2</sub> = [&minus;1.0, 0.5]</code>, <code>W<sub>3</sub> = [1.0, &minus;3.0]</code>, <code>b<sub>3</sub> = 0.5</code>. Compute <code>z<sup>1</sup></code>, <code>z<sup>2</sup></code> and <code>&#375;</code>.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4110,7 +4144,7 @@ z&#178;    = ReLU                                  = ( 2.0, 0 )
         <p class="memo"><b>Yaad rakhein:</b> dono hidden layers mein ek ek neuron <strong>mar gaya</strong> (ReLU ne zero kar diya) &mdash; is liye <code>W<sub>3</sub></code> ka doosra weight <code>&minus;3.0</code> bekaar gaya. Ye line likhne par justification ke marks milte hain.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md2"><p class="qn"><span>2</span><span class="mk">6 marks</span><span class="mk">full bank #33</span><span class="mk">asli Q6 jaisa</span></p>
+  </div><div class="qp" id="md2" data-lec="6"><p class="qn"><span>2</span><span class="mk">6 marks</span><span class="mk">full bank #33</span><span class="mk">asli Q6 jaisa</span></p>
     <p>For <code>f(x) = W<sub>2</sub>&phi;(W<sub>1</sub>x)</code> with <code>W<sub>1</sub> = [[2, 1], [1, &minus;3]]</code>, <code>W<sub>2</sub> = [1, 2]</code>, <code>x = [1, 2]<sup>T</sup></code>: evaluate <code>f(x)</code> with ReLU, and with identity activation. Show the collapsed weight vector.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4132,7 +4166,7 @@ Collapsed:  W&#8322;W&#8321; = [1(2)+2(1), 1(1)+2(-3)] = [4, -5]
         <p class="memo"><b>Do baatein likhein:</b> (1) ReLU ke bagair poora network sirf <strong>ek linear predictor <code>[4, &minus;5]</code></strong> hai &mdash; do layers ka faida zero. (2) Dono jawabon ka <strong>nishaan ulta</strong> hai, to dono models is input ko <strong>alag alag class</strong> denge.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md3"><p class="qn"><span>3</span><span class="mk">6 marks</span><span class="mk">full bank #28</span><span class="mk">asli Q2 jaisa</span></p>
+  </div><div class="qp" id="md3" data-lec="6"><p class="qn"><span>3</span><span class="mk">6 marks</span><span class="mk">full bank #28</span><span class="mk">asli Q2 jaisa</span></p>
     <p>A neuron has <code>x = [1.0, 2.0, &minus;1.0]<sup>T</sup></code>, <code>w = [2.0, &minus;1.0, 1.0]<sup>T</sup></code>, bias <code>b = &minus;1.5</code>, with <code>a = w<sup>T</sup>x + b</code>. Evaluate the output under <b>Leaky ReLU</b> <code>max(0.1a, a)</code>, <b>ELU</b> (<code>&alpha;=1</code>), and <b>sigmoid</b>.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4154,7 +4188,7 @@ Sigmoid    : 1/(1+e^(2.5)) = 1/13.182               =  0.076</div>
         <p class="memo"><b>Dhyan:</b> <code>max(&minus;0.25, &minus;2.5) = &minus;0.25</code> &mdash; <strong>bada wo hai jo zero ke qareeb hai</strong>. Aur sigmoid hamesha <em>positive</em> jawab deta hai (0 aur 1 ke beech), chahe <code>a</code> kitna bhi negative ho &mdash; ye baaqi do se buniyadi farq hai.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md4"><p class="qn"><span>4</span><span class="mk">6 marks</span><span class="mk">full bank #29</span></p>
+  </div><div class="qp" id="md4" data-lec="6"><p class="qn"><span>4</span><span class="mk">6 marks</span><span class="mk">full bank #29</span></p>
     <p>A neuron has <code>x = [1.0, 1.0]<sup>T</sup></code>, <code>w = [2.0, 1.0]<sup>T</sup></code>, <code>b = 0.5</code>. Evaluate ReLU, Leaky ReLU, ELU and sigmoid. What do you notice, and why?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4178,7 +4212,7 @@ Sigmoid    : 1/(1+e^(-3.5))         = 0.971</div>
         <p class="memo"><b>Sabaq (ye likhein):</b> Leaky ReLU aur ELU ka poora faida <em>sirf</em> negative taraf hai (dead ReLU se bachna). Aur sigmoid <code>3.5</code> par <strong>saturate</strong> ho chuka hai (0.971, yaani 1 ke bilkul paas) &mdash; wahan derivative taqreeban zero hai, jo training sust kar deta hai. <strong>Isi liye A4.2 (jahan <code>a &lt; 0</code> tha) asal mein zyada maaloomati sawal hai.</strong></p>
       </div>
     </div></details>
-  </div><div class="qp" id="md5"><p class="qn"><span>5</span><span class="mk">6 marks</span><span class="mk">full bank #30</span><span class="mk">asli Q3 jaisa</span></p>
+  </div><div class="qp" id="md5" data-lec="6"><p class="qn"><span>5</span><span class="mk">6 marks</span><span class="mk">full bank #30</span><span class="mk">asli Q3 jaisa</span></p>
     <p>A perceptron has augmented weights <code>w<sup>(0)</sup> = [1.0, &minus;0.5, 0.5]<sup>T</sup></code> with permanent input <code>x<sub>0</sub> = &minus;1</code>, and <code>&eta; = 0.2</code>. Process two samples in sequence: (a) <code>[2.0, 1.0]<sup>T</sup></code> with <code>y = &minus;1</code>; (b) <code>[1.0, 3.0]<sup>T</sup></code> with <code>y = &minus;1</code>. Give the weight vector after each sample.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4211,7 +4245,7 @@ SAMPLE (b):
         <p class="memo"><b>Verification likhein:</b> update ke baad dono samples ka margin positive ho jaata hai (<code>+2.7</code> aur <code>+2.2</code>) &mdash; yaani ab dono theek hain.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md6"><p class="qn"><span>6</span><span class="mk">6 marks</span><span class="mk">full bank #12</span></p>
+  </div><div class="qp" id="md6" data-lec="6"><p class="qn"><span>6</span><span class="mk">6 marks</span><span class="mk">full bank #12</span></p>
     <p>A perceptron has <code>w = [0, 1.0, &minus;1.0]</code>. Sample <code>x = [1.0, 1.0, 2.0]</code> with <code>y = +1</code> and <code>&eta; = 0.5</code>. Compute the margin, the updated weights, and verify the result.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4235,7 +4269,7 @@ Verify: w<sub>new</sub><sup>T</sup>x = 0.5(1) + 1.5(1) + 0.0(2) = 2.00  &gt; 0  
         <p class="memo"><b>Khoobsurat check:</b> theory kehti hai <code>naya margin = purana + &eta;&#8214;x&#8214;&sup2;</code>. Dekhein: <code>&#8214;x&#8214;&sup2; = 1+1+4 = 6</code>, to <code>&minus;1.00 + 0.5(6) = +2.00</code> &mdash; <strong>bilkul wohi jawab</strong>. Agar ye do tareeqe na milein, to kahin hisaab ghalat hua hai. <strong>Exam mein ye check 1 minute mein ho jaata hai aur ghalti pakad leta hai.</strong></p>
       </div>
     </div></details>
-  </div><div class="qp" id="md7"><p class="qn"><span>7</span><span class="mk">6 marks</span><span class="mk">full bank #11</span></p>
+  </div><div class="qp" id="md7" data-lec="6"><p class="qn"><span>7</span><span class="mk">6 marks</span><span class="mk">full bank #11</span></p>
     <p>A perceptron has <code>w = [0.5, 0.3, &minus;0.4]</code> (with <code>x<sub>0</sub> = 1</code> the bias input). A sample <code>x = [1.0, &minus;1.0, 2.0]</code> arrives with <code>y = &minus;1</code> and <code>&eta; = 0.1</code>. Compute the margin and state whether an update occurs.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4257,7 +4291,7 @@ margin = y(w<sup>T</sup>x) = (-1)(-0.60) = +0.60   &gt; 0</div>
         <p class="memo"><b>Yaad rakhein:</b> negative score ka matlab "ghalti" nahi! Agar asli class negative ho, to negative score <em>sahi</em> hai. <strong>Hamesha margin dekhein (<code>y &times; score</code>), sirf score nahi</strong> &mdash; margin ka poora maqsad yehi hai ke wo label ko hisaab mein le aata hai.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md8"><p class="qn"><span>8</span><span class="mk">6 marks</span><span class="mk">full bank #16</span></p>
+  </div><div class="qp" id="md8" data-lec="6"><p class="qn"><span>8</span><span class="mk">6 marks</span><span class="mk">full bank #16</span></p>
     <p>A neuron has <code>x = [2.0, 1.0, 0.5]</code>, <code>w = [0.3, 0.4, 1.0]</code> and threshold <code>t = 1.5</code>. (a) Does it fire? (b) What happens if <code>w<sub>3</sub></code> is set to zero?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4283,7 +4317,7 @@ margin = y(w<sup>T</sup>x) = (-1)(-0.60) = +0.60   &gt; 0</div>
         <b>(2)</b> Part (a) mein value threshold ke <em>bilkul barabar</em> hai, to jawab is par depend karta hai ke rule <code>&ge;</code> hai ya <code>&gt;</code>. <strong>Exam mein likh dein ke aap ne kaunsa rule liya</strong> &mdash; is se marks bachte hain.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md9"><p class="qn"><span>9</span><span class="mk">6 marks</span><span class="mk">full bank #31</span><span class="mk">asli Q5 jaisa</span></p>
+  </div><div class="qp" id="md9" data-lec="6"><p class="qn"><span>9</span><span class="mk">6 marks</span><span class="mk">full bank #31</span><span class="mk">asli Q5 jaisa</span></p>
     <p>A 2D perceptron outputs 1 if <code>w<sub>1</sub>x<sub>1</sub> + w<sub>2</sub>x<sub>2</sub> &gt; t</code>, with <code>w = [6, 8]<sup>T</sup></code> and <code>t = 20</code>. Find the perpendicular distance from the origin to the decision boundary, and classify <code>P = (1, 2)</code> and <code>Q = (2, 0)</code>.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4304,7 +4338,7 @@ Q = (2,0):  6(2) + 8(0) = 12 + 0  = 12  &#8815; 20   &rarr; output 0</div>
         <p class="memo"><b>Extra marks:</b> signed distance bhi likhein &mdash; <code>P</code> sirf <code>0.2</code> door hai boundary se, yaani <strong>bilkul kinaare par</strong>; <code>Q</code> <code>0.8</code> door hai. To <code>P</code> ka faisla <code>Q</code> se kam pakka hai.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md10"><p class="qn"><span>10</span><span class="mk">6 marks</span><span class="mk">full bank #2</span><span class="src">Stanford HW7 Q1(b)</span></p>
+  </div><div class="qp" id="md10" data-lec="6"><p class="qn"><span>10</span><span class="mk">6 marks</span><span class="mk">full bank #2</span><span class="src">Stanford HW7 Q1(b)</span></p>
     <p>An MLP has layer dimensions <code>d<sub>0</sub> = 20</code> (input), <code>d<sub>1</sub> = 64</code>, <code>d<sub>2</sub> = 32</code> (hidden), <code>d<sub>3</sub> = 10</code> (output classes), with a learnable bias at every neuron. Compute the total number of trainable parameters, showing the per-layer breakdown.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4329,7 +4363,7 @@ jama   = 3,754</div>
         <p class="memo"><b>Yaad rakhein:</b> teen numbers ke beech <strong>teen</strong> matrices banti hain (20-64, 64-32, 32-10). Input layer ko alag se nahi ginna.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md11"><p class="qn"><span>11</span><span class="mk">6 marks</span><span class="mk">full bank #32</span><span class="src">Stanford HW7 Q1(b)</span></p>
+  </div><div class="qp" id="md11" data-lec="6"><p class="qn"><span>11</span><span class="mk">6 marks</span><span class="mk">full bank #32</span><span class="src">Stanford HW7 Q1(b)</span></p>
     <p>An MLP has layer dimensions <code>d<sub>0</sub> = 8</code>, <code>d<sub>1</sub> = 20</code>, <code>d<sub>2</sub> = 20</code>, <code>d<sub>3</sub> = 5</code> (output classes), with a bias at every neuron. Compute the total trainable parameters, and separately report the weight count and bias count.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4354,7 +4388,7 @@ Split:  weights = 8(20) + 20(20) + 20(5) = 160+400+100 = 660
         <p class="memo"><b>Ghaur karein:</b> beech ki <code>20&rarr;20</code> layer akele <strong>420</strong> le gayi &mdash; poore network ka taqreeban 60%. Wajah: parameters do paas waali layers ke <strong>zarb</strong> se barhte hain.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md12"><p class="qn"><span>12</span><span class="mk">6 marks</span><span class="mk">full bank #7</span><span class="src">Stanford HW7 Q1(b)</span></p>
+  </div><div class="qp" id="md12" data-lec="6"><p class="qn"><span>12</span><span class="mk">6 marks</span><span class="mk">full bank #7</span><span class="src">Stanford HW7 Q1(b)</span></p>
     <p>For a 2-layer network with <code>d<sub>0</sub> = 2</code>, <code>d<sub>1</sub> = 2</code>, <code>d<sub>2</sub> = 1</code>, how many trainable parameters are there (a) <b>without</b> biases and (b) if biases were added at every neuron?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4379,7 +4413,7 @@ Split:  weights = 8(20) + 20(20) + 20(5) = 160+400+100 = 660
         <p class="memo"><b>Yaad rakhein:</b> chhote network mein bias ka hissa bada hota hai (yahan 3 out of 9 = 33%). Bade network mein bias ka hissa bohat chhota reh jaata hai &mdash; jaise sample paper Q-2 mein 52 out of 1,012 = 5%. <strong>Phir bhi usay ginna zaroori hai.</strong></p>
       </div>
     </div></details>
-  </div><div class="qp" id="md13"><p class="qn"><span>13</span><span class="mk">6 marks</span><span class="mk">full bank #9</span><span class="src">Stanford HW7 Q1(b)</span></p>
+  </div><div class="qp" id="md13" data-lec="6"><p class="qn"><span>13</span><span class="mk">6 marks</span><span class="mk">full bank #9</span><span class="src">Stanford HW7 Q1(b)</span></p>
     <p>A network has <code>d<sub>0</sub> = 5</code>, one hidden layer with <code>d<sub>1</sub> = h</code> neurons, and <code>d<sub>2</sub> = 3</code> outputs, with biases. It must have at most <code>100</code> trainable parameters. What is the largest <code>h</code> allowed?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4410,7 +4444,7 @@ jama   = 9h + 3
         <p class="memo"><b>Yaad rakhein:</b> neurons poore (whole number) hote hain, aadhe nahi &mdash; is liye <strong>neeche ki taraf</strong> round karein (10, 11 nahi). Aur jawab ko <strong>check kar ke dikhayein</strong> &mdash; 10 par 93 (theek), 11 par 102 (hadd se bahar).</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md14"><p class="qn"><span>14</span><span class="mk">6 marks</span><span class="mk">full bank #5</span><span class="src">Stanford HW7 Q1(b)</span></p>
+  </div><div class="qp" id="md14" data-lec="6"><p class="qn"><span>14</span><span class="mk">6 marks</span><span class="mk">full bank #5</span><span class="src">Stanford HW7 Q1(b)</span></p>
     <p>A layer takes an input of dimension <code>d<sub>i&minus;1</sub> = 8</code> and produces <code>d<sub>i</sub> = 5</code> outputs. State the dimensions of <code>&Theta;<sup>i</sup></code>, <code>W<sup>i</sup></code> and <code>b<sup>i</sup></code>, and write out the layer map.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4433,7 +4467,7 @@ Layer map:
         <p class="memo"><b>Yaad rakhein:</b> <code>&Theta;</code> ki <strong>pehli row hi <code>b</code></strong> hai, aur wo hamesha us <code>1</code> ke saath multiply hoti hai jo input ke oopar chipkaya jaata hai.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md15"><p class="qn"><span>15</span><span class="mk">6 marks</span><span class="mk">full bank #6</span></p>
+  </div><div class="qp" id="md15" data-lec="6"><p class="qn"><span>15</span><span class="mk">6 marks</span><span class="mk">full bank #6</span></p>
     <p>A network is described as a "4-layer neural net". How many hidden layers does it have, how many parameter matrices, and how many activation functions are applied?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4453,7 +4487,7 @@ Activations        =  4 layers, but typically 3 (hidden only)</div>
         <p class="memo"><b>Qaida:</b> <strong>matrices ki ginti = layers ki ginti</strong>. Aur hidden layers = total &minus; 1.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md16"><p class="qn"><span>16</span><span class="mk">6 marks</span><span class="mk">full bank #34</span></p>
+  </div><div class="qp" id="md16" data-lec="6"><p class="qn"><span>16</span><span class="mk">6 marks</span><span class="mk">full bank #34</span></p>
     <p>A 2-layer ReLU network has <code>W<sub>1</sub> = [[1, 1], [2, 2]]</code>, <code>b<sub>1</sub> = [&minus;5, &minus;5]</code>, <code>W<sub>2</sub> = [1, 1]</code>, <code>b<sub>2</sub> = 0.7</code>, and input <code>x = [1, 1]<sup>T</sup></code>. Compute the output. What is wrong with this network at this input?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4474,7 +4508,7 @@ z&#185;        = ReLU(-3, -1)      = ( 0, 0 )
         <p class="memo"><b>Naam: "dead ReLU" problem.</b> Aur sab se buri baat &mdash; ye <em>khud theek nahi hota</em>, kyunki ReLU ka derivative negative taraf <strong>zero</strong> hai, to training mein koi signal wapas nahi jaata. <strong>Ilaaj:</strong> behtar initialization, kam learning rate, ya <strong>Leaky ReLU / ELU</strong> (jo negative taraf bhi thori dhalaan rakhte hain) &mdash; aur yehi wajah hai ke asli paper ke Q-2 mein wohi do functions poochey gaye thay.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md17"><p class="qn"><span>17</span><span class="mk">6 marks</span><span class="mk">full bank #35</span></p>
+  </div><div class="qp" id="md17" data-lec="6"><p class="qn"><span>17</span><span class="mk">6 marks</span><span class="mk">full bank #35</span></p>
     <p>A neuron fires if <code>a &gt; t</code> with <code>t = 2.5</code>, where <code>a = &Sigma;x<sub>i</sub>w<sub>i</sub></code>, <code>x = [1, 2, 3]<sup>T</sup></code>, <code>w = [0.5, 0.5, 0.5]<sup>T</sup></code>. (a) Does it fire? (b) Rewrite the rule in bias form <code>&Sigma;x<sub>i</sub>w<sub>i</sub> + b &gt; 0</code> and verify you get the same answer.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4497,7 +4531,7 @@ z&#185;        = ReLU(-3, -1)      = ( 0, 0 )
         <p class="memo"><b>Sab se ahem rishta: <code>b = &minus;t</code></b> &mdash; bias threshold ka <strong>ulta</strong> hota hai. Aur isi ko ek qadam aage le jaayein to <code>w<sub>0</sub> = t</code> with <code>x<sub>0</sub> = &minus;1</code> &mdash; yaani wohi <strong>augmented</strong> shakal jo asli paper ke Q-3 mein thi (<a href="#g15">G15</a>). <strong>Teeno shaklein ek hi cheez hain</strong> &mdash; threshold, bias, aur augmented weight.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md18"><p class="qn"><span>18</span><span class="mk">6 marks</span><span class="mk">full bank #19</span></p>
+  </div><div class="qp" id="md18" data-lec="6"><p class="qn"><span>18</span><span class="mk">6 marks</span><span class="mk">full bank #19</span></p>
     <p>An engineer builds a 5-layer network but forgets to apply any activation function. Explain what predictor results, and why adding more layers will not help.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4517,7 +4551,7 @@ z&#185;        = ReLU(-3, -1)      = ( 0, 0 )
         <p class="memo"><b>Ek line mein:</b> network ki saari taqat <code>h</code> (nonlinearity) se aati hai. Us ke bagair gehrai (depth) bilkul bekaar hai.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md19"><p class="qn"><span>19</span><span class="mk">6 marks</span><span class="mk">full bank #13</span></p>
+  </div><div class="qp" id="md19" data-lec="6"><p class="qn"><span>19</span><span class="mk">6 marks</span><span class="mk">full bank #13</span></p>
     <p>Prove that the perceptron update <code>w<sub>new</sub> = w<sub>old</sub> + &eta;y<sub>i</sub>x<sub>i</sub></code> always increases the margin of the sample that triggered it.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4541,7 +4575,7 @@ z&#185;        = ReLU(-3, -1)      = ( 0, 0 )
         <p class="memo"><strong>Yahan se ye bhi samajh aata hai ke <code>&plusmn;1</code> embedding kyun chuni gayi</strong> &mdash; is se <code>y&sup2; = 1</code> hota hai, jo hisaab ko bilkul saaf kar deta hai. Agar <code>{0, 1}</code> embedding hoti, to ye chaal kaam na karti.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md20"><p class="qn"><span>20</span><span class="mk">6 marks</span><span class="mk">full bank #18</span></p>
+  </div><div class="qp" id="md20" data-lec="6"><p class="qn"><span>20</span><span class="mk">6 marks</span><span class="mk">full bank #18</span></p>
     <p>State the Perceptron Convergence Theorem precisely, and explain two things it does <em>not</em> guarantee.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4568,12 +4602,12 @@ z&#185;        = ReLU(-3, -1)      = ( 0, 0 )
       </div>
     </div></details>
   </div>
-  <div class="part-head" id="mdB" style="margin-top:52px;border-top-width:4px">
+  <div class="part-head" id="mdB" data-lec="7 8" style="margin-top:52px;border-top-width:4px">
     <div class="lbl">Section B &mdash; sawal 21&ndash;31</div>
     <h2>Boolean Classification &mdash; numericals</h2>
     <p>Paper mein yahan se <b>3 sawal</b> (18 marks). Har loss function ka ek numerical hai, kyunki pata nahi kaunsa poocha jaayega.</p>
   </div>
-<div class="qp" id="md21"><p class="qn"><span>21</span><span class="mk">6 marks</span><span class="mk">full bank #64</span></p>
+<div class="qp" id="md21" data-lec="8"><p class="qn"><span>21</span><span class="mk">6 marks</span><span class="mk">full bank #64</span></p>
     <p>Using the hubristic loss (<code>0</code> for <code>u &lt; &minus;1</code>; <code>(u+1)&sup2;</code> for <code>&minus;1 &le; u &le; 0</code>; <code>1+2u</code> for <code>u &gt; 0</code>) with <code>&kappa; = 2</code> and <code>&#375; = 0.5</code>, compute both losses.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Hubristic loss (teen tukdon wala), <code>&kappa; = 2</code>, <code>&#375; = 0.5</code>. Dono labels ke liye loss nikaalein.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -4596,7 +4630,7 @@ z&#185;        = ReLU(-3, -1)      = ( 0, 0 )
         <p class="memo"><b>Aur yaad rakhein:</b> (b) mein <code>&minus;&#375;</code> daalna hai, <code>&#375;</code> nahi &mdash; yehi wo phisalan hai jo asli paper ke Q-7 mein thi.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md22"><p class="qn"><span>22</span><span class="mk">6 marks</span><span class="mk">full bank #59</span></p>
+  </div><div class="qp" id="md22" data-lec="8"><p class="qn"><span>22</span><span class="mk">6 marks</span><span class="mk">full bank #59</span></p>
     <p>With <code>&kappa; = 2.0</code> and score <code>&#375; = &minus;1.5</code>, compute the <b>hinge loss</b> for (a) <code>y = &minus;1</code> and (b) <code>y = +1</code>.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p><code>&kappa; = 2.0</code>, score <code>&#375; = &minus;1.5</code>. Hinge loss nikaalein &mdash; (a) jab asli label <code>&minus;1</code> ho, (b) jab <code>+1</code> ho.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -4613,7 +4647,7 @@ z&#185;        = ReLU(-3, -1)      = ( 0, 0 )
         <p class="memo"><b>Yaad rakhein:</b> ek hi score (<code>&minus;1.5</code>) par label badalne se loss <code>0</code> se <code>5.0</code> ho gaya. Aur <code>&kappa;</code> <strong>sirf <code>y = +1</code> par</strong> laga &mdash; (a) mein <code>2.0</code> se multiply <em>nahi</em> karna.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md23"><p class="qn"><span>23</span><span class="mk">6 marks</span><span class="mk">full bank #60</span></p>
+  </div><div class="qp" id="md23" data-lec="8"><p class="qn"><span>23</span><span class="mk">6 marks</span><span class="mk">full bank #60</span></p>
     <p>With <code>&kappa; = 2.0</code> and <code>&#375; = 0.8</code>, compute the <b>logistic loss</b> for both labels.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p><code>&kappa; = 2.0</code>, <code>&#375; = 0.8</code>. Logistic loss dono labels ke liye nikaalein.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -4631,7 +4665,7 @@ z&#185;        = ReLU(-3, -1)      = ( 0, 0 )
         <p class="memo"><b>Hinge se farq (ye likhein):</b> logistic <strong>kabhi bilkul zero nahi hota</strong>. Theek case mein bhi <code>0.742</code> bacha hai &mdash; yaani wo kehta rehta hai "aur yaqeen se theek ho jao". Hinge margin 1 ke baad bilkul chup ho jaata hai.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md24"><p class="qn"><span>24</span><span class="mk">6 marks</span><span class="mk">full bank #61</span></p>
+  </div><div class="qp" id="md24" data-lec="8"><p class="qn"><span>24</span><span class="mk">6 marks</span><span class="mk">full bank #61</span></p>
     <p>For <code>&#375; = &minus;2.5</code> with true label <code>y = &minus;1</code> and <code>&kappa; = 1</code>, compute the <b>square</b>, <b>hinge</b> and <b>logistic</b> losses. Which loss behaves badly here, and why?</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p><code>&#375; = &minus;2.5</code>, asli label <code>&minus;1</code>. Teeno loss nikaalein: square, hinge, logistic. Phir batayein kaunsa loss yahan <b>bura rawayya</b> dikha raha hai aur kyun.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -4651,7 +4685,7 @@ Logistic : log(1+e^&#375;) = log(1 + e^-2.5)      = 0.079</div>
         <p class="memo"><b>Amli nuqsan:</b> training mein model is saza se bachne ke liye apni sahi predictions ko <strong>boundary ki taraf wapas kheench lega</strong>. Hinge (bilkul 0) aur logistic (0.079, gir raha) dono theek hain. <strong>Ye wohi masla hai jo <a href="#i3">I3</a> aur sample paper ke Q-4 mein tha.</strong></p>
       </div>
     </div></details>
-  </div><div class="qp" id="md25"><p class="qn"><span>25</span><span class="mk">6 marks</span><span class="mk">full bank #70</span><span class="mk">Q10 jaisa</span></p>
+  </div><div class="qp" id="md25" data-lec="8"><p class="qn"><span>25</span><span class="mk">6 marks</span><span class="mk">full bank #70</span><span class="mk">Q10 jaisa</span></p>
     <p>A score <code>&#375; = &minus;1.5</code> is observed with true label <code>y = &minus;1</code>. Compute the hinge, hubristic, square and logistic losses (<code>&kappa; = 1</code>). Which losses give exactly zero, and what does that tell you about them?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4675,7 +4709,7 @@ Logistic  : log(1 + e^(-1.5)) = log(1.2231) =  0.201</div>
         <p class="memo"><b>Baaqi do:</b> logistic zero ki taraf girta hai magar <strong>pohonchta kabhi nahi</strong> (0.201), to har point thora thora asar deta rehta hai. Aur square loss sab se bura &mdash; <code>0.25</code> ki saza us prediction par jo <em>zaroorat se behtar</em> hai, aur prediction aur behtar karein to saza aur barhegi.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md26"><p class="qn"><span>26</span><span class="mk">6 marks</span><span class="mk">full bank #65</span></p>
+  </div><div class="qp" id="md26" data-lec="8"><p class="qn"><span>26</span><span class="mk">6 marks</span><span class="mk">full bank #65</span></p>
     <p>The sigmoid loss is <code>&ell;<sub>sig</sub>(&#375;, &minus;1) = 1/(1 + e<sup>&minus;&#375;</sup>)</code>, with <code>&ell;(&#375;,+1) = &kappa;&ell;(&minus;&#375;,&minus;1)</code>. For <code>&kappa; = 3</code> and <code>&#375; = &minus;0.40</code>, compute both losses. Why is this loss avoided in RERM?</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Sigmoid loss ka formula diya hai. <code>&kappa; = 3</code>, <code>&#375; = &minus;0.40</code> par dono losses nikaalein. Aur batayein ke RERM mein ye loss kyun istemaal nahi kiya jaata.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -4693,7 +4727,7 @@ Logistic  : log(1 + e^(-1.5)) = log(1.2231) =  0.201</div>
         <p class="memo"><b>Kyun istemaal nahi hota:</b> sigmoid loss <strong>convex nahi</strong> hai ("S" ki shakal). Is se RERM mein <strong>kai local minima</strong> ban jaate hain &mdash; optimizer kisi chhote garhe mein phans sakta hai, aur jawab shuruati guess par depend karega. <strong>Koi zamanat nahi.</strong> Logistic, hinge aur hubristic teeno convex hain, is liye wohi istemaal hote hain.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md27"><p class="qn"><span>27</span><span class="mk">6 marks</span><span class="mk">full bank #62</span></p>
+  </div><div class="qp" id="md27" data-lec="7"><p class="qn"><span>27</span><span class="mk">6 marks</span><span class="mk">full bank #62</span></p>
     <p>A Boolean classifier on 200 test points gives <code>tn = 150</code>, <code>fp = 30</code>, <code>fn = 12</code>, <code>tp = 8</code>. With <code>&kappa; = 5</code>, compute the error rate, the Neyman-Pearson error, and the recall.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>200 test points par <code>tn=150, fp=30, fn=12, tp=8</code>. <code>&kappa; = 5</code> ke saath error rate, Neyman-Pearson error, aur recall nikaalein.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -4712,7 +4746,7 @@ recall     = tp/P        =  8/20         = 0.400 = 40.0%</div>
         <p class="memo"><b>Asal nuktah:</b> NP error (0.450) simple error rate (0.210) se <strong>do guna se zyada</strong> hai &mdash; kyunki <code>&kappa; = 5</code> un 12 false negatives ko paanch guna ginta hai. Aur recall sirf <strong>40%</strong> hai, yaani har 5 mein se 3 positives chhoot rahe hain. <strong>"21% error" sun kar model acha lagta hai, magar hai bura.</strong></p>
       </div>
     </div></details>
-  </div><div class="qp" id="md28"><p class="qn"><span>28</span><span class="mk">6 marks</span><span class="mk">full bank #63</span><span class="src">Stanford HW6 Q2(b,c)</span></p>
+  </div><div class="qp" id="md28" data-lec="7"><p class="qn"><span>28</span><span class="mk">6 marks</span><span class="mk">full bank #63</span><span class="src">Stanford HW6 Q2(b,c)</span></p>
     <p>On <code>n = 200</code> test points, classifier <b>A</b> gives <code>fn = 20, fp = 5</code> and classifier <b>B</b> gives <code>fn = 8, fp = 25</code>. Which is better at <code>&kappa; = 1</code>, and at <code>&kappa; = 4</code>?</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>200 points par: <b>A</b> ka <code>fn=20, fp=5</code>; <b>B</b> ka <code>fn=8, fp=25</code>. Kaunsa behtar hai &mdash; <code>&kappa; = 1</code> par, aur <code>&kappa; = 4</code> par?</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -4734,7 +4768,7 @@ recall     = tp/P        =  8/20         = 0.400 = 40.0%</div>
         <p class="memo"><b>Sab se ahem sabaq:</b> "kaunsa classifier behtar hai" ye sawal <strong><code>&kappa;</code> ke bagair adhoora hai</strong>. <code>&kappa;</code> ko application ki asli cost se pehle tay karein, phir models ka muqabla karein.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md29"><p class="qn"><span>29</span><span class="mk">6 marks</span><span class="mk">full bank #66</span></p>
+  </div><div class="qp" id="md29" data-lec="8"><p class="qn"><span>29</span><span class="mk">6 marks</span><span class="mk">full bank #66</span></p>
     <p>Prototypes are <code>a = [1, 1]<sup>T</sup></code> (Class 1) and <code>b = [5, 3]<sup>T</sup></code> (Class 2). Find the decision hyperplane, then compute the signed distance of <code>&#375; = [2, 2]<sup>T</sup></code> and give its class.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Do prototypes: <code>a = [1,1]</code> (Class 1) aur <code>b = [5,3]</code> (Class 2). Decision hyperplane nikaalein, phir <code>&#375; = [2,2]</code> ka signed distance aur uski class batayein.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -4761,7 +4795,7 @@ D &lt; 0  &rarr;  closer to a  &rarr;  CLASS 1</div>
         <p class="memo"><b>Nishaan ka matlab:</b> <code>D</code> negative &rarr; <code>a</code> ke qareeb &rarr; Class 1. Aur seedhe faasle se bhi check kar lein: <code>2 &lt; 10</code> &#10003; wohi jawab.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md30"><p class="qn"><span>30</span><span class="mk">6 marks</span><span class="mk">full bank #43</span></p>
+  </div><div class="qp" id="md30" data-lec="8"><p class="qn"><span>30</span><span class="mk">6 marks</span><span class="mk">full bank #43</span></p>
     <p>Write the general penalty-function framework for Boolean loss functions and explain the role of the sign flip in <code>p(&minus;&#375;)</code>.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4785,7 +4819,7 @@ where p : R &rarr; R is the PENALTY function, which should be
         <p class="memo"><b>Ye framework kyun itna qeemti hai:</b> lecture ke saare chhe losses mein <strong>sirf <code>p</code> ka farq</strong> hai &mdash; square <code>(1+u)&sup2;</code>, hinge <code>(1+u)<sub>+</sub></code>, logistic <code>log(1+e<sup>u</sup>)</code>, waghera. <strong>Yaani 12 formulas rata lagane ke bajaye, sirf 6 chhote <code>p</code> aur ye framework yaad karein</strong> &mdash; baaqi sab khud nikal aayega.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md31"><p class="qn"><span>31</span><span class="mk">6 marks</span><span class="mk">full bank #39</span></p>
+  </div><div class="qp" id="md31" data-lec="8"><p class="qn"><span>31</span><span class="mk">6 marks</span><span class="mk">full bank #39</span></p>
     <p>Name the loss function and regularizer used by (a) a least squares classifier, (b) logistic regression, and (c) a support vector machine.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4810,12 +4844,12 @@ HINGE    loss + square reg  =  SUPPORT VECTOR MACHINE (SVM)</div>
       </div>
     </div></details>
   </div>
-  <div class="part-head" id="mdC" style="margin-top:52px;border-top-width:4px">
+  <div class="part-head" id="mdC" data-lec="7" style="margin-top:52px;border-top-width:4px">
     <div class="lbl">Section C &mdash; sawal 32&ndash;37</div>
     <h2>Classifier &mdash; short theoretical</h2>
     <p>Paper mein yahan se <b>sirf 1 sawal</b> (6 marks). Ye chhe sab se zyada aane wale hain. Har jawab 3&ndash;4 line ka.</p>
   </div>
-<div class="qp" id="md32"><p class="qn"><span>32</span><span class="mk">6 marks</span><span class="mk">full bank #71</span></p>
+<div class="qp" id="md32" data-lec="7"><p class="qn"><span>32</span><span class="mk">6 marks</span><span class="mk">full bank #71</span></p>
     <p>A Boolean classifier on 200 test examples gives <code>tn = 120</code>, <code>fp = 20</code>, <code>fn = 30</code>, <code>tp = 30</code>. Compute the error rate, false positive rate, false negative rate, recall and precision.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4847,7 +4881,7 @@ precision  = 30/50   = 60.0%</div>
         <p class="memo"><b>Asal nuktah &mdash; ye likhein:</b> 75% accuracy theek lagti hai, magar <strong>recall sirf 50%</strong> hai &mdash; yaani aadhe asli positives <em>chhoot</em> gaye! Agar positives ahem cheez hain (bimari, fraud), to ye model na-qaabil-e-qubool hai. <strong>Hal: <code>&kappa; &gt; 1</code> rakhein</strong> taake false negatives ki saza barhe aur recall oopar aaye.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md33"><p class="qn"><span>33</span><span class="mk">6 marks</span><span class="mk">full bank #73</span></p>
+  </div><div class="qp" id="md33" data-lec="7"><p class="qn"><span>33</span><span class="mk">6 marks</span><span class="mk">full bank #73</span></p>
     <p>Distinguish precision from recall, giving the formula for each and a scenario where one matters far more than the other.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4881,7 +4915,7 @@ PRECISION = tp/(tp+fp)   &larr; neeche: jo HUM NE positive kaha</div>
         <p class="memo"><b>Trade-off:</b> dono ek saath nahi barhte. Zyada khul kar "positive" kehna shuru karein &rarr; recall barhega, precision girega. <strong>Aur <code>&kappa;</code> ka kaam bilkul yehi tawazun tay karna hai.</strong></p>
       </div>
     </div></details>
-  </div><div class="qp" id="md34"><p class="qn"><span>34</span><span class="mk">6 marks</span><span class="mk">full bank #72</span></p>
+  </div><div class="qp" id="md34" data-lec="7"><p class="qn"><span>34</span><span class="mk">6 marks</span><span class="mk">full bank #72</span></p>
     <p>In a dataset of 1000 patients, 10 have a rare disease. A classifier predicts "no disease" for everyone. Compute its error rate and recall, and comment on whether it is a good classifier.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4905,7 +4939,7 @@ precision  = tp/(tp+fp)=  0/0    = undefined</div>
         <p class="memo"><b>Ilaaj:</b> imbalanced data mein error rate par faisla <em>kabhi</em> na karein. <strong>Neyman-Pearson metric</strong> istemaal karein bade <code>&kappa;</code> ke saath &mdash; phir is classifier ka cost <code>10&kappa;/1000</code> ho jaayega, jo bade <code>&kappa;</code> par bohat bada hai, aur metric khud bata dega ke model bura hai. <strong>Saath recall bhi zaroor report karein.</strong></p>
       </div>
     </div></details>
-  </div><div class="qp" id="md35"><p class="qn"><span>35</span><span class="mk">6 marks</span><span class="mk">full bank #76</span></p>
+  </div><div class="qp" id="md35" data-lec="7"><p class="qn"><span>35</span><span class="mk">6 marks</span><span class="mk">full bank #76</span></p>
     <p>Explain the difference between a Type I and a Type II error, and give a scenario in which each is the more costly.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4934,7 +4968,7 @@ TYPE II = FALSE NEGATIVE :  v-hat = -1  but  v = +1
         <p class="memo"><b>Model mein ye kaise aata hai:</b> <code>&kappa;</code> ke zariye. <code>&kappa; &gt; 1</code> jab Type II buri ho, <code>&kappa; &lt; 1</code> jab Type I buri ho, aur <code>&kappa; = 1</code> par simple error rate.</p>
       </div>
     </div></details>
-  </div><div class="qp" id="md36"><p class="qn"><span>36</span><span class="mk">6 marks</span><span class="mk">full bank #87</span></p>
+  </div><div class="qp" id="md36" data-lec="7"><p class="qn"><span>36</span><span class="mk">6 marks</span><span class="mk">full bank #87</span></p>
     <p>State the three-stage structure of a classifier built by embedding, and write the final classifier as a composition of functions.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -4966,7 +5000,7 @@ Final classifier:
         <p class="memo"><b>Ye ghoom kar kyun jaana padta hai:</b> kyunki predictor <code>g</code> sirf <strong>numbers</strong> nikaal sakta hai, aur <code>v</code> ek <strong>qism</strong> hai. Model kabhi "SPAM" nahi likh sakta. To qism ko number banaya, number ka andaza lagaya, aur number ko wapas qism bana diya. <strong>Beech ka poora hissa model ki duniya hai &mdash; wahan sirf numbers hain.</strong></p>
       </div>
     </div></details>
-  </div><div class="qp" id="md37"><p class="qn"><span>37</span><span class="mk">6 marks</span><span class="mk">full bank #81</span></p>
+  </div><div class="qp" id="md37" data-lec="7"><p class="qn"><span>37</span><span class="mk">6 marks</span><span class="mk">full bank #81</span></p>
     <p>A 4-class problem uses one-hot embedding. The predictor outputs <code>&#375; = (0.1, 0.6, 0.2, 0.5)</code>. What class is predicted, and by what rule?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5108,19 +5142,28 @@ C.  1 sawal  &mdash;  CLASSIFIER              (short theoretical)
     <p style="margin-bottom:0;margin-top:12px"><b>Padhne ki tarteeb:</b> kam waqt ho to <b>Section A ke numericals pehle</b> (36 marks), phir <b>Section B</b> (18 marks), aur Section C aakhir mein (6 marks) &mdash; wo sab se halka hai kyunki theory padh kar bhi likhi ja sakti hai, magar hisaab practice ke bagair nahi aata.</p>
   </div>
 
-  <div class="part-head" id="secA" style="margin-top:52px;border-top-width:4px">
+  <div class="subnav qfilter" role="group" aria-label="Chapter filter">
+    <span class="flbl">Chapter filter</span>
+    <button type="button" data-f="all" aria-selected="true"><span class="n">ALL</span>Sab (108)</button>
+    <button type="button" data-f="6" aria-selected="false"><span class="n">LEC 6</span>Neural Net (35)</button>
+    <button type="button" data-f="7" aria-selected="false"><span class="n">LEC 7</span>Classifiers (44)</button>
+    <button type="button" data-f="8" aria-selected="false"><span class="n">LEC 8</span>Boolean (29)</button>
+    <span class="qcount"></span>
+  </div>
+
+  <div class="part-head" id="secA" data-lec="6" style="margin-top:52px;border-top-width:4px">
     <div class="lbl">Section A &mdash; paper mein 6 sawal</div>
     <h2>Neural Network &mdash; numericals</h2>
     <p>Paper ka <b>aadha hissa (36 marks)</b> yahan se hai. Sawal <b>1&ndash;35</b>. Chaar cheezein baar baar aati hain: <a href="#g10">forward pass</a>, <a href="#g8">parameter counting</a>, <a href="#g6">activation functions</a>, aur <a href="#g16">perceptron update</a>.</p>
   </div>
   <!-- ============ SET 1 ============ -->
-  <div class="part-head" style="margin-top:44px">
+  <div class="part-head" data-lec="6" style="margin-top:44px">
     <div class="lbl">A1 &mdash; sawal 1&ndash;10</div>
     <h2>Neural network &mdash; forward pass aur parameter counting</h2>
     <p>Sab se zyada yaqeeni qism (sample paper ke Q-1 aur Q-2 yahan se thay). In sab mein sirf do tareeqe chahiye: <a href="#g10">forward pass ke 4 qadam</a> aur <a href="#g8">(d<sub>i-1</sub>+1)&times;d<sub>i</sub></a>.</p>
   </div>
 
-  <div class="qp" id="pq1"><p class="qn"><span>1</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq1" data-lec="6"><p class="qn"><span>1</span><span class="mk">6 marks</span></p>
     <p>A 2-layer network without biases has <code>x = (1.0, 3.0)</code>, <code>W<sub>1</sub> = [[2.0, &minus;1.0], [0.5, 1.0]]</code>, <code>W<sub>2</sub> = [1.0, 2.0]</code>, with ReLU activation. Compute <code>z</code>, <code>h</code> and <code>f(x)</code>.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5145,7 +5188,7 @@ f(x) = 1.0(0.0) + 2.0(3.5) = 7.0</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq2"><p class="qn"><span>2</span><span class="mk">6 marks</span><span class="src">Stanford HW7 Q1(b)</span></p>
+  <div class="qp" id="pq2" data-lec="6"><p class="qn"><span>2</span><span class="mk">6 marks</span><span class="src">Stanford HW7 Q1(b)</span></p>
     <p>An MLP has layer dimensions <code>d<sub>0</sub> = 20</code> (input), <code>d<sub>1</sub> = 64</code>, <code>d<sub>2</sub> = 32</code> (hidden), <code>d<sub>3</sub> = 10</code> (output classes), with a learnable bias at every neuron. Compute the total number of trainable parameters, showing the per-layer breakdown.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5172,7 +5215,7 @@ jama   = 3,754</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq3"><p class="qn"><span>3</span><span class="mk">6 marks</span><span class="src">Stanford HW7 Q1(b)</span></p>
+  <div class="qp" id="pq3" data-lec="6"><p class="qn"><span>3</span><span class="mk">6 marks</span><span class="src">Stanford HW7 Q1(b)</span></p>
     <p>Two engineers build networks for the same task with <code>d<sub>0</sub> = 10</code> and <code>4</code> output classes. Engineer A uses one hidden layer with <code>d<sub>1</sub> = 100</code>; Engineer B uses two hidden layers with <code>d<sub>1</sub> = d<sub>2</sub> = 50</code>. All neurons have biases. Which network has more trainable parameters?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5201,7 +5244,7 @@ B (10&rarr;50&rarr;50&rarr;4):
     </div></details>
   </div>
 
-  <div class="qp" id="pq4"><p class="qn"><span>4</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq4" data-lec="6"><p class="qn"><span>4</span><span class="mk">6 marks</span></p>
     <p>For the network in sawal 1, recompute <code>h</code> and <code>f(x)</code> if the activation is changed from ReLU to the sigmoid <code>h(a) = e<sup>a</sup>/(1+e<sup>a</sup>)</code>. Comment on the difference.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5228,7 +5271,7 @@ f(x) = 1.0(0.269) + 2.0(0.971) = 2.21</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq5"><p class="qn"><span>5</span><span class="mk">6 marks</span><span class="src">Stanford HW7 Q1(b)</span></p>
+  <div class="qp" id="pq5" data-lec="6"><p class="qn"><span>5</span><span class="mk">6 marks</span><span class="src">Stanford HW7 Q1(b)</span></p>
     <p>A layer takes an input of dimension <code>d<sub>i&minus;1</sub> = 8</code> and produces <code>d<sub>i</sub> = 5</code> outputs. State the dimensions of <code>&Theta;<sup>i</sup></code>, <code>W<sup>i</sup></code> and <code>b<sup>i</sup></code>, and write out the layer map.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5253,7 +5296,7 @@ Layer map:
     </div></details>
   </div>
 
-  <div class="qp" id="pq6"><p class="qn"><span>6</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq6" data-lec="6"><p class="qn"><span>6</span><span class="mk">6 marks</span></p>
     <p>A network is described as a "4-layer neural net". How many hidden layers does it have, how many parameter matrices, and how many activation functions are applied?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5275,7 +5318,7 @@ Activations        =  4 layers, but typically 3 (hidden only)</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq7"><p class="qn"><span>7</span><span class="mk">6 marks</span><span class="src">Stanford HW7 Q1(b)</span></p>
+  <div class="qp" id="pq7" data-lec="6"><p class="qn"><span>7</span><span class="mk">6 marks</span><span class="src">Stanford HW7 Q1(b)</span></p>
     <p>For the network in sawal 1, how many trainable parameters are there (a) without biases, as stated, and (b) if biases were added at every neuron?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5302,7 +5345,7 @@ Activations        =  4 layers, but typically 3 (hidden only)</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq8"><p class="qn"><span>8</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq8" data-lec="6"><p class="qn"><span>8</span><span class="mk">6 marks</span></p>
     <p>A 3-layer network with ReLU produces hidden activations <code>z<sup>1</sup> = (0, 0, 0)</code> for a particular input. What is the output, and what has gone wrong?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5323,7 +5366,7 @@ Activations        =  4 layers, but typically 3 (hidden only)</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq9"><p class="qn"><span>9</span><span class="mk">6 marks</span><span class="src">Stanford HW7 Q1(b)</span></p>
+  <div class="qp" id="pq9" data-lec="6"><p class="qn"><span>9</span><span class="mk">6 marks</span><span class="src">Stanford HW7 Q1(b)</span></p>
     <p>A network has <code>d<sub>0</sub> = 5</code>, one hidden layer with <code>d<sub>1</sub> = h</code> neurons, and <code>d<sub>2</sub> = 3</code> outputs, with biases. It must have at most <code>100</code> trainable parameters. What is the largest <code>h</code> allowed?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5356,7 +5399,7 @@ jama   = 9h + 3
     </div></details>
   </div>
 
-  <div class="qp" id="pq10"><p class="qn"><span>10</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq10" data-lec="6"><p class="qn"><span>10</span><span class="mk">6 marks</span></p>
     <p>A pre-trained image network maps images to <code>z<sup>M&minus;1</sup> &isin; R<sup>1000</sup></code>. An engineer wants to classify X-rays into 3 categories using only <code>400</code> labelled X-rays. Describe the approach and the number of parameters to be trained.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5378,13 +5421,13 @@ jama   = 9h + 3
   </div>
 
   <!-- ============ SET 2 ============ -->
-  <div class="part-head" style="margin-top:44px">
+  <div class="part-head" data-lec="6" style="margin-top:44px">
     <div class="lbl">A2 &mdash; sawal 11&ndash;18</div>
     <h2>Perceptron &mdash; margin, update, convergence</h2>
     <p>Sample paper ka Q-3 yahan se tha. Tareeqa hamesha wohi 5 qadam: <a href="#g16">score &rarr; margin &rarr; faisla &rarr; update &rarr; verify</a>.</p>
   </div>
 
-  <div class="qp" id="pq11"><p class="qn"><span>11</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq11" data-lec="6"><p class="qn"><span>11</span><span class="mk">6 marks</span></p>
     <p>A perceptron has <code>w = [0.5, 0.3, &minus;0.4]</code> (with <code>x<sub>0</sub> = 1</code> the bias input). A sample <code>x = [1.0, &minus;1.0, 2.0]</code> arrives with <code>y = &minus;1</code> and <code>&eta; = 0.1</code>. Compute the margin and state whether an update occurs.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5408,7 +5451,7 @@ margin = y(w<sup>T</sup>x) = (-1)(-0.60) = +0.60   &gt; 0</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq12"><p class="qn"><span>12</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq12" data-lec="6"><p class="qn"><span>12</span><span class="mk">6 marks</span></p>
     <p>A perceptron has <code>w = [0, 1.0, &minus;1.0]</code>. Sample <code>x = [1.0, 1.0, 2.0]</code> with <code>y = +1</code> and <code>&eta; = 0.5</code>. Compute the margin, the updated weights, and verify the result.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5434,7 +5477,7 @@ Verify: w<sub>new</sub><sup>T</sup>x = 0.5(1) + 1.5(1) + 0.0(2) = 2.00  &gt; 0  
     </div></details>
   </div>
 
-  <div class="qp" id="pq13"><p class="qn"><span>13</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq13" data-lec="6"><p class="qn"><span>13</span><span class="mk">6 marks</span></p>
     <p>Prove that the perceptron update <code>w<sub>new</sub> = w<sub>old</sub> + &eta;y<sub>i</sub>x<sub>i</sub></code> always increases the margin of the sample that triggered it.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5460,7 +5503,7 @@ Verify: w<sub>new</sub><sup>T</sup>x = 0.5(1) + 1.5(1) + 0.0(2) = 2.00  &gt; 0  
     </div></details>
   </div>
 
-  <div class="qp" id="pq14"><p class="qn"><span>14</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq14" data-lec="6"><p class="qn"><span>14</span><span class="mk">6 marks</span></p>
     <p>A dataset contains two points of class <code>+1</code> and two of class <code>&minus;1</code>, arranged so that no straight line can separate them (an XOR pattern). What happens when the Perceptron Learning Algorithm is run on it, and what would you do instead?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5490,7 +5533,7 @@ Verify: w<sub>new</sub><sup>T</sup>x = 0.5(1) + 1.5(1) + 0.0(2) = 2.00  &gt; 0  
     </div></details>
   </div>
 
-  <div class="qp" id="pq15"><p class="qn"><span>15</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq15" data-lec="6"><p class="qn"><span>15</span><span class="mk">6 marks</span></p>
     <p>A perceptron uses the rule "if <code>&Sigma;x<sub>i</sub>w<sub>i</sub> &ge; t</code> then output 1". Show how to absorb the threshold <code>t</code> into the weight vector, and state the benefit.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5521,7 +5564,7 @@ Set   x&#8320; = -1   and   w&#8320; = t  :
     </div></details>
   </div>
 
-  <div class="qp" id="pq16"><p class="qn"><span>16</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq16" data-lec="6"><p class="qn"><span>16</span><span class="mk">6 marks</span></p>
     <p>A neuron has <code>x = [2.0, 1.0, 0.5]</code>, <code>w = [0.3, 0.4, 1.0]</code> and threshold <code>t = 1.5</code>. (a) Does it fire? (b) What happens if <code>w<sub>3</sub></code> is set to zero?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5549,7 +5592,7 @@ Set   x&#8320; = -1   and   w&#8320; = t  :
     </div></details>
   </div>
 
-  <div class="qp" id="pq17"><p class="qn"><span>17</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq17" data-lec="6"><p class="qn"><span>17</span><span class="mk">6 marks</span></p>
     <p>Two samples both have margin <code>&gt; 0</code>: sample A has margin <code>0.02</code>, sample B has margin <code>5.0</code>. Both are "correctly classified". Why should an engineer still be concerned about sample A?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5573,7 +5616,7 @@ Set   x&#8320; = -1   and   w&#8320; = t  :
     </div></details>
   </div>
 
-  <div class="qp" id="pq18"><p class="qn"><span>18</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq18" data-lec="6"><p class="qn"><span>18</span><span class="mk">6 marks</span></p>
     <p>State the Perceptron Convergence Theorem precisely, and explain two things it does <em>not</em> guarantee.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5601,13 +5644,13 @@ Set   x&#8320; = -1   and   w&#8320; = t  :
     </div></details>
   </div>
   <!-- ============ SET 3 ============ -->
-  <div class="part-head" style="margin-top:44px">
+  <div class="part-head" data-lec="6" style="margin-top:44px">
     <div class="lbl">A3 &mdash; sawal 19&ndash;26</div>
     <h2>Neural network &mdash; conceptual sawal</h2>
     <p>In mein hisaab nahi, <em>wajah</em> chahiye. Sab se zyada aane wala: "activation function ke bagair kya hoga" (<a href="#g7">G7</a>).</p>
   </div>
 
-  <div class="qp" id="pq19"><p class="qn"><span>19</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq19" data-lec="6"><p class="qn"><span>19</span><span class="mk">6 marks</span></p>
     <p>An engineer builds a 5-layer network but forgets to apply any activation function. Explain what predictor results, and why adding more layers will not help.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5629,7 +5672,7 @@ Set   x&#8320; = -1   and   w&#8320; = t  :
     </div></details>
   </div>
 
-  <div class="qp" id="pq20"><p class="qn"><span>20</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq20" data-lec="6"><p class="qn"><span>20</span><span class="mk">6 marks</span></p>
     <p>Compare neural networks with manual feature engineering. State two advantages and two disadvantages of the neural-network approach.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5666,7 +5709,7 @@ Set   x&#8320; = -1   and   w&#8320; = t  :
     </div></details>
   </div>
 
-  <div class="qp" id="pq21"><p class="qn"><span>21</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq21" data-lec="6"><p class="qn"><span>21</span><span class="mk">6 marks</span></p>
     <p>A hospital must justify every automated diagnosis to a regulator. A neural network achieves 94% accuracy; a regularized linear classifier achieves 91%. Which would you recommend, and why?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5687,7 +5730,7 @@ Set   x&#8320; = -1   and   w&#8320; = t  :
     </div></details>
   </div>
 
-  <div class="qp" id="pq22"><p class="qn"><span>22</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq22" data-lec="6"><p class="qn"><span>22</span><span class="mk">6 marks</span></p>
     <p>Explain what a pre-trained neural network is, and why it can help on a task quite different from the one it was trained on.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5708,7 +5751,7 @@ Set   x&#8320; = -1   and   w&#8320; = t  :
     </div></details>
   </div>
 
-  <div class="qp" id="pq23"><p class="qn"><span>23</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq23" data-lec="6"><p class="qn"><span>23</span><span class="mk">6 marks</span></p>
     <p>In the layer map <code>g<sup>i</sup>(z<sup>i&minus;1</sup>) = h((&Theta;<sup>i</sup>)<sup>T</sup>(1, z<sup>i&minus;1</sup>))</code>, explain the role of the constant <code>1</code>, and what would be lost without it.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5729,7 +5772,7 @@ Set   x&#8320; = -1   and   w&#8320; = t  :
     </div></details>
   </div>
 
-  <div class="qp" id="pq24"><p class="qn"><span>24</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq24" data-lec="6"><p class="qn"><span>24</span><span class="mk">6 marks</span></p>
     <p>Why is the activation function applied <em>elementwise</em> rather than to the vector as a whole? What would break otherwise?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5748,7 +5791,7 @@ Set   x&#8320; = -1   and   w&#8320; = t  :
     </div></details>
   </div>
 
-  <div class="qp" id="pq25"><p class="qn"><span>25</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq25" data-lec="6"><p class="qn"><span>25</span><span class="mk">6 marks</span></p>
     <p>A dataset of red points surrounded by blue points cannot be separated by a linear classifier. Explain how a hidden layer solves this, relating it to the polar-coordinate transform in the slides.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5769,7 +5812,7 @@ Set   x&#8320; = -1   and   w&#8320; = t  :
     </div></details>
   </div>
 
-  <div class="qp" id="pq26"><p class="qn"><span>26</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq26" data-lec="6"><p class="qn"><span>26</span><span class="mk">6 marks</span></p>
     <p>The slides note that a hidden layer lets us "learn 100 templates instead of 10" and "share templates between classes". Explain what this means and why it increases expressive power.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5793,13 +5836,13 @@ Set   x&#8320; = -1   and   w&#8320; = t  :
     </div></details>
   </div>
 
-  <div class="part-head" style="margin-top:44px">
+  <div class="part-head" data-lec="6" style="margin-top:44px">
     <div class="lbl">A4 &mdash; sawal 27&ndash;35</div>
     <h2>Naye NN numericals &mdash; asli paper ke mizaaj par</h2>
     <p>Ye sawal <b>asli OHT-II ke Q1&ndash;Q6 ko saamne rakh kar</b> banaye gaye hain &mdash; wohi shakal, naye numbers. Agar aap ye nau hal kar lein, to Section A ke chhe sawal aap ke liye nayi cheez nahi honge.</p>
   </div>
 
-  <div class="qp" id="pq27"><p class="qn"><span>27</span><span class="mk">6 marks</span><span class="mk">asli Q1 jaisa</span></p>
+  <div class="qp" id="pq27" data-lec="6"><p class="qn"><span>27</span><span class="mk">6 marks</span><span class="mk">asli Q1 jaisa</span></p>
     <p>A 3-layer network with ReLU hidden layers and a <b>linear output layer</b> has <code>x = [2.0, 1.0]<sup>T</sup></code>, <code>W<sub>1</sub> = [[1.0, &minus;1.0], [0.5, 2.0]]</code>, <code>b<sub>1</sub> = [0.5, &minus;3.0]</code>, <code>W<sub>2</sub> = [[2.0, 0.5], [&minus;1.0, 1.0]]</code>, <code>b<sub>2</sub> = [&minus;1.0, 0.5]</code>, <code>W<sub>3</sub> = [1.0, &minus;3.0]</code>, <code>b<sub>3</sub> = 0.5</code>. Compute <code>z<sup>1</sup></code>, <code>z<sup>2</sup></code> and <code>&#375;</code>.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5826,7 +5869,7 @@ z&#178;    = ReLU                                  = ( 2.0, 0 )
     </div></details>
   </div>
 
-  <div class="qp" id="pq28"><p class="qn"><span>28</span><span class="mk">6 marks</span><span class="mk">asli Q2 jaisa</span></p>
+  <div class="qp" id="pq28" data-lec="6"><p class="qn"><span>28</span><span class="mk">6 marks</span><span class="mk">asli Q2 jaisa</span></p>
     <p>A neuron has <code>x = [1.0, 2.0, &minus;1.0]<sup>T</sup></code>, <code>w = [2.0, &minus;1.0, 1.0]<sup>T</sup></code>, bias <code>b = &minus;1.5</code>, with <code>a = w<sup>T</sup>x + b</code>. Evaluate the output under <b>Leaky ReLU</b> <code>max(0.1a, a)</code>, <b>ELU</b> (<code>&alpha;=1</code>), and <b>sigmoid</b>.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5850,7 +5893,7 @@ Sigmoid    : 1/(1+e^(2.5)) = 1/13.182               =  0.076</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq29"><p class="qn"><span>29</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq29" data-lec="6"><p class="qn"><span>29</span><span class="mk">6 marks</span></p>
     <p>A neuron has <code>x = [1.0, 1.0]<sup>T</sup></code>, <code>w = [2.0, 1.0]<sup>T</sup></code>, <code>b = 0.5</code>. Evaluate ReLU, Leaky ReLU, ELU and sigmoid. What do you notice, and why?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5876,7 +5919,7 @@ Sigmoid    : 1/(1+e^(-3.5))         = 0.971</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq30"><p class="qn"><span>30</span><span class="mk">6 marks</span><span class="mk">asli Q3 jaisa</span></p>
+  <div class="qp" id="pq30" data-lec="6"><p class="qn"><span>30</span><span class="mk">6 marks</span><span class="mk">asli Q3 jaisa</span></p>
     <p>A perceptron has augmented weights <code>w<sup>(0)</sup> = [1.0, &minus;0.5, 0.5]<sup>T</sup></code> with permanent input <code>x<sub>0</sub> = &minus;1</code>, and <code>&eta; = 0.2</code>. Process two samples in sequence: (a) <code>[2.0, 1.0]<sup>T</sup></code> with <code>y = &minus;1</code>; (b) <code>[1.0, 3.0]<sup>T</sup></code> with <code>y = &minus;1</code>. Give the weight vector after each sample.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5911,7 +5954,7 @@ SAMPLE (b):
     </div></details>
   </div>
 
-  <div class="qp" id="pq31"><p class="qn"><span>31</span><span class="mk">6 marks</span><span class="mk">asli Q5 jaisa</span></p>
+  <div class="qp" id="pq31" data-lec="6"><p class="qn"><span>31</span><span class="mk">6 marks</span><span class="mk">asli Q5 jaisa</span></p>
     <p>A 2D perceptron outputs 1 if <code>w<sub>1</sub>x<sub>1</sub> + w<sub>2</sub>x<sub>2</sub> &gt; t</code>, with <code>w = [6, 8]<sup>T</sup></code> and <code>t = 20</code>. Find the perpendicular distance from the origin to the decision boundary, and classify <code>P = (1, 2)</code> and <code>Q = (2, 0)</code>.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5934,7 +5977,7 @@ Q = (2,0):  6(2) + 8(0) = 12 + 0  = 12  &#8815; 20   &rarr; output 0</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq32"><p class="qn"><span>32</span><span class="mk">6 marks</span><span class="src">Stanford HW7 Q1(b)</span></p>
+  <div class="qp" id="pq32" data-lec="6"><p class="qn"><span>32</span><span class="mk">6 marks</span><span class="src">Stanford HW7 Q1(b)</span></p>
     <p>An MLP has layer dimensions <code>d<sub>0</sub> = 8</code>, <code>d<sub>1</sub> = 20</code>, <code>d<sub>2</sub> = 20</code>, <code>d<sub>3</sub> = 5</code> (output classes), with a bias at every neuron. Compute the total trainable parameters, and separately report the weight count and bias count.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5961,7 +6004,7 @@ Split:  weights = 8(20) + 20(20) + 20(5) = 160+400+100 = 660
     </div></details>
   </div>
 
-  <div class="qp" id="pq33"><p class="qn"><span>33</span><span class="mk">6 marks</span><span class="mk">asli Q6 jaisa</span></p>
+  <div class="qp" id="pq33" data-lec="6"><p class="qn"><span>33</span><span class="mk">6 marks</span><span class="mk">asli Q6 jaisa</span></p>
     <p>For <code>f(x) = W<sub>2</sub>&phi;(W<sub>1</sub>x)</code> with <code>W<sub>1</sub> = [[2, 1], [1, &minus;3]]</code>, <code>W<sub>2</sub> = [1, 2]</code>, <code>x = [1, 2]<sup>T</sup></code>: evaluate <code>f(x)</code> with ReLU, and with identity activation. Show the collapsed weight vector.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -5985,7 +6028,7 @@ Collapsed:  W&#8322;W&#8321; = [1(2)+2(1), 1(1)+2(-3)] = [4, -5]
     </div></details>
   </div>
 
-  <div class="qp" id="pq34"><p class="qn"><span>34</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq34" data-lec="6"><p class="qn"><span>34</span><span class="mk">6 marks</span></p>
     <p>A 2-layer ReLU network has <code>W<sub>1</sub> = [[1, 1], [2, 2]]</code>, <code>b<sub>1</sub> = [&minus;5, &minus;5]</code>, <code>W<sub>2</sub> = [1, 1]</code>, <code>b<sub>2</sub> = 0.7</code>, and input <code>x = [1, 1]<sup>T</sup></code>. Compute the output. What is wrong with this network at this input?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6008,7 +6051,7 @@ z&#185;        = ReLU(-3, -1)      = ( 0, 0 )
     </div></details>
   </div>
 
-  <div class="qp" id="pq35"><p class="qn"><span>35</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq35" data-lec="6"><p class="qn"><span>35</span><span class="mk">6 marks</span></p>
     <p>A neuron fires if <code>a &gt; t</code> with <code>t = 2.5</code>, where <code>a = &Sigma;x<sub>i</sub>w<sub>i</sub></code>, <code>x = [1, 2, 3]<sup>T</sup></code>, <code>w = [0.5, 0.5, 0.5]<sup>T</sup></code>. (a) Does it fire? (b) Rewrite the rule in bias form <code>&Sigma;x<sub>i</sub>w<sub>i</sub> + b &gt; 0</code> and verify you get the same answer.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6033,19 +6076,19 @@ z&#185;        = ReLU(-3, -1)      = ( 0, 0 )
     </div></details>
   </div>
 
-  <div class="part-head" id="secB" style="margin-top:52px;border-top-width:4px">
+  <div class="part-head" id="secB" data-lec="7 8" style="margin-top:52px;border-top-width:4px">
     <div class="lbl">Section B &mdash; paper mein 3 sawal</div>
     <h2>Boolean Classification &mdash; numericals</h2>
     <p>Sawal <b>36&ndash;70</b> (18 marks). Har loss function ka numerical aa sakta hai, is liye saare diye gaye hain. <b>Asli paper ka Q-10 isi section se tha</b> &mdash; dekhein <a href="#pattern">pattern</a>.</p>
   </div>
   <!-- ============ SET 7 ============ -->
-  <div class="part-head" style="margin-top:44px">
+  <div class="part-head" data-lec="8" style="margin-top:44px">
     <div class="lbl">B1 &mdash; sawal 36&ndash;45</div>
     <h2>Boolean loss functions &mdash; hinge, square, logistic</h2>
     <p>Sample paper ka Q-4 yahan se tha. Har numerical sawal mein wohi teen qadam: <strong>label dekho &rarr; sahi formula uthao (<code>&kappa;</code> lagega ya nahi) &rarr; hisaab karo</strong>. <a href="#i9">I9</a> ka table saamne rakhein.</p>
   </div>
 
-  <div class="qp" id="pq36"><p class="qn"><span>36</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq36" data-lec="8"><p class="qn"><span>36</span><span class="mk">6 marks</span></p>
     <p>With <code>&kappa; = 3.0</code> and <code>&#375; = 0.5</code>, compute the hinge loss for (a) <code>v = +1</code> and (b) <code>v = &minus;1</code>.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6072,7 +6115,7 @@ z&#185;        = ReLU(-3, -1)      = ( 0, 0 )
     </div></details>
   </div>
 
-  <div class="qp" id="pq37"><p class="qn"><span>37</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq37" data-lec="8"><p class="qn"><span>37</span><span class="mk">6 marks</span></p>
     <p>Compute the hinge, square and logistic loss for <code>&#375; = &minus;2.0</code> with <code>v = &minus;1</code> and <code>&kappa; = 1</code>. What do the three values tell you?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6105,7 +6148,7 @@ LOGISTIC : log(1+e<sup>&#375;</sup>)  = log(1+e<sup>-2</sup>)  = log(1.135)  = 0
     </div></details>
   </div>
 
-  <div class="qp" id="pq38"><p class="qn"><span>38</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq38" data-lec="8"><p class="qn"><span>38</span><span class="mk">6 marks</span></p>
     <p>Why is the sigmoid loss, despite being a differentiable and close approximation of the Neyman-Pearson loss, not used in practice?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6126,7 +6169,7 @@ LOGISTIC : log(1+e<sup>&#375;</sup>)  = log(1+e<sup>-2</sup>)  = log(1.135)  = 0
     </div></details>
   </div>
 
-  <div class="qp" id="pq39"><p class="qn"><span>39</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq39" data-lec="8"><p class="qn"><span>39</span><span class="mk">6 marks</span></p>
     <p>Name the loss function and regularizer used by (a) a least squares classifier, (b) logistic regression, and (c) a support vector machine.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6152,7 +6195,7 @@ HINGE    loss + square reg  =  SUPPORT VECTOR MACHINE (SVM)</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq40"><p class="qn"><span>40</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq40" data-lec="8"><p class="qn"><span>40</span><span class="mk">6 marks</span></p>
     <p>Explain the significance of the lines <code>&#375; = 0</code> and <code>&#375; = &plusmn;1</code> in an SVM, and what a "support vector" is.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6179,7 +6222,7 @@ HINGE    loss + square reg  =  SUPPORT VECTOR MACHINE (SVM)</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq41"><p class="qn"><span>41</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq41" data-lec="8"><p class="qn"><span>41</span><span class="mk">6 marks</span></p>
     <p>Compare hinge and logistic loss. State two differences and say when each is preferable.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6210,7 +6253,7 @@ HINGE    loss + square reg  =  SUPPORT VECTOR MACHINE (SVM)</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq42"><p class="qn"><span>42</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq42" data-lec="8"><p class="qn"><span>42</span><span class="mk">6 marks</span></p>
     <p>Write the hubristic loss as given in the lectures and verify that it is continuous at <code>u = &minus;1</code> and <code>u = 0</code>. What problem does it solve?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6245,7 +6288,7 @@ u =  0 par:  (0+1)&#178; = 1  aur  1+2(0) = 1  &rarr;  barabar  &#10003;</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq43"><p class="qn"><span>43</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq43" data-lec="8"><p class="qn"><span>43</span><span class="mk">6 marks</span></p>
     <p>Write the general penalty-function framework for Boolean loss functions and explain the role of the sign flip in <code>p(&minus;&#375;)</code>.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6271,7 +6314,7 @@ where p : R &rarr; R is the PENALTY function, which should be
     </div></details>
   </div>
 
-  <div class="qp" id="pq44"><p class="qn"><span>44</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq44" data-lec="8"><p class="qn"><span>44</span><span class="mk">6 marks</span></p>
     <p>The Australian weather model achieves 16% error while the rain frequency is 22%. Explain why the second number must be reported alongside the first.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6292,7 +6335,7 @@ where p : R &rarr; R is the PENALTY function, which should be
     </div></details>
   </div>
 
-  <div class="qp" id="pq45"><p class="qn"><span>45</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq45" data-lec="8"><p class="qn"><span>45</span><span class="mk">6 marks</span></p>
     <p>The Australian weather study found that retraining with only 6 of the 62 features raised the error from 16% to 16.5%. Which model would you deploy, and why?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6322,13 +6365,13 @@ where p : R &rarr; R is the PENALTY function, which should be
   </div>
 
   <!-- ============ SET 8 ============ -->
-  <div class="part-head" style="margin-top:44px">
+  <div class="part-head" data-lec="8" style="margin-top:44px">
     <div class="lbl">B2 &mdash; sawal 46&ndash;52</div>
     <h2>Multi-class &mdash; signed distance aur multi-class losses</h2>
     <p>Log is hisse ko mushkil samajh kar chhod dete hain &mdash; <strong>isi liye examiner yahan se poochta hai</strong>. Haqeeqat mein sirf ek nayi cheez hai: <a href="#j3">signed distance</a>. Baaqi sab Boolean waala hi hai.</p>
   </div>
 
-  <div class="qp" id="pq46"><p class="qn"><span>46</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq46" data-lec="8"><p class="qn"><span>46</span><span class="mk">6 marks</span></p>
     <p>Derive the condition under which a point <code>x</code> is closer to <code>a</code> than to <code>b</code>, and show that the resulting decision boundary is a hyperplane.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6360,7 +6403,7 @@ Boundary (equality):   2(b-a)<sup>T</sup>x - &#8214;b&#8214;&#8322;&#178; + &#82
     </div></details>
   </div>
 
-  <div class="qp" id="pq47"><p class="qn"><span>47</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq47" data-lec="8"><p class="qn"><span>47</span><span class="mk">6 marks</span></p>
     <p>Define the signed distance <code>d(x)</code> from <code>x</code> to the boundary between <code>a</code> and <code>b</code>. State its four properties and explain why it is normalized.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6389,7 +6432,7 @@ Boundary (equality):   2(b-a)<sup>T</sup>x - &#8214;b&#8214;&#8322;&#178; + &#82
     </div></details>
   </div>
 
-  <div class="qp" id="pq48"><p class="qn"><span>48</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq48" data-lec="8"><p class="qn"><span>48</span><span class="mk">6 marks</span></p>
     <p>Show that for the Boolean embedding <code>y<sub>1</sub> = &minus;1</code>, <code>y<sub>2</sub> = +1</code>, the signed distance reduces to <code>d(&#375;) = &#375;</code>.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6417,7 +6460,7 @@ Boundary (equality):   2(b-a)<sup>T</sup>x - &#8214;b&#8214;&#8322;&#178; + &#82
     </div></details>
   </div>
 
-  <div class="qp" id="pq49"><p class="qn"><span>49</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq49" data-lec="8"><p class="qn"><span>49</span><span class="mk">6 marks</span></p>
     <p>In the multi-class loss condition, why is a <code>max</code> over <code>j &ne; k</code> used rather than a sum?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6440,7 +6483,7 @@ Boundary (equality):   2(b-a)<sup>T</sup>x - &#8214;b&#8214;&#8322;&#178; + &#82
     </div></details>
   </div>
 
-  <div class="qp" id="pq50"><p class="qn"><span>50</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq50" data-lec="8"><p class="qn"><span>50</span><span class="mk">6 marks</span></p>
     <p>Write the multi-class hinge loss and show that for <code>K = 2</code> with <code>&kappa;<sub>1</sub> = &kappa;<sub>2</sub> = 1</code> it reduces to the usual hinge loss.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6473,7 +6516,7 @@ v = +1  &rarr;  (1 - &#375;)<sub>+</sub>        &larr; bilkul Boolean hinge loss
     </div></details>
   </div>
 
-  <div class="qp" id="pq51"><p class="qn"><span>51</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq51" data-lec="8"><p class="qn"><span>51</span><span class="mk">6 marks</span></p>
     <p>Write the multi-class logistic loss. Why does the sum include <code>j = k</code>, and what does that term contribute?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6502,7 +6545,7 @@ v = +1  &rarr;  log(e^-&#375; + e&#8304;) = log(1 + e^-&#375;)</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq52"><p class="qn"><span>52</span><span class="mk">6 marks</span><span class="src">Stanford HW7 Q2</span></p>
+  <div class="qp" id="pq52" data-lec="8"><p class="qn"><span>52</span><span class="mk">6 marks</span><span class="src">Stanford HW7 Q2</span></p>
     <p>The Iris data gives error 16.67% with two sepal features and 1.33% with all four. Interpret both confusion matrices and recommend a next step.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6560,13 +6603,13 @@ NAAM              square+square = LS  |  logistic = log.reg  |  hinge+square = S
   </div>
 
   <!-- ============ SET 5 ============ -->
-  <div class="part-head" style="margin-top:44px">
+  <div class="part-head" data-lec="7 8" style="margin-top:44px">
     <div class="lbl">B3 &mdash; sawal 53&ndash;58</div>
     <h2>Neyman-Pearson metric aur <code>&kappa;</code></h2>
     <p><code>&kappa;</code> teen lectures mein <em>chhe</em> jagah aata hai (Lec-7 Boolean, Lec-7 multi-class, Lec-7 ERM, Lec-8 setup, Lec-8 losses, Lec-8 multi-class). Yaani is par sawal aana taqreeban yaqeeni hai.</p>
   </div>
 
-  <div class="qp" id="pq53"><p class="qn"><span>53</span><span class="mk">6 marks</span><span class="src">Stanford HW6 Q2(a)</span></p>
+  <div class="qp" id="pq53" data-lec="7"><p class="qn"><span>53</span><span class="mk">6 marks</span><span class="src">Stanford HW6 Q2(a)</span></p>
     <p>Define the Neyman-Pearson metric for Boolean classification. What does <code>&kappa;</code> control, and what happens when <code>&kappa; = 1</code>?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6596,7 +6639,7 @@ NAAM              square+square = LS  |  logistic = log.reg  |  hinge+square = S
     </div></details>
   </div>
 
-  <div class="qp" id="pq54"><p class="qn"><span>54</span><span class="mk">6 marks</span><span class="src">Stanford HW6 Q2(a)</span></p>
+  <div class="qp" id="pq54" data-lec="7"><p class="qn"><span>54</span><span class="mk">6 marks</span><span class="src">Stanford HW6 Q2(a)</span></p>
     <p>A bank's fraud detector must not miss fraud, but blocking legitimate cards is also expensive. Explain how you would set <code>&kappa;</code>, and how it enters both validation and training.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6619,7 +6662,7 @@ NAAM              square+square = LS  |  logistic = log.reg  |  hinge+square = S
     </div></details>
   </div>
 
-  <div class="qp" id="pq55"><p class="qn"><span>55</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq55" data-lec="7"><p class="qn"><span>55</span><span class="mk">6 marks</span></p>
     <p>On the plane with <code>fn/n</code> on one axis and <code>fp/n</code> on the other, what do lines of constant Neyman-Pearson error look like, and what is their slope?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6642,7 +6685,7 @@ NAAM              square+square = LS  |  logistic = log.reg  |  hinge+square = S
     </div></details>
   </div>
 
-  <div class="qp" id="pq56"><p class="qn"><span>56</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq56" data-lec="7"><p class="qn"><span>56</span><span class="mk">6 marks</span></p>
     <p>For a 3-class medical classifier with <code>V = {COVID19, FLU, COLD}</code>, explain how the multi-class Neyman-Pearson metric is defined and how you would choose <code>&kappa;</code>.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6672,7 +6715,7 @@ r<sub>k</sub>  = number of times class k was mistaken for another class
     </div></details>
   </div>
 
-  <div class="qp" id="pq57"><p class="qn"><span>57</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq57" data-lec="8"><p class="qn"><span>57</span><span class="mk">6 marks</span></p>
     <p>Why is the Neyman-Pearson <em>loss</em> not used for training, even though it matches the Neyman-Pearson <em>metric</em> exactly?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6698,7 +6741,7 @@ r<sub>k</sub>  = number of times class k was mistaken for another class
     </div></details>
   </div>
 
-  <div class="qp" id="pq58"><p class="qn"><span>58</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq58" data-lec="7"><p class="qn"><span>58</span><span class="mk">6 marks</span></p>
     <p>Write the Boolean loss function that implements the Neyman-Pearson metric with square loss, as given in the lectures, and explain which deviation it weights more.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6723,13 +6766,13 @@ v = +1  &rarr;  &kappa; &#8214;&#375; - y&#8322;&#8214;&#178;       (&kappa; gun
     </div></details>
   </div>
 
-  <div class="part-head" style="margin-top:44px">
+  <div class="part-head" data-lec="7 8" style="margin-top:44px">
     <div class="lbl">B4 &mdash; sawal 59&ndash;70</div>
     <h2>Naye Boolean classification numericals</h2>
     <p>Paper mein is section se <b>3 sawal</b> aate hain. Asli paper mein wo Q7 (hubristic loss), Q8 (signed distance) aur Q10 thay. Ye bara set is liye diya ja raha hai ke <b>har loss function ka numerical</b> aa sakta hai &mdash; aur B4.12 khaas tor par Q10 jaisa sawal hai.</p>
   </div>
 
-  <div class="qp" id="pq59"><p class="qn"><span>59</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq59" data-lec="8"><p class="qn"><span>59</span><span class="mk">6 marks</span></p>
     <p>With <code>&kappa; = 2.0</code> and score <code>&#375; = &minus;1.5</code>, compute the <b>hinge loss</b> for (a) <code>y = &minus;1</code> and (b) <code>y = +1</code>.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p><code>&kappa; = 2.0</code>, score <code>&#375; = &minus;1.5</code>. Hinge loss nikaalein &mdash; (a) jab asli label <code>&minus;1</code> ho, (b) jab <code>+1</code> ho.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -6748,7 +6791,7 @@ v = +1  &rarr;  &kappa; &#8214;&#375; - y&#8322;&#8214;&#178;       (&kappa; gun
     </div></details>
   </div>
 
-  <div class="qp" id="pq60"><p class="qn"><span>60</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq60" data-lec="8"><p class="qn"><span>60</span><span class="mk">6 marks</span></p>
     <p>With <code>&kappa; = 2.0</code> and <code>&#375; = 0.8</code>, compute the <b>logistic loss</b> for both labels.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p><code>&kappa; = 2.0</code>, <code>&#375; = 0.8</code>. Logistic loss dono labels ke liye nikaalein.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -6768,7 +6811,7 @@ v = +1  &rarr;  &kappa; &#8214;&#375; - y&#8322;&#8214;&#178;       (&kappa; gun
     </div></details>
   </div>
 
-  <div class="qp" id="pq61"><p class="qn"><span>61</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq61" data-lec="8"><p class="qn"><span>61</span><span class="mk">6 marks</span></p>
     <p>For <code>&#375; = &minus;2.5</code> with true label <code>y = &minus;1</code> and <code>&kappa; = 1</code>, compute the <b>square</b>, <b>hinge</b> and <b>logistic</b> losses. Which loss behaves badly here, and why?</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p><code>&#375; = &minus;2.5</code>, asli label <code>&minus;1</code>. Teeno loss nikaalein: square, hinge, logistic. Phir batayein kaunsa loss yahan <b>bura rawayya</b> dikha raha hai aur kyun.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -6790,7 +6833,7 @@ Logistic : log(1+e^&#375;) = log(1 + e^-2.5)      = 0.079</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq62"><p class="qn"><span>62</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq62" data-lec="7"><p class="qn"><span>62</span><span class="mk">6 marks</span></p>
     <p>A Boolean classifier on 200 test points gives <code>tn = 150</code>, <code>fp = 30</code>, <code>fn = 12</code>, <code>tp = 8</code>. With <code>&kappa; = 5</code>, compute the error rate, the Neyman-Pearson error, and the recall.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>200 test points par <code>tn=150, fp=30, fn=12, tp=8</code>. <code>&kappa; = 5</code> ke saath error rate, Neyman-Pearson error, aur recall nikaalein.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -6811,7 +6854,7 @@ recall     = tp/P        =  8/20         = 0.400 = 40.0%</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq63"><p class="qn"><span>63</span><span class="mk">6 marks</span><span class="src">Stanford HW6 Q2(b,c)</span></p>
+  <div class="qp" id="pq63" data-lec="7"><p class="qn"><span>63</span><span class="mk">6 marks</span><span class="src">Stanford HW6 Q2(b,c)</span></p>
     <p>On <code>n = 200</code> test points, classifier <b>A</b> gives <code>fn = 20, fp = 5</code> and classifier <b>B</b> gives <code>fn = 8, fp = 25</code>. Which is better at <code>&kappa; = 1</code>, and at <code>&kappa; = 4</code>?</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>200 points par: <b>A</b> ka <code>fn=20, fp=5</code>; <b>B</b> ka <code>fn=8, fp=25</code>. Kaunsa behtar hai &mdash; <code>&kappa; = 1</code> par, aur <code>&kappa; = 4</code> par?</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -6835,7 +6878,7 @@ recall     = tp/P        =  8/20         = 0.400 = 40.0%</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq64"><p class="qn"><span>64</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq64" data-lec="8"><p class="qn"><span>64</span><span class="mk">6 marks</span></p>
     <p>Using the hubristic loss (<code>0</code> for <code>u &lt; &minus;1</code>; <code>(u+1)&sup2;</code> for <code>&minus;1 &le; u &le; 0</code>; <code>1+2u</code> for <code>u &gt; 0</code>) with <code>&kappa; = 2</code> and <code>&#375; = 0.5</code>, compute both losses.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Hubristic loss (teen tukdon wala), <code>&kappa; = 2</code>, <code>&#375; = 0.5</code>. Dono labels ke liye loss nikaalein.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -6860,7 +6903,7 @@ recall     = tp/P        =  8/20         = 0.400 = 40.0%</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq65"><p class="qn"><span>65</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq65" data-lec="8"><p class="qn"><span>65</span><span class="mk">6 marks</span></p>
     <p>The sigmoid loss is <code>&ell;<sub>sig</sub>(&#375;, &minus;1) = 1/(1 + e<sup>&minus;&#375;</sup>)</code>, with <code>&ell;(&#375;,+1) = &kappa;&ell;(&minus;&#375;,&minus;1)</code>. For <code>&kappa; = 3</code> and <code>&#375; = &minus;0.40</code>, compute both losses. Why is this loss avoided in RERM?</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Sigmoid loss ka formula diya hai. <code>&kappa; = 3</code>, <code>&#375; = &minus;0.40</code> par dono losses nikaalein. Aur batayein ke RERM mein ye loss kyun istemaal nahi kiya jaata.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -6880,7 +6923,7 @@ recall     = tp/P        =  8/20         = 0.400 = 40.0%</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq66"><p class="qn"><span>66</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq66" data-lec="8"><p class="qn"><span>66</span><span class="mk">6 marks</span></p>
     <p>Prototypes are <code>a = [1, 1]<sup>T</sup></code> (Class 1) and <code>b = [5, 3]<sup>T</sup></code> (Class 2). Find the decision hyperplane, then compute the signed distance of <code>&#375; = [2, 2]<sup>T</sup></code> and give its class.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Do prototypes: <code>a = [1,1]</code> (Class 1) aur <code>b = [5,3]</code> (Class 2). Decision hyperplane nikaalein, phir <code>&#375; = [2,2]</code> ka signed distance aur uski class batayein.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -6909,7 +6952,7 @@ D &lt; 0  &rarr;  closer to a  &rarr;  CLASS 1</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq67"><p class="qn"><span>67</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq67" data-lec="7"><p class="qn"><span>67</span><span class="mk">6 marks</span></p>
     <p>A 3-class model with one-hot embedding outputs <code>&#375; = (1.2, &minus;0.3, 0.9)</code>. Un-embed it by both the distance rule and the argmax rule, and show they agree.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>3-class model (one-hot embedding) ne <code>&#375; = (1.2, &minus;0.3, 0.9)</code> diya. Dono tareeqon se un-embed karein &mdash; distance se aur argmax se &mdash; aur dikhayein ke dono ka jawab ek hai.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -6933,7 +6976,7 @@ BOTH give  v-hat = CLASS 1   &#10003;</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq68"><p class="qn"><span>68</span><span class="mk">6 marks</span><span class="src">Stanford HW6 Q2(b,c)</span></p>
+  <div class="qp" id="pq68" data-lec="8"><p class="qn"><span>68</span><span class="mk">6 marks</span><span class="src">Stanford HW6 Q2(b,c)</span></p>
     <p>A positive example (<code>y = +1</code>) receives score <code>&#375; = &minus;0.2</code>. Compute its hinge loss for <code>&kappa; = 1</code>, <code>&kappa; = 3</code> and <code>&kappa; = 10</code>, and explain what the trend does to the trained classifier.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Ek positive example (<code>y = +1</code>) ko score <code>&minus;0.2</code> mila. Hinge loss nikaalein teen values par: <code>&kappa; = 1, 3, 10</code>. Aur batayein ke is trend ka trained classifier par kya asar hoga.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -6954,7 +6997,7 @@ BOTH give  v-hat = CLASS 1   &#10003;</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq69"><p class="qn"><span>69</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq69" data-lec="8"><p class="qn"><span>69</span><span class="mk">6 marks</span></p>
     <p>A least squares classifier produces <code>&#375; = 0.6</code>. With <code>&kappa; = 2</code>, compute the square loss for both labels.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Least squares classifier ne <code>&#375; = 0.6</code> diya. <code>&kappa; = 2</code> ke saath dono labels ka square loss nikaalein.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -6971,7 +7014,7 @@ BOTH give  v-hat = CLASS 1   &#10003;</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq70"><p class="qn"><span>70</span><span class="mk">6 marks</span><span class="mk">Q10 jaisa</span></p>
+  <div class="qp" id="pq70" data-lec="8"><p class="qn"><span>70</span><span class="mk">6 marks</span><span class="mk">Q10 jaisa</span></p>
     <p>A score <code>&#375; = &minus;1.5</code> is observed with true label <code>y = &minus;1</code>. Compute the hinge, hubristic, square and logistic losses (<code>&kappa; = 1</code>). Which losses give exactly zero, and what does that tell you about them?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -6997,19 +7040,19 @@ Logistic  : log(1 + e^(-1.5)) = log(1.2231) =  0.201</div>
     </div></details>
   </div>
 
-  <div class="part-head" id="secC" style="margin-top:52px;border-top-width:4px">
+  <div class="part-head" id="secC" data-lec="7 8" style="margin-top:52px;border-top-width:4px">
     <div class="lbl">Section C &mdash; paper mein 1 sawal</div>
     <h2>Classifier &mdash; short theoretical</h2>
     <p>Sawal <b>71&ndash;108</b> (6 marks). Sirf ek sawal aayega magar <em>kaunsa</em>, ye pata nahi &mdash; is liye poora Lecture-7 chhote sawalon mein tor diya gaya hai. Har jawab <b>3&ndash;4 line</b>.</p>
   </div>
   <!-- ============ SET 4 ============ -->
-  <div class="part-head" style="margin-top:44px">
+  <div class="part-head" data-lec="7" style="margin-top:44px">
     <div class="lbl">C1 &mdash; sawal 71&ndash;80</div>
     <h2>Confusion matrix, error rates aur metrics</h2>
     <p><strong>Ye set sab se khatarnaak hai.</strong> Sample paper mein Lecture-7 se <em>ek bhi</em> sawal nahi aaya, jabke ye poora lecture hai &mdash; aur numerical sawal banane ke liye sab se aasaan. <a href="#h6">H6</a> ka table saamne rakh kar ye set karein.</p>
   </div>
 
-  <div class="qp" id="pq71"><p class="qn"><span>71</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq71" data-lec="7"><p class="qn"><span>71</span><span class="mk">6 marks</span></p>
     <p>A Boolean classifier on 200 test examples gives <code>tn = 120</code>, <code>fp = 20</code>, <code>fn = 30</code>, <code>tp = 30</code>. Compute the error rate, false positive rate, false negative rate, recall and precision.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7043,7 +7086,7 @@ precision  = 30/50   = 60.0%</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq72"><p class="qn"><span>72</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq72" data-lec="7"><p class="qn"><span>72</span><span class="mk">6 marks</span></p>
     <p>In a dataset of 1000 patients, 10 have a rare disease. A classifier predicts "no disease" for everyone. Compute its error rate and recall, and comment on whether it is a good classifier.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7069,7 +7112,7 @@ precision  = tp/(tp+fp)=  0/0    = undefined</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq73"><p class="qn"><span>73</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq73" data-lec="7"><p class="qn"><span>73</span><span class="mk">6 marks</span></p>
     <p>Distinguish precision from recall, giving the formula for each and a scenario where one matters far more than the other.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7105,7 +7148,7 @@ PRECISION = tp/(tp+fp)   &larr; neeche: jo HUM NE positive kaha</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq74"><p class="qn"><span>74</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq74" data-lec="7"><p class="qn"><span>74</span><span class="mk">6 marks</span></p>
     <p>A 3-class confusion matrix is <code>C = [[40, 2, 1], [3, 35, 8], [2, 6, 28]]</code> (rows = predicted, columns = actual), with <code>n = 125</code>. Compute the overall error rate and identify the most serious confusion.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7132,7 +7175,7 @@ error rate       = 22/125       = 17.6%</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq75"><p class="qn"><span>75</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq75" data-lec="7"><p class="qn"><span>75</span><span class="mk">6 marks</span></p>
     <p>For <code>K</code> classes, how many entries does the confusion matrix have, how many correspond to correct predictions, and how many distinct error types exist? Evaluate for <code>K = 5</code>.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7164,7 +7207,7 @@ K = 5  &rarr;  25 khaane, 5 sahi, 20 qism ki ghaltiyan</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq76"><p class="qn"><span>76</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq76" data-lec="7"><p class="qn"><span>76</span><span class="mk">6 marks</span></p>
     <p>Explain the difference between a Type I and a Type II error, and give a scenario in which each is the more costly.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7195,7 +7238,7 @@ TYPE II = FALSE NEGATIVE :  v-hat = -1  but  v = +1
     </div></details>
   </div>
 
-  <div class="qp" id="pq77"><p class="qn"><span>77</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq77" data-lec="7"><p class="qn"><span>77</span><span class="mk">6 marks</span></p>
     <p>A classifier is evaluated on its training data and achieves 2% error. Can we conclude it will achieve about 2% error on new data? Justify.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7218,7 +7261,7 @@ TYPE II = FALSE NEGATIVE :  v-hat = -1  but  v = +1
     </div></details>
   </div>
 
-  <div class="qp" id="pq78"><p class="qn"><span>78</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq78" data-lec="7"><p class="qn"><span>78</span><span class="mk">6 marks</span></p>
     <p>Two classifiers are compared. A has <code>fp/n = 0.05</code>, <code>fn/n = 0.20</code>; B has <code>fp/n = 0.15</code>, <code>fn/n = 0.08</code>. Which is better? Answer for <code>&kappa; = 1</code> and for <code>&kappa; = 4</code>.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7246,7 +7289,7 @@ TYPE II = FALSE NEGATIVE :  v-hat = -1  but  v = +1
     </div></details>
   </div>
 
-  <div class="qp" id="pq79"><p class="qn"><span>79</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq79" data-lec="7"><p class="qn"><span>79</span><span class="mk">6 marks</span></p>
     <p>In a 3-class problem, class 2 has 60 examples of which 48 are correctly classified, 7 are predicted as class 1 and 5 as class 3. Write the relevant column of <code>C</code> and compute <code>r<sub>2</sub>/n</code> if <code>n = 180</code>.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7274,7 +7317,7 @@ r&#8322;/n = 12/180 = 0.0667 = 6.67%</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq80"><p class="qn"><span>80</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq80" data-lec="7"><p class="qn"><span>80</span><span class="mk">6 marks</span></p>
     <p>A colleague reports a confusion matrix but does not say whether rows are predictions or actuals. The matrix is <code>[[85, 4], [11, 50]]</code>. How can you determine the convention, and what are <code>fp</code> and <code>fn</code>?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7298,13 +7341,13 @@ error rate = 15/150  = 10%      &larr; ye yaqeeni hai</div>
     </div></details>
   </div>
   <!-- ============ SET 6 ============ -->
-  <div class="part-head" style="margin-top:44px">
+  <div class="part-head" data-lec="7" style="margin-top:44px">
     <div class="lbl">C2 &mdash; sawal 81&ndash;88</div>
     <h2>Embedding aur un-embedding</h2>
     <p>Sample paper mein nahi aaya, magar numerical sawal banane ke liye <strong>sab se aasaan hissa</strong> hai &mdash; <code>&#375;</code> de kar class poochna, ya embedding chunwana. <a href="#h11">H11&ndash;H18</a>.</p>
   </div>
 
-  <div class="qp" id="pq81"><p class="qn"><span>81</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq81" data-lec="7"><p class="qn"><span>81</span><span class="mk">6 marks</span></p>
     <p>A 4-class problem uses one-hot embedding. The predictor outputs <code>&#375; = (0.1, 0.6, 0.2, 0.5)</code>. What class is predicted, and by what rule?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7328,7 +7371,7 @@ largest entry = 0.6  at position 2    &rarr;   v-hat = class 2</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq82"><p class="qn"><span>82</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq82" data-lec="7"><p class="qn"><span>82</span><span class="mk">6 marks</span></p>
     <p>Prove that for one-hot embedding, nearest-neighbour un-embedding is equivalent to <code>arg max<sub>k</sub> &#375;<sub>k</sub></code>.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7363,7 +7406,7 @@ Now:  &#8214;&#375;&#8214;&#8322;&#178;  does not depend on k
     </div></details>
   </div>
 
-  <div class="qp" id="pq83"><p class="qn"><span>83</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq83" data-lec="7"><p class="qn"><span>83</span><span class="mk">6 marks</span></p>
     <p>A student embeds <code>V = {APPLE, ORANGE, BANANA}</code> as <code>1, 2, 3</code> and fits a linear predictor. Explain why this is a poor choice and what should be used instead.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7390,7 +7433,7 @@ Now:  &#8214;&#375;&#8214;&#8322;&#178;  does not depend on k
     </div></details>
   </div>
 
-  <div class="qp" id="pq84"><p class="qn"><span>84</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq84" data-lec="7"><p class="qn"><span>84</span><span class="mk">6 marks</span></p>
     <p>Compare one-hot and reduced one-hot embedding for <code>K</code> classes. State the dimension of each and one advantage of each.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7415,7 +7458,7 @@ REDUCED ONE-HOT :  default class &rarr; 0 &isin; R<sup>K-1</sup>
     </div></details>
   </div>
 
-  <div class="qp" id="pq85"><p class="qn"><span>85</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq85" data-lec="7"><p class="qn"><span>85</span><span class="mk">6 marks</span></p>
     <p>With the reduced one-hot embedding <code>YES &rarr; (1,0)</code>, <code>MAYBE &rarr; (0,0)</code>, <code>NO &rarr; (0,1)</code>, un-embed the prediction <code>&#375; = (0.3, 0.7)</code>. Show your reasoning.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7443,7 +7486,7 @@ NO    se: 0.18      &larr; sab se chhota, to jawab NO</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq86"><p class="qn"><span>86</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq86" data-lec="7"><p class="qn"><span>86</span><span class="mk">6 marks</span></p>
     <p>Define a Voronoi diagram in the context of un-embedding. Why are the region boundaries straight?</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7466,7 +7509,7 @@ NO    se: 0.18      &larr; sab se chhota, to jawab NO</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq87"><p class="qn"><span>87</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq87" data-lec="7"><p class="qn"><span>87</span><span class="mk">6 marks</span></p>
     <p>State the three-stage structure of a classifier built by embedding, and write the final classifier as a composition of functions.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7500,7 +7543,7 @@ Final classifier:
     </div></details>
   </div>
 
-  <div class="qp" id="pq88"><p class="qn"><span>88</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq88" data-lec="7"><p class="qn"><span>88</span><span class="mk">6 marks</span></p>
     <p>For Boolean classification with <code>TRUE &rarr; +1</code>, <code>FALSE &rarr; &minus;1</code>, derive the un-embedding rule and explain why the decision boundary is <code>&#375; = 0</code>.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7523,7 +7566,7 @@ Final classifier:
       </div>
     </div></details>
   </div>
-  <div class="part-head" style="margin-top:44px">
+  <div class="part-head" data-lec="7 8" style="margin-top:44px">
     <div class="lbl">C3 &mdash; sawal 89&ndash;104</div>
     <h2>Classifier theory &mdash; har mumkin sawal</h2>
     <p>Paper mein is section se <b>sirf 1 sawal</b> aata hai, aur wo <b>short theoretical</b> hota hai. Magar wo <em>kaunsa</em> hoga, ye pata nahi &mdash; is liye yahan Lecture-7 ka <b>poora mazmoon</b> chhote chhote sawalon mein tora gaya hai. Har jawab <b>3&ndash;4 line</b> ka hai, kyunki paper mein utni hi jagah milti hai.</p>
@@ -7544,7 +7587,7 @@ UN-EMBED        Boolean: sign(&#375;)    one-hot: argmax &#375;<sub>k</sub>
 VORONOI         regions polyhedra; boundaries = perpendicular bisectors</div>
   </div>
 
-  <div class="qp" id="pq89"><p class="qn"><span>89</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq89" data-lec="7"><p class="qn"><span>89</span><span class="mk">6 marks</span></p>
     <p>Define a classifier. When is it called Boolean and when multi-class? Give one example of each.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Classifier ki tareef likhein. Usay Boolean kab kehte hain aur multi-class kab? Dono ki ek ek misaal dein.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -7562,7 +7605,7 @@ K &gt; 2  &rarr;  MULTI-CLASS  e.g. V = {COVID19, FLU, COLD}</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq90"><p class="qn"><span>90</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq90" data-lec="7"><p class="qn"><span>90</span><span class="mk">6 marks</span></p>
     <p>Why is the error rate alone a misleading performance metric? Illustrate with a short example.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Sirf error rate dekhna gumrah kun kyun hai? Ek chhoti misaal se samjhayein.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -7582,7 +7625,7 @@ Classifier predicts "no disease" for everyone:
     </div></details>
   </div>
 
-  <div class="qp" id="pq91"><p class="qn"><span>91</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq91" data-lec="7"><p class="qn"><span>91</span><span class="mk">6 marks</span></p>
     <p>Define precision and recall. Give one scenario where recall matters more and one where precision matters more.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Precision aur recall ki tareef likhein. Ek misaal jahan recall zyada ahem ho, aur ek jahan precision.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -7601,7 +7644,7 @@ PRECISION = tp/(tp+fp)          of all PREDICTED positives, how many right?</div
     </div></details>
   </div>
 
-  <div class="qp" id="pq92"><p class="qn"><span>92</span><span class="mk">6 marks</span><span class="src">Stanford HW6 Q2(a)</span></p>
+  <div class="qp" id="pq92" data-lec="7"><p class="qn"><span>92</span><span class="mk">6 marks</span><span class="src">Stanford HW6 Q2(a)</span></p>
     <p>What is the difference between a Type I and a Type II error? How does the model account for their differing costs?</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Type I aur Type II error mein kya farq hai? Model un ki mukhtalif qeematon ka hisaab kaise rakhta hai?</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -7619,7 +7662,7 @@ TYPE II = FALSE NEGATIVE : &#375; = -1 but v = +1   (a miss)</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq93"><p class="qn"><span>93</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq93" data-lec="7"><p class="qn"><span>93</span><span class="mk">6 marks</span></p>
     <p>What is a confusion matrix? Explain what the diagonal, off-diagonal and column sums represent, and how to get the error rate from it.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Confusion matrix kya hai? Diagonal, off-diagonal aur column sums ka matlab batayein, aur us se error rate kaise nikaalte hain.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -7642,7 +7685,7 @@ error rate = 1 - (trace of C)/n</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq94"><p class="qn"><span>94</span><span class="mk">6 marks</span><span class="src">Stanford HW6 Q2(a)</span></p>
+  <div class="qp" id="pq94" data-lec="7"><p class="qn"><span>94</span><span class="mk">6 marks</span><span class="src">Stanford HW6 Q2(a)</span></p>
     <p>Define the Neyman-Pearson metric for Boolean and for multi-class classification. What does <code>&kappa;</code> mean, and what happens when all <code>&kappa;</code> equal 1?</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Neyman-Pearson metric ki tareef likhein &mdash; Boolean aur multi-class dono ke liye. <code>&kappa;</code> ka matlab kya hai, aur jab saare <code>&kappa;</code> 1 hon to kya hota hai?</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -7665,7 +7708,7 @@ All &kappa; = 1   &rarr;   NP = the overall ERROR RATE</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq95"><p class="qn"><span>95</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq95" data-lec="7"><p class="qn"><span>95</span><span class="mk">6 marks</span></p>
     <p>Why must a categorical output be embedded at all? Describe the three-stage structure of a classifier built this way.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Categorical output ko embed karne ki zaroorat hi kyun padti hai? Aur is tareeqe se bane classifier ke teen hisse batayein.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -7686,7 +7729,7 @@ Classifier:  v-hat = &#8988; g<sub>&theta;</sub>(&phi;(u)) &#8991;</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq96"><p class="qn"><span>96</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq96" data-lec="7"><p class="qn"><span>96</span><span class="mk">6 marks</span></p>
     <p>Compare one-hot and reduced one-hot embedding: dimensions, one advantage of each, and the cost of reducing.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>One-hot aur reduced one-hot ka muqabla: dimension, har aik ka ek faida, aur kam karne ki qeemat kya hai.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -7706,7 +7749,7 @@ REDUCED ONE-HOT default class &rarr; 0 &isin; R<sup>K-1</sup>   m = K-1</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq97"><p class="qn"><span>97</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq97" data-lec="7"><p class="qn"><span>97</span><span class="mk">6 marks</span></p>
     <p>Why is it wrong to embed <code>{APPLE, ORANGE, BANANA}</code> as <code>1, 2, 3</code>? When <em>is</em> a single-number embedding appropriate?</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p><code>{APPLE, ORANGE, BANANA}</code> ko <code>1, 2, 3</code> mein embed karna ghalat kyun hai? Aur ek-number waali embedding kab theek hoti hai?</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -7724,7 +7767,7 @@ REDUCED ONE-HOT default class &rarr; 0 &isin; R<sup>K-1</sup>   m = K-1</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq98"><p class="qn"><span>98</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq98" data-lec="7"><p class="qn"><span>98</span><span class="mk">6 marks</span></p>
     <p>State the nearest-neighbour un-embedding rule, and what it simplifies to for (a) the Boolean <code>&plusmn;1</code> embedding and (b) one-hot embedding.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Nearest-neighbour un-embedding ka rule likhein, aur batayein ke wo (a) Boolean <code>&plusmn;1</code> embedding aur (b) one-hot embedding ke saath kis saadi shakal mein badal jaata hai.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -7746,7 +7789,7 @@ REDUCED ONE-HOT default class &rarr; 0 &isin; R<sup>K-1</sup>   m = K-1</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq99"><p class="qn"><span>99</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq99" data-lec="7"><p class="qn"><span>99</span><span class="mk">6 marks</span></p>
     <p>What is a Voronoi diagram in this context? Why are its region boundaries straight?</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Is context mein Voronoi diagram kya hai? Aur uske kinaare <b>seedhe</b> kyun hote hain?</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -7765,7 +7808,7 @@ REDUCED ONE-HOT default class &rarr; 0 &isin; R<sup>K-1</sup>   m = K-1</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq100"><p class="qn"><span>100</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq100" data-lec="8"><p class="qn"><span>100</span><span class="mk">6 marks</span></p>
     <p>Why is square loss a poor choice for classification, and what property should a good classification loss have?</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Classification ke liye square loss bura intikhab kyun hai, aur ache classification loss mein kaunsi khoobi honi chahiye?</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -7786,7 +7829,7 @@ REDUCED ONE-HOT default class &rarr; 0 &isin; R<sup>K-1</sup>   m = K-1</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq101"><p class="qn"><span>101</span><span class="mk">6 marks</span><span class="src">Stanford HW6 Q2(b,c)</span></p>
+  <div class="qp" id="pq101" data-lec="8"><p class="qn"><span>101</span><span class="mk">6 marks</span><span class="src">Stanford HW6 Q2(b,c)</span></p>
     <p>Name the loss function and regularizer used by the least squares classifier, logistic regression and the support vector machine.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Least squares classifier, logistic regression aur SVM &mdash; teeno ka loss function aur regularizer batayein.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -7806,7 +7849,7 @@ HINGE    + square reg  =  SVM</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq102"><p class="qn"><span>102</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq102" data-lec="7"><p class="qn"><span>102</span><span class="mk">6 marks</span></p>
     <p>A model reports 2% error on the data it was trained on. Can we conclude it will achieve about 2% on new data? Justify.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Ek model ne usi data par 2% error diya jis se wo bana tha. Kya hum keh sakte hain ke naye data par bhi 2% hoga? Wajah batayein.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -7823,7 +7866,7 @@ HINGE    + square reg  =  SVM</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq103"><p class="qn"><span>103</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq103" data-lec="7"><p class="qn"><span>103</span><span class="mk">6 marks</span></p>
     <p>For <code>K</code> classes, how many entries does the confusion matrix have, how many are correct predictions, and how many distinct error types exist? Why does this motivate a weight vector <code>&kappa;</code>?</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p><code>K</code> classes ke liye: confusion matrix mein kitne khaane, kitne sahi, aur kitni alag qism ki ghaltiyan? Aur is se weight vector <code>&kappa;</code> ki zaroorat kaise saabit hoti hai?</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -7844,7 +7887,7 @@ e.g. K = 5 :  25 entries, 5 correct, 20 distinct error types</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq104"><p class="qn"><span>104</span><span class="mk">6 marks</span></p>
+  <div class="qp" id="pq104" data-lec="7"><p class="qn"><span>104</span><span class="mk">6 marks</span></p>
     <p>Define specificity, false alarm rate and true positive rate in terms of the confusion matrix entries, and state which pairs are the same quantity under different names.</p>
     <div class="qur"><p class="qurh">Sawal aam alfaz mein</p><p>Specificity, false alarm rate aur true positive rate ko confusion matrix ki entries ki shakal mein likhein, aur batayein kaunse naam asal mein ek hi cheez hain.</p></div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
@@ -7869,7 +7912,7 @@ tp/(tp+fp)  = precision</div>
     </div></details>
   </div>
 
-  <div class="part-head" style="margin-top:44px">
+  <div class="part-head" data-lec="7" style="margin-top:44px">
     <div class="lbl">C4 &mdash; sawal 105&ndash;108</div>
     <h2>Stanford ke asli final exam se</h2>
     <p>Ye chaar sawal <b>Stanford EE104 ke asli final exam (Spring 2022, S. Lall &amp; S. Boyd)</b> ke <b>Problem 2 &mdash; "Titanic survivors"</b> se liye gaye hain. <b>Numbers asli exam ke official solution se hain</b>, banaye hue nahi. Stanford mein ye sawal Julia code likh kar hal hota tha; yahan matrix pehle se de kar <b>haath se hisaab</b> karwaya gaya hai &mdash; jaisa aap ke paper mein aayega.</p>
@@ -7879,7 +7922,7 @@ tp/(tp+fp)  = precision</div>
     </div>
   </div>
 
-  <div class="qp" id="pq105"><p class="qn"><span>105</span><span class="mk">6 marks</span><span class="src">Stanford Final 2022 Q2(a)</span></p>
+  <div class="qp" id="pq105" data-lec="7"><p class="qn"><span>105</span><span class="mk">6 marks</span><span class="src">Stanford Final 2022 Q2(a)</span></p>
     <p>A simple predictor uses gender alone: <code>G(u) = survived</code> if the passenger is female, <code>died</code> otherwise. On the test set its confusion matrix is <code>C = [[83, 23], [15, 57]]</code>. Compute the error rate, and the recall and precision for the "survived" class.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7911,7 +7954,7 @@ precision = 57/72  &larr; neeche: jin ko HUM NE "bach gaya" kaha</div>
     </div></details>
   </div>
 
-  <div class="qp" id="pq106"><p class="qn"><span>106</span><span class="mk">6 marks</span><span class="src">Stanford Final 2022 Q2(b,c)</span></p>
+  <div class="qp" id="pq106" data-lec="7"><p class="qn"><span>106</span><span class="mk">6 marks</span><span class="src">Stanford Final 2022 Q2(b,c)</span></p>
     <p>A second simple predictor uses passenger class alone: <code>G(u) = survived</code> if class &lt; 3, <code>died</code> otherwise. Its test confusion matrix is <code>C = [[72, 26], [26, 54]]</code>. Compute its error rate and state which of the two simple predictors is better.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7938,7 +7981,7 @@ gender-based (from Q105): errors = 38, error rate = 21.35%
     </div></details>
   </div>
 
-  <div class="qp" id="pq107"><p class="qn"><span>107</span><span class="mk">6 marks</span><span class="src">Stanford Final 2022 Q2(d)</span></p>
+  <div class="qp" id="pq107" data-lec="7"><p class="qn"><span>107</span><span class="mk">6 marks</span><span class="src">Stanford Final 2022 Q2(d)</span></p>
     <p>A classifier is now trained with <b>logistic loss and an L1 regularizer</b> (<code>&lambda; = 0.01</code>). Its confusion matrices are <code>C<sub>train</sub> = [[392, 83], [59, 177]]</code> and <code>C<sub>test</sub> = [[86, 22], [12, 58]]</code>. Compute both error rates and state whether the model is overfitting.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -7966,7 +8009,7 @@ TEST:   tn=86  fn=22 fp=12 tp=58      n = 178
     </div></details>
   </div>
 
-  <div class="qp" id="pq108"><p class="qn"><span>108</span><span class="mk">6 marks</span><span class="src">Stanford Final 2022 Q2 &mdash; tajziya</span></p>
+  <div class="qp" id="pq108" data-lec="7"><p class="qn"><span>108</span><span class="mk">6 marks</span><span class="src">Stanford Final 2022 Q2 &mdash; tajziya</span></p>
     <p>The trained logistic + L1 model achieves 19.10% test error, while the one-line gender rule achieves 21.35%. Was the machine learning worth it? Justify your answer.</p>
     <div class="qur">
       <p class="qurh">Sawal aam alfaz mein</p>
@@ -8072,6 +8115,56 @@ faida                       :  2.25 percentage points
     }
   }
 
+
+  // ---- chapter (lecture) filter inside question panels ----
+  function panelOf(el) {
+    var n = el;
+    while (n && n !== document.body) {
+      if (n.getAttribute && n.getAttribute('role') === 'tabpanel') return n;
+      n = n.parentNode;
+    }
+    return null;
+  }
+  var qfilters = [].slice.call(document.querySelectorAll('.qfilter'));
+  qfilters.forEach(function (bar) {
+    var panel = panelOf(bar);
+    if (!panel) return;
+    var btns  = [].slice.call(bar.querySelectorAll('button[data-f]'));
+    var count = bar.querySelector('.qcount');
+    function apply(v) {
+      var shown = 0;
+      [].slice.call(panel.querySelectorAll('[data-lec]')).forEach(function (el) {
+        var tags = (el.getAttribute('data-lec') || '').split(' ');
+        var ok = (v === 'all') || tags.indexOf(v) >= 0;
+        el.hidden = !ok;
+        if (ok && (el.className.indexOf('qp') === 0 || el.className.indexOf('qblock') === 0)) shown++;
+      });
+      btns.forEach(function (b) {
+        b.setAttribute('aria-selected', b.getAttribute('data-f') === v ? 'true' : 'false');
+      });
+      if (count) count.textContent = (v === 'all') ? '' : shown + ' sawal dikh rahe hain';
+      bar.setAttribute('data-active', v);
+    }
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () { apply(b.getAttribute('data-f')); });
+    });
+  });
+  // if a link targets a question hidden by a filter, clear that panel's filter
+  function clearFilterFor(el) {
+    var n = el;
+    while (n && n !== document.body) {
+      if (n.hasAttribute && n.hasAttribute('data-lec') && n.hidden) {
+        var pnl = panelOf(n);
+        if (pnl) {
+          var all = pnl.querySelector('.qfilter button[data-f="all"]');
+          if (all) all.click();
+        }
+        return;
+      }
+      n = n.parentNode;
+    }
+  }
+
   function panelTokenFor(el) {
     var n = el;
     while (n && n !== document.body) {
@@ -8094,6 +8187,7 @@ faida                       :  2.25 percentage points
     var tok = panelTokenFor(el);
     if (tok) show(tok, false);
     revealLec(el);
+    clearFilterFor(el);
     try { el.scrollIntoView({ block: 'start' }); } catch (e) { el.scrollIntoView(); }
   }
 
@@ -8110,6 +8204,7 @@ faida                       :  2.25 percentage points
     var tok = panelTokenFor(el);
     if (tok) show(tok, false);
     revealLec(el);
+    clearFilterFor(el);
     try { el.scrollIntoView({ block: 'start' }); } catch (e) { el.scrollIntoView(); }
     try { history.replaceState(null, '', href); } catch (e) {}
   });
