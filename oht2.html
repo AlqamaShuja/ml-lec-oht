@@ -4475,16 +4475,17 @@ Layer map:
     </div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
       <div class="en"><p class="ct">English &mdash; paper par likhein</p>
-        <div class="math">Hidden layers      =  3      ("3-hidden-layer neural net")
+        <div class="math">Hidden layers      =  3      (z&#185;, z&#178;, z&#179;)   &mdash; input is NOT a layer
 Parameter matrices =  4      (&Theta;&#185;, &Theta;&#178;, &Theta;&#179;, &Theta;&#8308;)
-Activations        =  4 layers, but typically 3 (hidden only)</div>
-        <p class="memo"><b>Why:</b> the <b>input layer is not counted</b>, as it performs no computation &mdash; so "<code>M</code>-layer" means <code>M&minus;1</code> hidden layers plus the output layer, and <code>M</code> parameter matrices. In classification the output layer is usually left without an activation (its raw scores are un-embedded directly), giving 3 activation applications.</p>
+Activations        =  4      h is applied once INSIDE every layer</div>
+        <p class="memo"><b>Why:</b> by the definition of a layer, <code>g<sup>i</sup>(z<sup>i&minus;1</sup>) = h(&Theta;<sub>i</sub><sup>T</sup>(1, z<sup>i&minus;1</sup>))</code> for <code>i = 1, &hellip;, M</code> &mdash; the activation <code>h</code> sits <b>inside</b> every layer, the output layer included. So <code>M</code> layers give <code>M</code> parameter matrices and <code>M</code> activation applications; the <b>input is not a layer</b> (it computes nothing), hence <code>M&minus;1 = 3</code> hidden layers.</p>
       </div>
       <div class="ur"><p class="ct">Roman Urdu &mdash; samajhne ke liye</p>
-        <p><b>Jawab:</b> 3 hidden layers, 4 parameter matrices, aur activation (aam tor par) 3 baar.</p>
-        <p><b>Kyun:</b> layers ginte waqt <strong>input ko nahi ginte</strong>, kyunki wo koi hisaab nahi karta &mdash; wo sirf numbers hain. To "4-layer" ka matlab hai: 3 hidden + 1 output.</p>
-        <p><b>Matrices 4 hain</b> kyunki har hisaab karne wali layer ka apna ek matrix hota hai &mdash; <code>&Theta;<sup>1</sup></code> se <code>&Theta;<sup>4</sup></code>.</p>
-        <p class="memo"><b>Qaida:</b> <strong>matrices ki ginti = layers ki ginti</strong>. Aur hidden layers = total &minus; 1.</p>
+        <p><b>Jawab:</b> 3 hidden layers, 4 parameter matrices, aur activation <b>4 baar</b>.</p>
+        <p><b>Hidden 3 kyun:</b> layers ginte waqt <b>input ko nahi ginte</b> &mdash; wo koi hisaab nahi karta, sirf numbers hain. To "4-layer" = 3 hidden (<code>z<sup>1</sup>, z<sup>2</sup>, z<sup>3</sup></code>) + 1 output (<code>z<sup>4</sup> = &#375;</code>).</p>
+        <p><b>Activation 4 kyun, 3 nahi:</b> slide par <b>layer ki definition hi ye hai</b> &mdash; <code>g<sup>i</sup>(z<sup>i&minus;1</sup>) = h(&Theta;<sub>i</sub><sup>T</sup>(1, z<sup>i&minus;1</sup>))</code>, <code>i = 1 &hellip; M</code>. Yaani <b>affine + h milkar ek layer banti hai</b>; <code>h</code> layer ke andar hi shaamil hai. 4 layers hain, to <code>h</code> <b>4 dafa</b> laga &mdash; output layer par bhi, kyunki formula mein <code>i = M</code> bhi shaamil hai.</p>
+        <p><b>"3" ki ghalti kahan se aati hai:</b> log sochte hain aakhri (output) layer par activation nahi lagta. Lagta hai &mdash; bas wahan <code>h</code> aam tor par <b>identity</b> <code>h(u) = u</code> (ya sigmoid) hoti hai. <b>Identity bhi ek activation hai</b>, is liye ginti <b>4</b> hi rehti hai. Sirf "non-linear activations" poochein to jawab 3 hoga.</p>
+        <p class="memo"><b>Qaida:</b> <code>M</code>-layer net &rarr; <b>matrices = activations = M</b>, aur <b>hidden = M &minus; 1</b>. Teen ginti alag alag yaad na karein &mdash; do hi number hain: <code>M</code> aur <code>M&minus;1</code>.</p>
       </div>
     </div></details>
   </div><div class="qp" id="md16" data-lec="6"><p class="qn"><span>16</span><span class="mk">6 marks</span><span class="mk">full bank #34</span></p>
@@ -5304,16 +5305,17 @@ Layer map:
     </div>
     <details class="ans"><summary>Jawab</summary><div class="bil">
       <div class="en"><p class="ct">English &mdash; paper par likhein</p>
-        <div class="math">Hidden layers      =  3      ("3-hidden-layer neural net")
+        <div class="math">Hidden layers      =  3      (z&#185;, z&#178;, z&#179;)   &mdash; input is NOT a layer
 Parameter matrices =  4      (&Theta;&#185;, &Theta;&#178;, &Theta;&#179;, &Theta;&#8308;)
-Activations        =  4 layers, but typically 3 (hidden only)</div>
-        <p class="memo"><b>Why:</b> the <b>input layer is not counted</b>, as it performs no computation &mdash; so "<code>M</code>-layer" means <code>M&minus;1</code> hidden layers plus the output layer, and <code>M</code> parameter matrices. In classification the output layer is usually left without an activation (its raw scores are un-embedded directly), giving 3 activation applications.</p>
+Activations        =  4      h is applied once INSIDE every layer</div>
+        <p class="memo"><b>Why:</b> by the definition of a layer, <code>g<sup>i</sup>(z<sup>i&minus;1</sup>) = h(&Theta;<sub>i</sub><sup>T</sup>(1, z<sup>i&minus;1</sup>))</code> for <code>i = 1, &hellip;, M</code> &mdash; the activation <code>h</code> sits <b>inside</b> every layer, the output layer included. So <code>M</code> layers give <code>M</code> parameter matrices and <code>M</code> activation applications; the <b>input is not a layer</b> (it computes nothing), hence <code>M&minus;1 = 3</code> hidden layers.</p>
       </div>
       <div class="ur"><p class="ct">Roman Urdu &mdash; samajhne ke liye</p>
-        <p><b>Jawab:</b> 3 hidden layers, 4 parameter matrices, aur activation (aam tor par) 3 baar.</p>
-        <p><b>Kyun:</b> layers ginte waqt <strong>input ko nahi ginte</strong>, kyunki wo koi hisaab nahi karta &mdash; wo sirf numbers hain. To "4-layer" ka matlab hai: 3 hidden + 1 output.</p>
-        <p><b>Matrices 4 hain</b> kyunki har hisaab karne wali layer ka apna ek matrix hota hai &mdash; <code>&Theta;<sup>1</sup></code> se <code>&Theta;<sup>4</sup></code>.</p>
-        <p class="memo"><b>Qaida:</b> <strong>matrices ki ginti = layers ki ginti</strong>. Aur hidden layers = total &minus; 1.</p>
+        <p><b>Jawab:</b> 3 hidden layers, 4 parameter matrices, aur activation <b>4 baar</b>.</p>
+        <p><b>Hidden 3 kyun:</b> layers ginte waqt <b>input ko nahi ginte</b> &mdash; wo koi hisaab nahi karta, sirf numbers hain. To "4-layer" = 3 hidden (<code>z<sup>1</sup>, z<sup>2</sup>, z<sup>3</sup></code>) + 1 output (<code>z<sup>4</sup> = &#375;</code>).</p>
+        <p><b>Activation 4 kyun, 3 nahi:</b> slide par <b>layer ki definition hi ye hai</b> &mdash; <code>g<sup>i</sup>(z<sup>i&minus;1</sup>) = h(&Theta;<sub>i</sub><sup>T</sup>(1, z<sup>i&minus;1</sup>))</code>, <code>i = 1 &hellip; M</code>. Yaani <b>affine + h milkar ek layer banti hai</b>; <code>h</code> layer ke andar hi shaamil hai. 4 layers hain, to <code>h</code> <b>4 dafa</b> laga &mdash; output layer par bhi, kyunki formula mein <code>i = M</code> bhi shaamil hai.</p>
+        <p><b>"3" ki ghalti kahan se aati hai:</b> log sochte hain aakhri (output) layer par activation nahi lagta. Lagta hai &mdash; bas wahan <code>h</code> aam tor par <b>identity</b> <code>h(u) = u</code> (ya sigmoid) hoti hai. <b>Identity bhi ek activation hai</b>, is liye ginti <b>4</b> hi rehti hai. Sirf "non-linear activations" poochein to jawab 3 hoga.</p>
+        <p class="memo"><b>Qaida:</b> <code>M</code>-layer net &rarr; <b>matrices = activations = M</b>, aur <b>hidden = M &minus; 1</b>. Teen ginti alag alag yaad na karein &mdash; do hi number hain: <code>M</code> aur <code>M&minus;1</code>.</p>
       </div>
     </div></details>
   </div>
