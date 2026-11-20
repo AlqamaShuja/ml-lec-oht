@@ -274,6 +274,7 @@ html{scroll-behavior:smooth}
     <button class="tab" role="tab" id="tab-solved" aria-controls="panel-solved" aria-selected="false"><span class="n">03</span> Sample Paper (hal)</button>
     <button class="tab" role="tab" id="tab-must" aria-controls="panel-must" aria-selected="false"><span class="n">04</span> 2-Din Plan (37)</button>
     <button class="tab" role="tab" id="tab-prof" aria-controls="panel-prof" aria-selected="false"><span class="n">05</span> Extra Practice (108)</button>
+    <button class="tab" role="tab" id="tab-form" aria-controls="panel-form" aria-selected="false"><span class="n">06</span> Formula Sheet (21)</button>
     <a class="theme-btn" href="index.html" style="text-decoration:none;margin-left:auto">&larr; OHT-1 page</a>
     <button class="theme-btn" id="themeBtn" type="button" style="margin-left:6px">theme</button>
   </div>
@@ -2952,7 +2953,7 @@ LECTURE 8 &mdash; LOSS FUNCTIONS
           <tr><td><b><a href="#rq7">Q7</a></b></td><td>Cost-sensitive hubristic loss + sigmoid se muqabla</td><td><code>&ell;(&#375;,&minus;1) = 0.36</code><br><code>&ell;(&#375;,+1) = 5.40</code></td><td><a href="#i8">I8</a>, <a href="#i5">I5</a></td></tr>
           <tr><td><b><a href="#rq8">Q8</a></b></td><td>Nearest-neighbour &mdash; hyperplane + signed distance</td><td><code>x<sub>1</sub>+x<sub>2</sub> = 2</code>; <code>D = &minus;&radic;2</code><br>&rarr; <b>Class 1</b></td><td><a href="#j2">J2</a>, <a href="#j3">J3</a></td></tr>
           <tr><td><b><a href="#rq9">Q9</a></b></td><td>3-class confusion matrix, <code>N = 200</code></td><td>accuracy <b><code>85%</code></b><br>(per-class neeche)</td><td><a href="#h9">H9</a>, <a href="#h6">H6</a></td></tr>
-          <tr><td><b>Q10</b></td><td colspan="2"><em>Abhi tak kisi tasveer mein nahi aaya</em></td><td><a href="#missing">dekhein</a></td></tr>
+          <tr><td><b>Q10</b></td><td colspan="2">Multiclass logistic vs Neyman-Pearson loss (ERM) &mdash; <em>fragment se mila, numbers reconstructed</em></td><td><a href="#rq10">hal</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -2962,10 +2963,10 @@ LECTURE 8 &mdash; LOSS FUNCTIONS
 
   <div class="subnav qfilter" role="group" aria-label="Chapter filter">
     <span class="flbl">Chapter filter</span>
-    <button type="button" data-f="all" aria-selected="true"><span class="n">ALL</span>Sab (9)</button>
+    <button type="button" data-f="all" aria-selected="true"><span class="n">ALL</span>Sab (10)</button>
     <button type="button" data-f="6" aria-selected="false"><span class="n">LEC 6</span>Neural Net (6)</button>
     <button type="button" data-f="7" aria-selected="false"><span class="n">LEC 7</span>Classifiers (1)</button>
-    <button type="button" data-f="8" aria-selected="false"><span class="n">LEC 8</span>Boolean (2)</button>
+    <button type="button" data-f="8" aria-selected="false"><span class="n">LEC 8</span>Boolean (3)</button>
     <span class="qcount"></span>
   </div>
 
@@ -3657,29 +3658,242 @@ Class 3:  50/59 = 84.75%</div>
     </div>
   </div>
 
-  <!-- MISSING -->
-  <div class="part-head" id="missing" style="margin-top:48px">
-    <div class="lbl">Q10</div>
-    <h2>Ek sawal jo abhi tak nahi mila</h2>
-    <p>Tasveeron se <b>Q1 se Q9 tak sab mil gaye</b>. Sirf <b>Q-10</b> kisi tasveer mein nahi aaya &mdash; aur docx mein bhi wo "illegible" likha tha. Is ka hal main bana kar nahi likh raha; magar ye batana mufeed hai ke kaunsa topic bach gaya hai.</p>
+  <!-- Q10 -->
+  <div class="part-head" id="missing" data-lec="8" style="margin-top:48px">
+    <div class="lbl">Q10 &mdash; ab mil gaya</div>
+    <h2>Multiclass logistic loss &mdash; aur NP loss se behtar kyun (ERM)</h2>
+    <p>Q-10 kisi tasveer mein nahi tha aur docx mein "illegible" likha tha. Ab is ka <b>ek hissa yaad se mil gaya hai</b>, aur usi se topic pakka ho gaya hai.</p>
   </div>
 
-  <div class="box exam">
-    <p class="bt">Q-10 kis topic se ho sakta hai &mdash; jo bacha hai</p>
-    <p>Q1&ndash;Q9 ne jo cover kar liya wo nikaal dein, to Lecture 6/7/8 mein se ye bachta hai (tarteeb imkaan ke hisaab se):</p>
-    <div class="tw" style="margin:0">
-      <table>
-        <thead><tr><th>Topic</th><th>Kyun ghalib imkaan hai</th><th>Tayyari yahan se</th></tr></thead>
-        <tbody>
-          <tr><td><b>Parameter counting</b><br><code>(d<sub>i-1</sub>+1)&times;d<sub>i</sub></code></td><td><b>Sab se mazboot imkaan.</b> Ye <em>sample paper ka Q-2</em> tha, Lecture-6 ka markazi formula hai, aur asli paper ke nau sawalon mein <em>bilkul nahi</em> aaya &mdash; halanke paper ka do tihai Lecture-6 se hai.</td><td><a href="#g8">G8</a> &middot; <a href="#oq2">sample Q-2</a> &middot; <a href="#panel-prof">sawal 2, sawal 3, sawal 9</a></td></tr>
-          <tr><td><b>Neyman-Pearson metric</b><br><code>(&kappa;&middot;fn + fp)/n</code></td><td>Q-7 mein <code>&kappa;</code> ka sirf <em>loss</em> waala roop aaya &mdash; <em>metric</em> waala nahi. Boolean confusion matrix de kar NP error poochna aasaan 6-marks sawal hai.</td><td><a href="#h7">H7</a> &middot; <a href="#h10">H10</a> &middot; <a href="#panel-prof">sawal 53, sawal 78</a></td></tr>
-          <tr><td><b>One-hot embedding<br>aur argmax un-embedding</b></td><td>Q-8 ne nearest-neighbour ka <em>geometry</em> wala hissa liya, magar <b>one-hot aur argmax</b> nahi aaya. <code>&#375;</code> vector de kar class poochna sab se saada numerical hai.</td><td><a href="#h12">H12</a> &middot; <a href="#h16">H16</a> &middot; <a href="#panel-prof">sawal 81, sawal 82</a></td></tr>
-          <tr><td><b>Hinge / logistic loss</b> ka hisaab</td><td>Q-7 mein <em>hubristic</em> aaya. Hinge aur logistic (yaani SVM aur logistic regression ke losses) bach gaye &mdash; aur wo sample paper ke Q-4 mein thay.</td><td><a href="#i6">I6</a> &middot; <a href="#i7">I7</a> &middot; <a href="#i9">I9</a> &middot; <a href="#panel-prof">sawal 36, sawal 37</a></td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="margin-bottom:0;margin-top:12px"><b>Agar Q-10 ki saaf tasveer mil jaaye</b> (ya Q-2 ka teesra activation function), to main usay bhi isi tarah poora hal kar ke yahan laga doonga.</p>
+  <div class="box warn" data-lec="8">
+    <p class="bt">Imaandari se &mdash; is sawal mein kitna asli hai aur kitna mera bharā hua</p>
+    <p style="margin-top:0"><b>Jo asal mein mila:</b> sirf ye adhoori line &mdash; <em>"Multiclass logistic loss of neyman pearson is favoured ERM"</em>.</p>
+    <p><b>Is se pakka kya hota hai:</b> sawal <b>multiclass logistic loss</b> aur <b>Neyman-Pearson loss</b> ka muqabla tha, aur poocha gaya tha ke <b>ERM mein logistic ko tarjeeh kyun di jaati hai</b>. Ye <b>Lecture 8</b> hai.</p>
+    <p><b>Jo maine khud bharā hai:</b> <b>numbers</b> (<code>&#375; = [2.0, 1.0, &minus;1.0]</code>, <code>&kappa;&#8323; = 2.0</code>, true class <code>k = 3</code>) &mdash; <b>ye asli paper ke numbers NAHI hain</b>, kyunki wo hisse mein nahi mile. Maine paper ke andaz par ek numerical bana diya hai taake tareeqa practice ho jaye. <b>Agar paper mein doosre numbers hon, tareeqa bilkul wohi rahega.</b></p>
+    <p style="margin-bottom:0"><b>Aur ek cheez saaf kar doon:</b> pehle maine pattern ki ginti se likha tha ke Q-10 ek <b>Boolean numerical</b> hoga. Ye fragment us andaze ko theek kar deta hai &mdash; sawal <b>loss ke intikhab (choice)</b> ka tha, mehez hisaab ka nahi. Pattern se takraar nahi: multi-class bhi Lecture 8 hi hai, jo sir ke <b>Section B (Boolean Classification)</b> mein aata hai.</p>
   </div>
+
+  <div class="qblock" id="rq10" data-lec="8">
+    <div class="qhead">
+      <div class="qtag"><span class="pill">Asli Q10</span><span class="pill m">6 marks</span><span class="pill t">multiclass logistic vs NP loss</span><span class="pill t">numbers reconstructed</span></div>
+      <h3>Multiclass logistic loss, Neyman-Pearson loss, aur ERM mein tarjeeh</h3>
+    </div>
+    <div class="qtext">
+      <p class="vb">In multi-class classification with <code>K = 3</code> and raw prediction scores <code>&#375; = [2.0, 1.0, &minus;1.0]<sup>T</sup></code>, with per-class weights <code>&kappa;<sub>k</sub></code>:<br>
+      1. Compute the <b>multiclass logistic loss</b> if the true class is <code>k = 3</code>, with <code>&kappa;<sub>3</sub> = 2.0</code>.<br>
+      2. Compute the <b>Neyman-Pearson loss</b> for the same case.<br>
+      3. Explain why the multiclass logistic loss is <b>favoured over the Neyman-Pearson loss in ERM</b>.</p>
+    </div>
+    <div class="qhint">
+      <p class="bt">Hint &mdash; teen phisalan</p>
+      <ul style="margin-bottom:0">
+        <li><strong><code>log &Sigma; e<sup>&#375;&#11388;</sup></code> mein SAARE scores jaate hain</strong> &mdash; sirf sahi class ka nahi. Ye number har class ke liye <em>wohi</em> rehta hai; sirf <code>&minus;&#375;<sub>k</sub></code> badalta hai.</li>
+        <li><strong><code>&minus;&#375;<sub>k</sub></code> mein <code>k</code> = SAHI class hai.</strong> Yahan <code>k = 3</code>, to <code>&#375;&#8323; = &minus;1.0</code> minus hoga &mdash; aur <code>&minus;(&minus;1.0) = +1.0</code>, yaani jama hoga. Minus ka minus par sab phisalte hain.</li>
+        <li><strong>Part 3 sab se zyada marks ka hai</strong>, aur jawab do lafz hain: <b>discontinuous</b> aur <b>zero derivative</b>. Us par poora paragraph likhein.</li>
+      </ul>
+    </div>
+    <div class="bil">
+      <div class="en">
+        <p class="ct">English &mdash; paper par likhein</p>
+        <p><b>Formulas.</b> With true class <code>k</code>, first form the worst rival gap:</p>
+        <div class="math">m  =  max  (&#375;&#11388; &minus; &#375;&#8342;)            m &lt; 0  &rArr;  decoded correctly
+       j&ne;k
+
+NP loss        &ell;(&#375;, k)  =   0      if m &lt; 0
+                               &kappa;&#8342;     otherwise
+
+logistic loss  &ell;(&#375;, k)  =   &kappa;&#8342; [ log &Sigma;&#11388; e^(&#375;&#11388;)  &minus;  &#375;&#8342; ]</div>
+        <p><b>Part 1 &mdash; multiclass logistic loss, <code>k = 3</code>, <code>&kappa;&#8323; = 2.0</code>:</b></p>
+        <div class="math">log &Sigma; e^(&#375;&#11388;) = log(e&#178; + e&#185; + e&#8315;&#185;)
+               = log(7.389 + 2.718 + 0.368)
+               = log(10.476)  =  2.349
+
+&ell;(&#375;, 3) = &kappa;&#8323; [ 2.349 &minus; &#375;&#8323; ]
+         = 2.0 &times; [ 2.349 &minus; (&minus;1.0) ]
+         = 2.0 &times; 3.349
+         = 6.698</div>
+        <p><b>Part 2 &mdash; Neyman-Pearson loss, same case:</b></p>
+        <div class="math">m = max(&#375;&#8321; &minus; &#375;&#8323;,  &#375;&#8322; &minus; &#375;&#8323;)
+  = max(2.0 &minus; (&minus;1.0),  1.0 &minus; (&minus;1.0))
+  = max(3.0, 2.0)  =  3.0      &ge; 0   &rArr;  decoded INCORRECTLY
+
+&ell;_NP(&#375;, 3)  =  &kappa;&#8323;  =  2.0</div>
+        <p>(Consistent: <code>arg max &#375;&#8342; = 1</code>, but the true class is <code>3</code> &mdash; so the prediction is indeed wrong.)</p>
+        <p><b>Part 3 &mdash; why logistic is favoured in ERM.</b> The NP loss <em>is</em> the performance metric we actually care about, which would seem ideal. But it is unusable as a <em>training</em> loss:</p>
+        <ul>
+          <li>It is <b>discontinuous</b> &mdash; it takes only two values, <code>0</code> or <code>&kappa;<sub>k</sub></code>, and jumps between them.</li>
+          <li>It has <b>zero derivative almost everywhere</b>. Perturbing the parameters leaves the loss unchanged, so a gradient-based optimizer receives <b>no information about which direction improves the fit</b>. ERM cannot make progress.</li>
+          <li>The resulting objective is <b>non-convex and intractable</b> &mdash; there is no efficient algorithm and no optimality guarantee.</li>
+        </ul>
+        <p>The multiclass logistic loss is a <b>proxy</b> that fixes exactly this:</p>
+        <ul>
+          <li><b>Convex</b> &mdash; with a convex regularizer the whole RERM objective is convex, so it has a <b>single global minimum</b>, reachable efficiently and <b>independent of initialisation</b>.</li>
+          <li><b>Differentiable everywhere</b> &mdash; gradients are always well defined (unlike multiclass hinge, which has a kink at the margin).</li>
+          <li><b>Graded</b> &mdash; it reports <em>how</em> wrong the prediction is (here <code>3.349</code> before weighting), not merely whether it is wrong, so it supplies a usable learning signal.</li>
+        </ul>
+        <p class="memo"><b>One-line summary (write this):</b> the Neyman-Pearson loss is the exact metric but is discontinuous with zero gradient almost everywhere, so it cannot be minimised; the multiclass logistic loss is a convex, differentiable surrogate whose RERM problem is solvable to global optimality &mdash; <b>in ERM, solvability beats exactness</b>. Empirically the surrogate also generalises better on test data.</p>
+      </div>
+      <div class="ur">
+        <p class="ct">Roman Urdu &mdash; samajhne ke liye</p>
+        <p><b>Jawab:</b> logistic loss = <b>6.698</b>, NP loss = <b>2.0</b>, aur tarjeeh ki wajah = <b>convex + differentiable</b> (NP discontinuous hai aur uska derivative har jagah sifar).</p>
+        <p><b>Part 1 &mdash; qadam ba qadam.</b> Pehle <code>log &Sigma; e^(&#375;&#11388;)</code> nikaalein. Is mein <b>teeno scores</b> jaate hain:</p>
+        <div class="math">e&#178;   = 7.389
+e&#185;   = 2.718
+e&#8315;&#185;  = 0.368
+       -------
+jama = 10.476        log(10.476) = 2.349</div>
+        <div class="box warn" style="margin:14px 0">
+          <p class="bt">Ab wo cheez jahan sab phisalte hain &mdash; <code>&minus;&#375;&#8342;</code></p>
+          <p style="margin-top:0">Formula mein <code>&minus; &#375;<sub>k</sub></code> hai, jahan <code>k</code> = <b>sahi class</b>. Yahan sahi class <code>3</code> hai:</p>
+          <div class="math">&#375;  =  [ 2.0 ,  1.0 ,  &minus;1.0 ]
+       &#375;&#8321;     &#375;&#8322;     &#375;&#8323;
+                     &#8593;
+         k = 3   &rarr;   &#375;&#8323; = &minus;1.0</div>
+          <p style="margin-bottom:0">To <code>2.349 &minus; (&minus;1.0)</code> banta hai. Aur <b>minus ka minus plus</b> hota hai, yaani <code>2.349 + 1.0 = 3.349</code>. Yehi wo <code>(&minus;1.0)</code> hai jo log dhoondte reh jaate hain &mdash; wo <b>sahi class ka score</b> hai.</p>
+        </div>
+        <div class="math">&ell;(&#375;, 3) = 2.0 &times; 3.349  =  6.698</div>
+        <p class="memo"><b>Yaad rakhein:</b> <code>log &Sigma; e^(&#375;&#11388;) = 2.349</code> <b>hamesha wohi</b> rehta hai, chahe sahi class koi bhi ho &mdash; kyunki wo saare scores se banta hai. <b>Sirf <code>&#375;&#8342;</code> badalta hai.</b> Is liye: <code>k=1</code> &rarr; <code>2.349 &minus; 2.0 = 0.349</code>; <code>k=2</code> &rarr; <code>2.349 &minus; 1.0 = 1.349</code>; <code>k=3</code> &rarr; <code>3.349</code>. <b>Score jitna kam, loss utna zyada</b> &mdash; mantiqi hai.</p>
+        <p><b>Part 2 &mdash; NP loss.</b> Ye sirf ek baat poochta hai: <b>decode sahi hua ya galat?</b></p>
+        <div class="math">sahi class 3 hai. Baqi classes ke scores se muqabla karein:
+
+&#375;&#8321; &minus; &#375;&#8323;  =  2.0 &minus; (&minus;1.0)  =  3.0
+&#375;&#8322; &minus; &#375;&#8323;  =  1.0 &minus; (&minus;1.0)  =  2.0
+
+m = max(3.0, 2.0) = 3.0        m &ge; 0  &rarr;  GALAT decode
+
+&ell;_NP = &kappa;&#8323; = 2.0</div>
+        <p><b>Doosre tareeqe se check:</b> <code>argmax &#375; = class 1</code> (score 2.0 sab se bara), magar sahi class <code>3</code> thi &mdash; to waqai galat hai &#10003;. <b>Dhyan rahe:</b> NP loss sirf <code>0</code> ya <code>&kappa;&#8342;</code> deta hai, beech mein kuch nahi.</p>
+        <p><b>Part 3 &mdash; logistic kyun behtar (sab se zyada marks).</b> Dono jawab saath rakh kar dekhein, baat khud saaf ho jaati hai:</p>
+        <div class="math">NP loss        =  2.0      &larr; sirf kehta hai "GALAT"
+logistic loss  =  6.698    &larr; kehta hai "galat, aur ITNA galat"</div>
+        <p><b>NP loss asli metric hai</b> &mdash; wohi cheez naapta hai jis ki hamein fikar hai. To use hi kyun na karein? Kyunki <b>usay minimize karna namumkin hai:</b></p>
+        <ul>
+          <li><b>Discontinuous hai</b> &mdash; sirf do values (<code>0</code> ya <code>&kappa;&#8342;</code>), beech mein chhalaang.</li>
+          <li><b>Derivative har jagah sifar hai.</b> Parameters thore badlein &rarr; loss <b>bilkul waisa hi</b> raha. Optimizer ko pata hi nahi chalta ke <b>kis taraf behtar hai</b>. Yaani seekhne ka koi signal nahi.</li>
+          <li><b>Non-convex aur intractable</b> &mdash; na koi efficient tareeqa, na koi zamanat.</li>
+        </ul>
+        <p><b>Logistic loss ye teeno masle hal kar deta hai:</b></p>
+        <ul>
+          <li><b>Convex</b> &mdash; convex regularizer ke saath poora RERM ek <b>pyaala</b> ban jaata hai: <b>ek hi pendha</b>, jo hamesha mil jaata hai, aur shuruati guess se jawab nahi badalta.</li>
+          <li><b>Har jagah differentiable</b> &mdash; dhalaan hamesha maujood (multiclass <b>hinge</b> mein margin par <b>kona</b> hota hai, wahan dhalaan ek nahi banti).</li>
+          <li><b>Darja batata hai</b> &mdash; "kitna galat" bhi kehta hai (<code>3.349</code>), sirf "galat" nahi. Yehi optimizer ka rasta hai.</li>
+        </ul>
+        <p class="memo"><b>Ek line jo poore marks deti hai:</b> <em>Neyman-Pearson loss theek cheez naapta hai magar hal nahi hota (discontinuous, derivative sifar); multiclass logistic loss convex aur differentiable hai, is liye uska RERM global minimum tak hal ho jaata hai &mdash; <b>ERM mein "hal ho sakna" zyada ahem hai "theek hona" se</b>.</em> Aur hairani ki baat: is proxy se <b>test performance bhi behtar</b> aati hai.</p>
+        <p class="memo"><b>Ye bilkul wohi usool hai jo <a href="#rq7">Q-7</a> mein tha</b> (hubristic vs sigmoid) &mdash; ek hi jawab, do sawal. Farq sirf itna: Q-7 mein sigmoid ki kharabi <b>non-convexity</b> thi; yahan NP ki kharabi <b>discontinuity + derivative sifar</b> hai. Dono jagah jeetne wali cheez <b>solvability</b> hai. Formulas: <a href="#ff21">F21</a>, <a href="#ff16">F16</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="vgrp" data-lec="8" style="margin-top:44px">
+    <div class="part-head" id="q10more">
+      <div class="lbl">Isi fragment se</div>
+      <h2>Das mumkin sawal &mdash; jo isi topic se ban sakte hain</h2>
+      <p>Fragment adhoora hai, is liye sawal ka roop badal sakta hai. Ye <b>das shaklein</b> hain jo isi material se bani hain &mdash; har ek ka jawab <b>2&ndash;3 line</b> ka.</p>
+    </div>
+
+    <div class="qp"><p class="qn"><span>T1</span><span class="mk">theory</span><span class="mk">sab se zyada imkaan</span></p>
+      <p>Why is the multiclass logistic loss favoured over the Neyman-Pearson loss in ERM?</p>
+      <details class="ans"><summary>Jawab</summary><div class="ab">
+        <p style="margin-top:0">NP loss asli metric hai, magar <b>discontinuous</b> hai aur uska <b>derivative har jagah sifar</b> &mdash; gradient koi rukh nahi batata, to ERM aage nahi barh sakta. Logistic loss <b>convex aur differentiable</b> hai, to convex regularizer ke saath RERM ka <b>ek hi global minimum</b> hota hai jo efficiently mil jaata hai. <b>ERM mein solvability, exactness se zyada ahem hai.</b></p>
+      </div></details>
+    </div>
+
+    <div class="qp"><p class="qn"><span>T2</span><span class="mk">formula</span></p>
+      <p>Write the multiclass logistic loss and the multiclass Neyman-Pearson loss.</p>
+      <details class="ans"><summary>Jawab</summary><div class="ab">
+        <div class="math" style="margin-top:0">m = max (&#375;&#11388; &minus; &#375;&#8342;)        (j &ne; k)
+NP        : &ell;(&#375;,k) = 0 agar m &lt; 0,  warna &kappa;&#8342;
+logistic  : &ell;(&#375;,k) = &kappa;&#8342; [ log &Sigma;&#11388; e^(&#375;&#11388;) &minus; &#375;&#8342; ]</div>
+      </div></details>
+    </div>
+
+    <div class="qp"><p class="qn"><span>T3</span><span class="mk">numerical</span></p>
+      <p><code>&#375; = [2.0, 1.0, &minus;1.0]</code>, true class <code>k = 1</code>, <code>&kappa;&#8321; = 1.0</code>. Compute both losses and the un-embedded class.</p>
+      <details class="ans"><summary>Jawab</summary><div class="ab">
+        <div class="math" style="margin-top:0">LOGISTIC   1.0 &times; (2.349 &minus; &#375;&#8321;)  =  1.0 &times; (2.349 &minus; 2.0)  =  0.349
+
+NP         m  =  max (&#375;&#11388; &minus; &#375;&#8342;)      yahan k = 1,  to &#375;&#8342; = &#375;&#8321; = 2.0
+                  j&ne;k
+
+           j = 2 :   &#375;&#8322; &minus; &#375;&#8321;  =    1.0 &minus; 2.0  =  &minus;1.0
+           j = 3 :   &#375;&#8323; &minus; &#375;&#8321;  =  (&minus;1.0) &minus; 2.0  =  &minus;3.0
+                     (j = 1 SKIP &mdash; wo khud sahi class hai)
+
+           m  =  max(&minus;1.0, &minus;3.0)  =  &minus;1.0      &lt; 0   &rarr;  SAHI decode
+           &ell;_NP  =  0
+
+UN-EMBED   arg max &#375;  =  class 1   &#10003;  (2.0 sab se bara)</div>
+        <p class="memo" style="margin-bottom:0"><b>Do cheezein jo yahan samajhni hain:</b> (1) <code>&#375;<sub>k</sub></code> <b>sahi class ka score</b> hai aur <b>har bar wohi</b> minus hota hai &mdash; is liye dono lines mein <code>&minus; 2.0</code> hai; (2) <code>j &ne; k</code> ka matlab <b>sahi class ko chhor do</b>, sirf <b>rival</b> classes se muqabla karo. <b>Nishaan ka matlab:</b> <code>m &lt; 0</code> &rarr; koi rival sahi class se aage nahi, yaani decode <b>sahi</b> &rarr; NP loss <code>0</code>. <code>m &ge; 0</code> &rarr; koi rival aage nikal gaya, decode <b>galat</b> &rarr; NP loss <code>&kappa;<sub>k</sub></code>.</p>
+      </div></details>
+    </div>
+
+    <div class="qp"><p class="qn"><span>T4</span><span class="mk">numerical + theory</span></p>
+      <p>Using the scores above, show that the NP loss provides no useful gradient for ERM.</p>
+      <details class="ans"><summary>Jawab</summary><div class="ab">
+        <p style="margin-top:0">NP sirf <code>0</code> ya <code>&kappa;&#8342;</code> deta hai. <code>&#375;&#8321;</code> ko <code>2.0</code> se <code>2.5</code> karein &mdash; decode phir bhi galat, to NP <b>2.0 hi raha</b> (derivative <code>0</code>). Optimizer ko pata hi nahi chalta ke behtar kis taraf hai. Logistic <code>6.698</code> se <code>7.098</code> &mdash; <b>narmi se badalta hai</b>, is liye rukh ka pata chalta hai.</p>
+      </div></details>
+    </div>
+
+    <div class="qp"><p class="qn"><span>T5</span><span class="mk">theory</span></p>
+      <p>Both the multiclass hinge and logistic losses are convex. Why might logistic be preferred?</p>
+      <details class="ans"><summary>Jawab</summary><div class="ab">
+        <p style="margin-top:0">Dono convex hain, magar <b>logistic har jagah differentiable</b> hai. Hinge mein margin par <b>kona (kink)</b> hota hai, jahan derivative ek nahi banti. Gradient methods ko saaf derivative chahiye, is liye logistic behtar. (Hinge ka faida doosra hai: exactly zero loss jab margin kaafi ho.)</p>
+      </div></details>
+    </div>
+
+    <div class="qp"><p class="qn"><span>T6</span><span class="mk">derivation</span></p>
+      <p>Show that the multiclass logistic loss reduces to the Boolean logistic loss for the embedding <code>v&#8321; = &minus;1, v&#8322; = +1</code>.</p>
+      <details class="ans"><summary>Jawab</summary><div class="ab">
+        <div class="math" style="margin-top:0">K = 2, scores (0, &#375;):
+  k=1 :  &kappa;&#8321;[ log(1 + e^&#375;) &minus; 0 ]  =  &kappa;&#8321; log(1 + e^&#375;)
+  k=2 :  &kappa;&#8322;[ log(1 + e^&#375;) &minus; &#375; ] =  &kappa;&#8322; log(1 + e^&minus;&#375;)</div>
+        <p style="margin-bottom:0">Yehi Boolean logistic loss hai &mdash; <code>&ell;(&#375;,&minus;1) = log(1+e^&#375;)</code>, <code>&ell;(&#375;,+1) = &kappa; log(1+e^&minus;&#375;)</code>. Slide par yehi check diya hai. (<code>&#375; = 0.5</code> par dono taraf <code>0.9741</code>.)</p>
+      </div></details>
+    </div>
+
+    <div class="qp"><p class="qn"><span>T7</span><span class="mk">theory</span></p>
+      <p>What does <code>&kappa;<sub>k</sub></code> represent in the multi-class setting, and what happens when all <code>&kappa;<sub>k</sub> = 1</code>?</p>
+      <details class="ans"><summary>Jawab</summary><div class="ab">
+        <p style="margin-top:0"><code>&kappa;&#8342;</code> poore loss ko multiply karta hai aur slide ke lafzon mein <em>"our relative distaste for mistaking class k"</em> hai &mdash; yaani class <code>k</code> ko chhodne ka nuqsan. Boolean ke ek <code>&kappa;</code> ki jagah ab <b>vector</b> hota hai. <b>Agar saare <code>&kappa;&#8342; = 1</code> hon, to NP metric wapas saada <b>error rate</b> ban jaata hai.</b></p>
+      </div></details>
+    </div>
+
+    <div class="qp"><p class="qn"><span>T8</span><span class="mk">theory</span></p>
+      <p>The NP loss equals the performance metric we care about. Why is that not an argument for using it in training?</p>
+      <details class="ans"><summary>Jawab</summary><div class="ab">
+        <p style="margin-top:0">Slide ka apna jawab: <em>"it's the same as our performance metric, which would seem good &mdash; but it's very hard to minimize, since it's discontinuous, has zero derivative almost everywhere."</em> Aur <b>hairani ki baat</b> &mdash; aasaan proxy loss istemaal karne se <b>test performance behtar</b> aati hai. <b>Metric aur training loss ka ek hona zaroori nahi.</b></p>
+      </div></details>
+    </div>
+
+    <div class="qp"><p class="qn"><span>T9</span><span class="mk">naam</span></p>
+      <p>Name the classifiers that use the multiclass logistic loss and the multiclass hinge loss.</p>
+      <details class="ans"><summary>Jawab</summary><div class="ab">
+        <div class="math" style="margin-top:0">multiclass logistic loss  &rarr;  multi-class LOGISTIC REGRESSION
+multiclass hinge loss     &rarr;  multi-class SVM
+                                 (quadratic regularizer ke saath)</div>
+      </div></details>
+    </div>
+
+    <div class="qp"><p class="qn"><span>T10</span><span class="mk">theory</span></p>
+      <p>Which of these losses are convex: Neyman-Pearson, sigmoid, logistic, hinge, hubristic, square?</p>
+      <details class="ans"><summary>Jawab</summary><div class="ab">
+        <div class="math" style="margin-top:0">CONVEX      :  logistic, hinge, hubristic, square
+NON-CONVEX  :  sigmoid  ("S" shakal)
+               Neyman-Pearson  (discontinuous bhi)</div>
+        <p style="margin-bottom:0">Dhyan rahe: <b>square convex hai</b>, magar classification ke liye phir bhi bura hai &mdash; wajah alag hai (<b>margin mein non-monotonic</b>, sahi predictions ko bhi saza). <b>Do wajuhat mila na dein.</b> (<a href="#ff16">F16</a>)</p>
+      </div></details>
+    </div>
+
+    <div class="box exam" style="margin-top:30px">
+      <p class="bt">In das mein se jo ek cheez har soorat mein yaad rakhni hai</p>
+      <div class="math">NP loss        =  SAHI cheez naapta hai,     magar HAL nahi hota
+logistic loss  =  taqreeban sahi naapta hai,  AUR hal ho jaata hai
+
+                  ERM mein doosri cheez JEET jaati hai.</div>
+      <p style="margin-bottom:0">Yehi jumla <a href="#rq7">Q-7</a> (hubristic vs sigmoid) ka bhi jawab tha. Agar Q-10 ka roop badla hua aaye, <b>ye ek line phir bhi kaam karegi</b> &mdash; sirf kharabi ka naam badlein: NP ke liye <b>discontinuous + derivative sifar</b>, sigmoid ke liye <b>non-convex</b>.</p>
+    </div>
+  </div>
+
 
   <div class="box hint">
     <p class="bt">Is paper se 6 sabaq</p>
@@ -4087,7 +4301,7 @@ DONO KO SQUARE LOSS BARABAR BURA SAMAJHTA HAI!</div>
         </tbody>
       </table>
     </div>
-    <p style="margin-bottom:0;margin-top:12px"><b>Sab se zaroori usool:</b> jawab <em>padhne</em> se kuch nahi aata. Har sawal pehle <b>copy par haath se</b> karein, phir jawab kholein. Jo ghalat ho us par nishan lagayein aur doosre din dobara karein. <b>20 sawal khud kar lena 108 sawal padh lene se kai guna behtar hai.</b></p>
+    <p style="margin-bottom:0;margin-top:12px"><b>Sab se zaroori usool:</b> jawab <em>padhne</em> se kuch nahi aata. Har sawal pehle <b>copy par haath se</b> karein, phir jawab kholein. Jo ghalat ho us par nishan lagayein aur doosre din dobara karein. <b>20 sawal khud kar lena 108 sawal padh lene se kai guna behtar hai.</b> Aur har section shuru karne se pehle <a href="#panel-form">Formula Sheet</a> tab mein usi lecture ka filter laga kar formulas ek nazar dekh lein &mdash; <b>saare 21 formulas</b> wahan ek jagah hain, <a href="#ftraps">aath traps</a> ke saath.</p>
   </div>
 
   <div class="box hint">
@@ -5058,7 +5272,7 @@ CONFUSION       error rate = 1 - trace/n
 UN-EMBED        Boolean: sign(&#375;)        one-hot: argmax &#375;<sub>k</sub>
 
 HYPERPLANE      2(b-a)<sup>T</sup>x - &#8214;b&#8214;&#178; + &#8214;a&#8214;&#178; = 0     midpoint se guzarta hai (CHECK!)</div>
-    <p style="margin-bottom:0"><b>Char aadatein jo marks bachati hain:</b> (1) <b>formula pehle likho</b>, numbers baad mein; (2) <b>minus ke nishaan</b> par bracket lagao &mdash; asli paper ke chhe sawalon mein phisalan thi; (3) sawal ki <b>pehli line</b> dhyan se padho ("without biases", "rows are true classes", "linear output layer"); (4) har jawab ke baad <b>ek line wajah</b> &mdash; paper khud kehta hai <em>"provide brief technical justifications"</em>.</p>
+    <p style="margin-bottom:0"><b>Char aadatein jo marks bachati hain:</b> (1) <b>formula pehle likho</b>, numbers baad mein; (2) <b>minus ke nishaan</b> par bracket lagao &mdash; asli paper ke chhe sawalon mein phisalan thi; (3) sawal ki <b>pehli line</b> dhyan se padho ("without biases", "rows are true classes", "linear output layer"); (4) har jawab ke baad <b>ek line wajah</b> &mdash; paper khud kehta hai <em>"provide brief technical justifications"</em>. <b>Formula bhool rahe hain?</b> <a href="#panel-form">Formula Sheet</a> tab &mdash; F1 se F21, lecture ke filter ke saath.</p>
   </div>
 
 </div>
@@ -5100,7 +5314,7 @@ C.  1 sawal  &mdash;  CLASSIFIER              (short theoretical)
         </tbody>
       </table>
     </div>
-    <p style="margin-bottom:0;margin-top:12px"><b>Yaani Q-10 taqreeban yaqeeni tor par ek BOOLEAN CLASSIFICATION ka numerical tha</b> &mdash; ghalib imkaan hinge loss, logistic loss, ya Neyman-Pearson metric ka hisaab, kyunki hubristic aur signed distance pehle hi Q7/Q8 mein aa chuke thay. Is liye <b>Section B</b> mein wo saare numericals diye gaye hain &mdash; khaas tor par sawal <a href="#pq36">36</a>, <a href="#pq37">37</a>, <a href="#pq62">62</a> aur <a href="#pq70">70</a>.</p>
+    <p style="margin-bottom:0;margin-top:12px"><b>Yaani Q-10 Section B (Lecture 8) ka sawal tha</b> &mdash; aur ab <b>us ka ek hissa yaad se mil bhi gaya hai:</b> wo <b>multiclass logistic loss vs Neyman-Pearson loss</b> ka sawal tha (ERM mein logistic ko tarjeeh kyun). Poora hal aur <b>das mumkin shaklein</b> <a href="#rq10">Asli Paper ke Q-10</a> mein hain. Baqi Section B ke numericals bhi zaroor karein &mdash; khaas tor par sawal <a href="#pq36">36</a>, <a href="#pq37">37</a>, <a href="#pq62">62</a> aur <a href="#pq70">70</a>.</p>
   </div>
 
   <div class="box hint">
@@ -8051,6 +8265,433 @@ faida                       :  2.25 percentage points
   </div>
 
 </div>
+<!-- ============================================================ PANEL 6: FORMULAS -->
+<div class="wrap" role="tabpanel" id="panel-form" aria-labelledby="tab-form" hidden>
+
+  <div class="srcnote">
+    <p style="margin-top:0"><b>Ye tab kis liye hai.</b> Paper mein jo bhi formula poocha ja sakta hai, wo <b>sab ek jagah</b>. Shuruat <b>Sample Paper ke Q-4</b> se hai (jo aap ne poocha), uske baad <b>Lecture 6, 7, 8 ka har formula</b> &mdash; lecture ke mutabiq, upar <b>chapter filter</b> ke saath.</p>
+    <p style="margin-bottom:0"><b>Har formula ke saath teen cheezein hain:</b> (1) formula khud, (2) <b>kahan se hai</b> (kaunsi slide), aur (3) <b>kab lagta hai aur kab nahi</b> &mdash; kyunki paper mein galti formula bhool jaane se nahi, <b>galat jagah lagane</b> se hoti hai. Jin formulas ka denominator PDF se gayab tha (slide par fraction ki shakal mein hain) unhe slide ke apne brackets, graph ke axes, aur Boolean reduction se verify kiya gaya hai &mdash; har aise formula par nishan lagaya hai.</p>
+  </div>
+
+  <div class="box exam" id="fq4">
+    <p class="bt">Sample Paper Q-4 &mdash; is mein sirf 3 formulas lagte hain</p>
+    <p style="margin-top:0">Sawal: <code>&kappa; = 4.0</code>, prediction score <code>&#375; = &minus;0.40</code>. (1) cost-sensitive hinge loss jab <code>y = +1</code>; (2) square loss jab <code>y = &minus;1</code>; (3) square loss confident sahi prediction par kyun bura hai.</p>
+    <div class="math">[1]  PENALTY FRAMEWORK  &mdash;  &kappa; kahan lagta hai (sab se ahem)
+
+        &ell;(&#375;, &minus;1)  =  p(&#375;)             &larr;  &kappa; NAHI lagta
+        &ell;(&#375;, +1)  =  &kappa; &middot; p(&minus;&#375;)         &larr;  &kappa; SIRF yahan lagta hai
+
+[2]  HINGE penalty            p(u) = (1 + u)&#8330;
+        &rArr;  &ell;(&#375;, +1) = &kappa;(1 &minus; &#375;)&#8330;   =  4.0 &times; (1 &minus; (&minus;0.40))&#8330;
+                                      =  4.0 &times; 1.40  =  5.60   &#10003;
+
+[3]  SQUARE penalty           p(u) = (1 + u)&#178;
+        &rArr;  &ell;(&#375;, &minus;1) = (1 + &#375;)&#178;    =  (1 + (&minus;0.40))&#178;
+                                      =  (0.60)&#178;      =  0.36   &#10003;
+
+     Part (3) ka koi naya formula nahi &mdash; sirf MARGIN ka khayal:
+        acha loss  margin  y&middot;&#375;  mein  non-increasing  hona chahiye.
+        square loss nahi hai &rarr; "bohat sahi" ko bhi saza deta hai.
+        &ell;(&minus;3.0, &minus;1) = (1 &minus; 3.0)&#178; = 4.00  =  &ell;(+1.0, &minus;1)  &larr; yehi kharabi</div>
+    <p style="margin-bottom:0"><b>Q-4 ki ek hi galti hoti hai:</b> log part (2) mein bhi <code>&kappa; = 4.0</code> se multiply kar dete hain. <b>Nahi.</b> <code>y = &minus;1</code> hai, aur <code>&kappa;</code> sirf <code>y = +1</code> ki line par baitha hai. Formula pehle likhein, phir numbers daalein &mdash; isi se ye galti bach jaati hai. (Poora hal: <a href="#oq4">Sample Paper Q-4</a>.)</p>
+  </div>
+
+  <div class="subnav qfilter" role="group" aria-label="Chapter filter">
+    <span class="flbl">Chapter filter</span>
+    <button type="button" data-f="all" aria-selected="true"><span class="n">ALL</span>Sab (21)</button>
+    <button type="button" data-f="6" aria-selected="false"><span class="n">LEC 6</span>Neural Net (8)</button>
+    <button type="button" data-f="7" aria-selected="false"><span class="n">LEC 7</span>Classifiers (6)</button>
+    <button type="button" data-f="8" aria-selected="false"><span class="n">LEC 8</span>Boolean + Loss (7)</button>
+  </div>
+
+  <div class="part-head" id="fsec6" data-lec="6" style="margin-top:52px;border-top-width:4px">
+    <div class="lbl">Lecture 6 &mdash; paper mein 6 sawal (36 marks)</div>
+    <h2>Neural Networks &mdash; F1 se F8</h2>
+    <p>Paper ka <b>aadha hissa</b> inhi aath formulas se bana hai. F1, F2, F3 aur F5 <b>lazmi</b> yaad hone chahiye &mdash; baqi inhi se nikalte hain.</p>
+  </div>
+
+  <div class="qp" id="ff1" data-lec="6"><p class="qn"><span>F1</span><span class="mk">Lec 6 &mdash; "Layer functions"</span><span class="mk">slide par exactly ye</span></p>
+    <p><b>Layer function</b> &mdash; poore Lecture 6 ki buniyad. Har layer <b>affine + activation</b> hoti hai.</p>
+    <div class="math">g&#8305;(z&#8305;&#8315;&#185;)  =  h( &Theta;&#7522;&#7488; (1, z&#8305;&#8315;&#185;) ),        i = 1, &hellip;, M
+
+&Theta;&#7522;  ka size  =  (d&#7522;&#8331;&#8321; + 1)  &times;  d&#7522;        &larr;  "+1" wali row = BIAS</div>
+    <p class="memo"><b>Is ek line se teen jawab nikalte hain:</b> (1) <code>h</code> layer ke <b>andar</b> hai, is liye <code>M</code> layers par activation <b>M baar</b> lagta hai &mdash; output layer par bhi; (2) <code>i = 1 &hellip; M</code>, yaani <b>input koi layer nahi</b>; (3) us <code>1</code> ki wajah se hi <code>+1</code> row aati hai (bias). Dekhein <a href="#g10">G10</a>.</p>
+  </div>
+
+  <div class="qp" id="ff2" data-lec="6"><p class="qn"><span>F2</span><span class="mk">Lec 6 &mdash; "Neural network layers"</span><span class="mk">slide par exactly ye</span></p>
+    <p><b>Forward pass aur layer ginti</b> &mdash; "M-layer neural net" ka matlab.</p>
+    <div class="math">&#375;  =  g^M( &hellip; g&#178;( g&#185;(x) ) &hellip; )
+
+z&#8304; = x,      z&#8305; = g&#8305;(z&#8305;&#8315;&#185;),      z^M = &#375;
+d&#8320; = d  (input),                     d_M = m  (output)
+
+"M-layer net"  &rarr;   hidden layers       =  M &minus; 1     (z&#185; &hellip; z^(M&minus;1))
+                     parameter matrices  =  M         (&Theta;&#185; &hellip; &Theta;^M)
+                     activations lagay   =  M         (h har layer ke andar)</div>
+    <p class="memo"><b>Teen ginti alag yaad na karein &mdash; do hi number hain: <code>M</code> aur <code>M&minus;1</code>.</b> Matrices aur activations dono <code>M</code>; sirf hidden layers <code>M&minus;1</code>. Naam ka doosra tareeqa: "4-layer net" = "3-hidden-layer net" &mdash; slide par dono likhe hain. Dekhein <a href="#md15">sawal 15</a>.</p>
+  </div>
+
+  <div class="qp" id="ff3" data-lec="6"><p class="qn"><span>F3</span><span class="mk">Lec 6 &mdash; "Layer functions"</span><span class="mk">Stanford HW7 Q1(b) mein bhi</span></p>
+    <p><b>Parameter counting</b> &mdash; paper ka sab se aasan 6 marks, aur sab se zyada zaya hone wala.</p>
+    <div class="math">layer i ke parameters  =  (d&#7522;&#8331;&#8321; + 1) &middot; d&#7522;            &larr;  "+1" = BIAS
+
+                          M
+total parameters  =      &Sigma;   (d&#7522;&#8331;&#8321; + 1) &middot; d&#7522;
+                        i=1
+
+input layer ke parameters  =  0       (wo hisaab nahi karta)
+
+MISAAL   d = (4, 5, 3, 1):
+         (4+1)&middot;5  +  (5+1)&middot;3  +  (3+1)&middot;1
+         =   25    +    18    +    4      =  47</div>
+    <p class="memo"><b>Agar sawal mein "without biases" ya "no bias terms" likha ho</b> to <code>+1</code> <b>hata dein</b>: <code>d&#7522;&#8331;&#8321; &middot; d&#7522;</code>. Oopar wali misaal phir <code>20 + 15 + 3 = 38</code> ho jaati hai. Ye ek lafz 6 marks ka faisla karta hai &mdash; sawal ki pehli line dhyan se padhein. Dekhein <a href="#g8">G8</a>.</p>
+  </div>
+
+  <div class="qp" id="ff4" data-lec="6"><p class="qn"><span>F4</span><span class="mk">Lec 6 &mdash; "Activation functions"</span><span class="mk">dekhein memo</span></p>
+    <p><b>Activation functions</b> &mdash; <code>h : R &rarr; R</code>, aur <b>har entry par alag alag</b> lagta hai (elementwise).</p>
+    <div class="math">ReLU         h(a) = (a)&#8330; = max(a, 0)              &larr; slide par formula
+sigmoid      h(a) = e&#7491;/(1 + e&#7491;) = 1/(1 + e&#8315;&#7491;)     &larr; slide par formula
+
+tanh         h(a) = tanh(a)
+Leaky ReLU   h(a) = max(c&middot;a, a),   c chhota
+ELU          h(a) = a              (a &ge; 0)
+                  = &alpha;(e&#7491; &minus; 1)       (a &lt; 0)
+Maxout       h    = max(w&#8321;&#7488;x + b&#8321;,  w&#8322;&#7488;x + b&#8322;)
+
+IMTEHAN KA NUKTA   a &gt; 0  par  ReLU = Leaky ReLU = ELU = a   (teeno barabar)
+                   farq SIRF  a &lt; 0  par shuru hota hai</div>
+    <p class="memo"><b>Imaandari se:</b> slide par <b>formula sirf ReLU aur sigmoid ka</b> likha hai. tanh, Leaky ReLU, ELU aur Maxout slide par <b>sirf naam aur graph</b> ki shakal mein hain (tasveer ke andar), is liye un ke formula standard definitions se hain. <b>Leaky ReLU ka slope sawal mein diya jaata hai</b> &mdash; asli paper mein <code>0.1</code> tha, kitaabon mein aksar <code>0.01</code>. <b>Jo sawal mein likha ho wohi lagayein</b>, apna yaad kiya hua nahi.</p>
+  </div>
+
+  <div class="qp" id="ff5" data-lec="6"><p class="qn"><span>F5</span><span class="mk">Lec 6 &mdash; "Perceptron Learning Algorithm"</span><span class="mk">slide par exactly ye</span></p>
+    <p><b>Perceptron &mdash; margin aur weight update.</b> Numerical sawal ka pasandeeda topic.</p>
+    <div class="math">margin  =  y&#7522; (w&#7488; x&#7522;)
+
+margin &gt; 0    &rarr;   point SAHI hai  &mdash;  kuch na karein
+margin &le; 0    &rarr;   &Delta;w = y&#7522; x&#7522;
+                      w_new = w_old + &Delta;w
+
+CONVERGENCE THEOREM   data linearly separable ho to perceptron rule
+                      FINITE iterations mein separating boundary dhoond leta hai</div>
+    <p class="memo"><b>Dhyan rahe &mdash; slide par learning rate <code>&eta;</code> NAHI hai.</b> Slide ka rule <code>w &larr; w + y&#7522;x&#7522;</code> hai (yaani <code>&eta; = 1</code>). Agar sawal mein <code>&eta;</code> diya ho to <code>w &larr; w + &eta; y&#7522; x&#7522;</code> likhein; na diya ho to <code>&eta;</code> apni taraf se na daalein. Aur <b>update ke baad margin dobara nikaal kar VERIFY karein</b> &mdash; ek line, magar marks pakki. Dekhein <a href="#g16">G16</a>.</p>
+  </div>
+
+  <div class="qp" id="ff6" data-lec="6"><p class="qn"><span>F6</span><span class="mk">Lec 6 &mdash; "Perceptron Decision Rule"</span><span class="mk">slide par exactly ye</span></p>
+    <p><b>Threshold ko weight bana dena</b> (augmented vector) &mdash; slide ke apne lafz: <em>"we now treat the threshold like any other weight with a permanent input of &minus;1"</em>.</p>
+    <div class="math">neuron ka rule:     a = &Sigma; w&#7522;x&#7522;        if (a &gt; threshold t) FIRE
+
+augmented banayein:
+    x  =  (&minus;1,  x&#8321;,  x&#8322;,  &hellip;)        &larr; x&#8320; = &minus;1  SAB SE AAGE
+    w  =  ( t,   w&#8321;,  w&#8322;,  &hellip;)        &larr; threshold pehli jagah
+
+    w&#7488;x  =  &minus;t + w&#8321;x&#8321; + w&#8322;x&#8322; + &hellip;
+
+    phir:    a &gt; t     &hArr;     w&#7488;x &gt; 0        &larr; ek hi shart</div>
+    <p class="memo"><b>Do cheezein yaad rakhein:</b> (1) <code>x&#8320; = &minus;1</code> vector ke <b>aage</b> lagta hai, peeche nahi &mdash; aur threshold bhi <code>w</code> ke <b>aage</b>; (2) iske baad threshold ghayab ho jaata hai, sirf <code>w&#7488;x &gt; 0</code> dekhna hota hai. Isi liye perceptron ke sawal mein bias alag se nahi dikhta.</p>
+  </div>
+
+  <div class="qp" id="ff7" data-lec="6"><p class="qn"><span>F7</span><span class="mk">Lec 6 &mdash; perceptron / boundary</span><span class="mk">dekhein memo</span></p>
+    <p><b>Decision boundary aur us se faasla</b> (linear predictor ke liye).</p>
+    <div class="math">boundary:              w&#7488;x = t          (ya augmented mein  w&#7488;x = 0)
+
+origin se faasla  =   |t| / &#8214;w&#8214;
+
+kisi point x&#8320; se faasla  =  |w&#7488;x&#8320; &minus; t| / &#8214;w&#8214;
+
+&#8214;w&#8214;  =  &radic;(w&#8321;&#178; + w&#8322;&#178; + &hellip;)       &larr; sirf w, threshold SHAAMIL NAHI</div>
+    <p class="memo"><b>Sab se aam galti:</b> <code>&#8214;w&#8214;</code> nikaalte waqt threshold ya bias ko bhi square karke jama kar dena. <b>Nahi</b> &mdash; norm sirf weights ka hai. Aur <code>|t|</code> par <b>absolute value</b> lazmi hai, warna minus threshold par faasla manfi aa jayega. Iska general (multi-class) roop <a href="#ff20">F20</a> hai.</p>
+  </div>
+
+  <div class="qp" id="ff8" data-lec="6"><p class="qn"><span>F8</span><span class="mk">Lec 6 &mdash; "Activation functions" note</span><span class="mk">slide par exactly ye</span></p>
+    <p><b>Activation nonlinear kyun hona chahiye</b> &mdash; theory ka sawal, magar ek line ka formula jawab hai.</p>
+    <div class="math">agar h affine ho,  h(a) = &alpha;a + &beta;,  to:
+
+    g&#178;(g&#185;(x))  =  affine( affine(x) )  =  affine(x)
+
+yaani poora network SIKUR kar ek LINEAR PREDICTOR ban jaata hai
+&mdash; chahe 100 layers hon, taqat barhti hi nahi</div>
+    <p class="memo">Slide ka apna sawal hai: <em>"Q: What if we try to build a neural network without one? A: We end up with a linear classifier again!"</em> <b>Jawab likhne ka tareeqa:</b> affine ka affine bhi affine hota hai, is liye nonlinearity ke bagair layers ka faida sifar &mdash; network sirf ek matrix ke barabar reh jaata hai. Dekhein <a href="#g6">G6</a>.</p>
+  </div>
+
+  <div class="part-head" id="fsec7" data-lec="7" style="margin-top:52px;border-top-width:4px">
+    <div class="lbl">Lecture 7 &mdash; paper mein 1 sawal (6 marks), lekin kuch bhi aa sakta hai</div>
+    <h2>Classifiers &amp; Metrics &mdash; F9 se F14</h2>
+    <p>Yahan sab kuch <b>denominator</b> ka khel hai. Numerator naam mein hi hota hai &mdash; "false positive rate" ka numerator <code>fp</code> hai. <b>Sirf neeche kya aata hai, wo yaad karna hai</b> &mdash; aur uske sirf chaar option hain.</p>
+  </div>
+
+  <div class="qp" id="ff9" data-lec="7"><p class="qn"><span>F9</span><span class="mk">Lec 7 &mdash; "Boolean confusion matrix"</span><span class="mk">slide par exactly ye</span></p>
+    <p><b>Confusion matrix aur teen totals.</b> Koi bhi metric nikaalne se <b>pehle</b> ye teen number likh lein.</p>
+    <div class="math">                   ACTUAL  (y)
+                neg(&minus;1)   pos(+1)
+   &#375; = &minus;1  |     tn        fn     |
+   &#375; = +1  |     fp        tp     |
+           +------------------------
+                  N         P          n
+
+n  =  tn + fn + fp + tp         (total examples)
+N  =  tn + fp                   (asli negatives)   &larr; column 1
+P  =  fn + tp                   (asli positives)   &larr; column 2
+
+CHECK    N + P = n              &larr; muft ki tasdeeq, hamesha karein
+
+diagonal (tn, tp)  =  sahi            off-diagonal (fn, fp)  =  galat</div>
+    <p class="memo"><b>Slide ka apna warning:</b> <em>"some people use the transpose of A"</em>. Sir ki slide mein <b>column = haqeeqat</b> (<em>"column sums of A give number of records in each class"</em>), <b>row = meri guess</b>. Aam kitaabon aur sklearn mein <b>ulta</b> hota hai. <b>Paper mein pehle column jama karein</b> &mdash; agar wo class counts jaisa lage to sir ki convention hai. Aur jawab mein ek line likh dein: <em>"columns = true class"</em>.</p>
+  </div>
+
+  <div class="qp" id="ff10" data-lec="7"><p class="qn"><span>F10</span><span class="mk">Lec 7 &mdash; "the basic error measures"</span><span class="mk">denominator reconstruct kiya</span></p>
+    <p><b>Teen "basic" error measures</b> &mdash; teeno ka denominator <code>n</code> hai.</p>
+    <div class="math">false positive rate  =   fp / n
+
+false negative rate  =   fn / n
+
+error rate           =  (fn + fp) / n
+
+
+MUFT KA CHECK     fp rate  +  fn rate  =  error rate
+                  (sirf tab milta hai jab denominator n ho)</div>
+    <p class="memo"><b>Denominator ki tasdeeq:</b> slide par ye fraction ki shakal mein hain aur PDF se neeche ka hissa gayab tha. Magar <b>Neyman-Pearson wale graph ke axes slide par saaf likhe hain: <code>fp/n</code> aur <code>fn/n</code></b> &mdash; isi se pata chalta hai ke is course mein <code>n</code> hi denominator hai. Yehi <a href="#ff13">F13</a> ke trap ki jadd hai.</p>
+  </div>
+
+  <div class="qp" id="ff11" data-lec="7"><p class="qn"><span>F11</span><span class="mk">Lec 7 &mdash; "error measures some people use"</span><span class="mk">denominator reconstruct kiya</span></p>
+    <p><b>Chaar aur metrics</b> &mdash; aur yahan denominator <b>badal jaata hai</b>. Yehi asli imtehan hai.</p>
+    <div class="math">recall = sensitivity = TPR   =   tp / P           &larr; P     (asli positives)
+
+false alarm rate             =   fp / N           &larr; N     (asli negatives)
+
+specificity = TNR            =   tn / N           &larr; N
+
+precision                    =   tp / (tp + fp)   &larr; meri +ve guesses</div>
+    <p class="memo"><b>Yaad rakhne ka tareeqa &mdash; pehla harf dekhein:</b> <b>R</b>ecall &rarr; <b>R</b>eality (asli haqeeqat, column) &rarr; <code>P</code>. <b>P</b>recision &rarr; <b>P</b>rediction (meri guess, row) &rarr; <code>tp+fp</code>. Dono ka numerator <code>tp</code> hai, farq sirf neeche ka. <b>Denominator ke chaar hi ghar hain:</b> <code>n</code> (sab), <code>N</code> (column 1), <code>P</code> (column 2), <code>tp+fp</code> (row 2). Slide ke brackets ne denominator khud bata diya: <em>"fraction of true negatives we correctly guess"</em> &rarr; <code>N</code>.</p>
+  </div>
+
+  <div class="qp" id="ff12" data-lec="7"><p class="qn"><span>F12</span><span class="mk">Lec 7 &mdash; "Neyman-Pearson metric"</span><span class="mk">slide par exactly ye</span></p>
+    <p><b>Neyman-Pearson metric</b> (Boolean) &mdash; do objectives ko ek number banane ka tareeqa.</p>
+    <div class="math">             &kappa;&middot;fn  +  fp
+    NP   =  ----------------              &kappa; &gt; 0
+                   n
+
+&kappa; &gt; 1    &rarr;   false negatives ZYADA bure
+&kappa; &lt; 1    &rarr;   false negatives KAM bure
+&kappa; = 1    &rarr;   NP  =  error rate        &larr; aap ka self-check</div>
+    <p class="memo"><b>Yaad rakhein: <code>&kappa;</code> hamesha <code>fn</code> ke saath chipakta hai.</b> Wajah slide par likhi hai &mdash; <em>"&kappa; &gt; 1, false negatives upset us more"</em>. Yaani <b><code>&kappa;</code> us cheez ka price tag hai jis se zyada darr lagta hai</b>, aur wo <code>fn</code> hai. Soch lein: <code>&kappa;</code> = "<b>k</b>itna bura hai false <b>n</b>egative". Dekhein <a href="#h6">H6</a>.</p>
+  </div>
+
+  <div class="qp" id="ff13" data-lec="7"><p class="qn"><span>F13</span><span class="mk">Lec 7 &mdash; "Confusion matrix" (multiclass)</span><span class="mk">slide par exactly ye</span></p>
+    <p><b>Multi-class confusion matrix</b> &mdash; agar table <code>3&times;3</code> ho jaye. Qaida bilkul wohi rehta hai.</p>
+    <div class="math">A&#7522;&#11388;  =  # records with  &#375; = i  (ROW)   aur   y = j  (COLUMN)
+
+column sums  =  har class ke asli records     row sums  =  meri guesses
+A&#7522;&#7522;         =  sahi predictions
+A&#7522;&#11388; (i&ne;j)  =  humne  j  ko  i  samajh liya
+galti ki qismein  =  K(K &minus; 1)      &larr; K=3 par 6 off-diagonal khaane
+
+                      n &minus; &Sigma; A&#7522;&#7522;              trace(A)
+    error rate   =  --------------  =   1  &minus;  ---------
+                           n                      n
+
+MISAAL  3&times;3, column sums 100/60/40, n = 200, diagonal 88/40/30:
+        trace = 158    &rarr;   error rate = (200 &minus; 158)/200 = 42/200 = 0.21</div>
+    <p class="memo"><b>Shortcut:</b> chhe off-diagonal number jama karna waqt barbaad karna hai. <b>Sirf diagonal (teen number) jama karein aur <code>n</code> se minus karein.</b> Aur yahan bhi wohi warning lagti hai &mdash; <a href="#ff9">F9</a> dekhein: slide mein <b>column = haqeeqat</b>, magar <em>"some people use the transpose"</em>.</p>
+  </div>
+
+  <div class="qp" id="ff14" data-lec="7"><p class="qn"><span>F14</span><span class="mk">Lec 7 &mdash; "Neyman-Pearson error" (multiclass)</span><span class="mk">slide par exactly ye</span></p>
+    <p><b>Multi-class NP metric, aur per-class recall/precision.</b> Yahan <code>&kappa;</code> ek number nahi &mdash; <b>vector</b> hai.</p>
+    <div class="math">class j ko chhodne ki ginti  =  (column j ka jama)  &minus;  A&#11388;&#11388;
+
+                      (column j ka jama) &minus; A&#11388;&#11388;
+    rate&#11388;      =   -----------------------------
+                                  n
+
+                     K
+    NP        =     &Sigma;   &kappa;&#11388; &middot; rate&#11388;             &kappa;&#11388; &ge; 0
+                    j=1
+
+    &kappa;&#11388; = 1  sab ke liye   &rarr;   NP = error rate     &larr; self-check
+
+    recall(j)      =  A&#11388;&#11388; / (column j ka jama)      &larr; haqeeqat
+    precision(i)   =  A&#7522;&#7522; / (row i ka jama)           &larr; meri guess</div>
+    <p class="memo"><b>Do baatein:</b> (1) <code>3&times;3</code> mein "recall kya hai" ka jawab nahi hota &mdash; <b>"class 2 ka recall"</b> hota hai. Teen recall aur teen precision bante hain. (2) <b>Muft ka check:</b> saari <code>(col j &minus; A&#11388;&#11388;)</code> jama karein to total errors (<code>n &minus; trace</code>) aana chahiye. Oopar ki misaal mein <code>12 + 20 + 10 = 42</code> &#10003;. Slide ke lafz: <code>&kappa;&#11388;</code> = <em>"our relative distaste for mistaking class j"</em>.</p>
+  </div>
+
+  <div class="part-head" id="fsec8" data-lec="8" style="margin-top:52px;border-top-width:4px">
+    <div class="lbl">Lecture 8 &mdash; paper mein 3 sawal (18 marks)</div>
+    <h2>Boolean Classification &amp; Losses &mdash; F15 se F21</h2>
+    <p><b>F15 aur F16 sab se zaroori hain</b> &mdash; Sample Paper ka Q-4, asli paper ka Q-7, aur (pattern ke mutabiq) Q-10 teeno inhi se thay. Baqi F18&ndash;F21 chhote magar aasan marks hain.</p>
+  </div>
+
+  <div class="qp" id="ff15" data-lec="8"><p class="qn"><span>F15</span><span class="mk">Lec 8 &mdash; "Loss functions for Boolean classification"</span><span class="mk">slide par exactly ye</span></p>
+    <p><b>Penalty framework</b> &mdash; Lecture 8 ka <b>sab se zaroori formula</b>. Saare losses isi dhaanche mein daale jaate hain.</p>
+    <div class="math">kyunki y sirf &minus;1 ya +1 ho sakta hai, do hi functions chahiye:
+
+    &ell;(&#375;, &minus;1)   =   p(&#375;)                 &larr;  &kappa; NAHI lagta
+    &ell;(&#375;, +1)   =   &kappa; &middot; p(&minus;&#375;)             &larr;  &kappa; SIRF yahan
+
+p = penalty function:   &#375; manfi par CHHOTA,  &#375; musbat par BARA hona chahiye
+&kappa;                    =   false negative ki relative cost
+&kappa; bara               =   positive class ko chhodne par zyada saza</div>
+    <p class="memo"><b>Paper ki sab se aam galti isi formula mein hoti hai:</b> log dono cases mein <code>&kappa;</code> multiply kar dete hain. <b>Teen qadam ka tareeqa jo bachata hai:</b> (1) <code>y</code> dekhein; (2) <code>y = &minus;1</code> &rarr; <code>p(&#375;)</code> likhein, <code>y = +1</code> &rarr; <code>&kappa;p(&minus;&#375;)</code> likhein; (3) <b>phir</b> numbers daalein. Dekhein <a href="#i1">I1</a> aur <a href="#fq4">Q-4 ka box</a>.</p>
+  </div>
+
+  <div class="qp" id="ff16" data-lec="8"><p class="qn"><span>F16</span><span class="mk">Lec 8 &mdash; slides 6&ndash;12</span><span class="mk">slide par exactly ye</span></p>
+    <p><b>Saare chhe penalty functions ek table mein.</b> Doosra column <code>&ell;(&#375;,&minus;1)</code> hai, teesra <code>&ell;(&#375;,+1) = &kappa;p(&minus;&#375;)</code>.</p>
+    <div class="tw" style="margin:16px 0"><table class="mono num">
+      <thead><tr><th>Loss</th><th><code>p(u) = &ell;(&#375;, &minus;1)</code></th><th><code>&ell;(&#375;, +1)</code></th><th>Convex?</th></tr></thead>
+      <tbody>
+        <tr><td><b>Neyman-Pearson</b><br><span class="mk">(0&ndash;1 loss)</span></td><td><code>1</code> agar <code>u &ge; 0</code><br><code>0</code> agar <code>u &lt; 0</code></td><td><code>&kappa;</code> agar <code>&#375; &le; 0</code><br><code>0</code> warna</td><td><b>Nahi</b> &mdash; discontinuous, derivative har jagah 0</td></tr>
+        <tr><td><b>sigmoid</b></td><td><code>1/(1 + e<sup>&minus;u</sup>)</code></td><td><code>&kappa;/(1 + e<sup>&#375;</sup>)</code></td><td><b>Nahi</b> &mdash; "S" shakal, local minima</td></tr>
+        <tr><td><b>logistic</b></td><td><code>log(1 + e<sup>u</sup>)</code></td><td><code>&kappa; log(1 + e<sup>&minus;&#375;</sup>)</code></td><td><b>Haan</b> + differentiable</td></tr>
+        <tr><td><b>hinge</b></td><td><code>(1 + u)<sub>+</sub></code></td><td><code>&kappa;(1 &minus; &#375;)<sub>+</sub></code></td><td><b>Haan</b> (differentiable nahi)</td></tr>
+        <tr><td><b>square</b></td><td><code>(1 + u)<sup>2</sup></code></td><td><code>&kappa;(1 &minus; &#375;)<sup>2</sup></code></td><td>Haan &mdash; <b>magar classification ke liye bura</b></td></tr>
+        <tr><td><b>hubristic</b><br><span class="mk">(Huber + logistic)</span></td><td><code>0</code> agar <code>u &lt; &minus;1</code><br><code>(u+1)<sup>2</sup></code> agar <code>&minus;1 &le; u &le; 0</code><br><code>1 + 2u</code> agar <code>u &gt; 0</code></td><td><code>&kappa; &middot; p(&minus;&#375;)</code></td><td><b>Haan</b></td></tr>
+      </tbody>
+    </table></div>
+    <div class="math">(u)&#8330;  ka matlab  max(u, 0)   &mdash;  "positive part"
+
+SQUARE LOSS KYUN BURA HAI
+    acha classification loss margin  y&middot;&#375;  mein non-increasing hona chahiye
+    &mdash; yaani sahi taraf jaane par saza barhni NAHI chahiye.
+    square loss dono taraf saza deta hai:
+        &#375; = &minus;1.0,  y = &minus;1   (theek representative par)   &rarr;  loss 0.00
+        &#375; = &minus;3.0,  y = &minus;1   (poore yaqeen se SAHI)       &rarr;  loss 4.00
+        &#375; = +1.0,  y = &minus;1   (saaf GALAT)                 &rarr;  loss 4.00
+    confident sahi aur saaf galat ki saza BARABAR  &rarr;  yehi kharabi</div>
+    <p class="memo"><b>Teen cheezein jo poochi jaati hain:</b> (1) ek loss ka adadi hisaab (<code>&kappa;</code> ki jagah dhyan se) &mdash; <a href="#oq4">Q-4</a>; (2) "<b>kyun istemaal nahi hota</b>" &rarr; sigmoid ka jawab <b>non-convex</b> hai, square ka jawab <b>non-monotonic</b> hai &mdash; do alag wajahein, mila na dein; (3) convex kaun kaun hai &rarr; <b>logistic, hinge, hubristic</b> (aur square bhi convex hai, bas classification ke liye munasib nahi). NP loss hi asli metric hai, magar minimize karna namumkin &mdash; isi liye baqi paanch uske <b>proxy</b> hain.</p>
+  </div>
+
+  <div class="qp" id="ff17" data-lec="8"><p class="qn"><span>F17</span><span class="mk">Lec 8 &mdash; "Boolean classifiers with names"</span><span class="mk">slide par exactly ye</span></p>
+    <p><b>Naamwar classifiers</b> &mdash; "ye classifier kaunsa loss use karta hai" ka seedha jawab.</p>
+    <div class="math">least squares classifier   =   square loss     +  square regularizer
+logistic regression        =   logistic loss   +  koi bhi regularizer
+support vector machine     =   hinge loss      +  square regularizer
+   (SVM)
+
+multi-class SVM            =   multi-class hinge   + quadratic regularizer
+multi-class logistic reg.  =   multi-class logistic loss</div>
+    <p class="memo"><b>Ye theory ka muft sawal hai</b> &mdash; teen line, 6 marks. Formula hi naam hai: <b>loss + regularizer = classifier ka naam</b>. SVM = hinge, logistic regression = logistic, least squares = square. Ulta bhi poocha ja sakta hai: "hinge loss kis classifier mein" &rarr; SVM.</p>
+  </div>
+
+  <div class="qp" id="ff18" data-lec="8"><p class="qn"><span>F18</span><span class="mk">Lec 8 &mdash; "Embedding" / "Multi-class classification"</span><span class="mk">slide par exactly ye</span></p>
+    <p><b>Embed &rarr; predict &rarr; un-embed.</b> Classifier ka poora pipeline teen qadam mein.</p>
+    <div class="math">BOOLEAN
+    embed:      classes ko  &minus;1  aur  +1  bana do
+    un-embed:   class  =  sign(&#375;)
+
+MULTI-CLASS  (k = 1 &hellip; K)
+    embed:      har class ko ek vector  v1, v2, &hellip;, vK  bana do
+    un-embed:   class  =  arg min  &#8214;&#375; &minus; v&#8342;&#8214;&#178;         &larr; nearest-neighbour
+                            k
+
+ONE-HOT ki soorat mein (v&#8342; = e&#8342;) ye SIKUR kar ye ban jaata hai:
+
+    class  =  arg max  &#375;&#8342;
+                 k</div>
+    <p class="memo"><b>Do baar poocha gaya nukta:</b> <code>argmax</code> ko <b>normalize karne ki zaroorat nahi</b>. Raw scores jama ho kar 1 na banein, manfi hon, 10 se bare hon &mdash; <b>farq nahi padta</b>, kyunki <code>argmax</code> sirf <b>tartib</b> dekhta hai, qeemat nahi. Ye scores <b>probabilities nahi</b> hain. Aur jawab mein <b>class ka naam/number</b> likhein, score nahi.</p>
+  </div>
+
+  <div class="qp" id="ff19" data-lec="8"><p class="qn"><span>F19</span><span class="mk">Lec 8 &mdash; "When is a vector closer to one given vector than another?"</span><span class="mk">slide par exactly ye</span></p>
+    <p><b>Do points ke darmiyan boundary</b> (Voronoi / nearest-centroid). Slide ka tareeqa: dono taraf square karo.</p>
+    <div class="math">x,  a  ke qareeb hai  b  ke muqable mein:
+
+    &#8214;x &minus; a&#8214;&#178;  &lt;  &#8214;x &minus; b&#8214;&#178;
+
+dono taraf khol kar:
+
+    2(b &minus; a)&#7488;x  &minus;  &#8214;b&#8214;&#178;  +  &#8214;a&#8214;&#178;   &lt;  0
+
+DECISION BOUNDARY  (barabar ka faasla):
+
+    2(b &minus; a)&#7488;x  &minus;  &#8214;b&#8214;&#178;  +  &#8214;a&#8214;&#178;   =  0
+
+&rarr; ye ek HYPERPLANE hai
+   normal vector      =  b &minus; a
+   guzarta hai        =  midpoint (a + b)/2 se       &larr; CHECK KAREIN</div>
+    <p class="memo"><b>Do muft checks jo marks bachate hain:</b> (1) midpoint <code>(a+b)/2</code> ko formula mein daalein &mdash; jawab <b>theek 0</b> aana chahiye; (2) <code>x = a</code> daalein &mdash; jawab <b>manfi</b> aana chahiye. Aur <b>nishanon ka dhyan</b>: <code>&minus;&#8214;b&#8214;&#178; + &#8214;a&#8214;&#178;</code> &mdash; minus <code>b</code> par hai, <code>a</code> par nahi. Log yahan ulta kar dete hain.</p>
+  </div>
+
+  <div class="qp" id="ff20" data-lec="8"><p class="qn"><span>F20</span><span class="mk">Lec 8 &mdash; "Signed distance to the decision boundary"</span><span class="mk">slide par exactly ye</span></p>
+    <p><b>Signed distance</b> &mdash; <a href="#ff19">F19</a> wali line ko <code>2&#8214;b&minus;a&#8214;</code> se taqseem kar dein, bas.</p>
+    <div class="math">             2(b &minus; a)&#7488;x  &minus;  &#8214;b&#8214;&#178;  +  &#8214;a&#8214;&#178;
+    s(x)  =  --------------------------------------
+                          2&#8214;b &minus; a&#8214;
+
+s(x) &lt; 0     &rarr;   x,  a  ke qareeb hai
+s(x) = 0     &rarr;   x boundary PAR hai
+|s(x)|       &rarr;   boundary se asli FAASLA
+s            &rarr;   x ka affine function hai</div>
+    <p class="memo"><b>Numerator <a href="#ff19">F19</a> ka hu-ba-hu hai</b> &mdash; alag yaad karne ki zaroorat nahi. Sirf <code>2&#8214;b&minus;a&#8214;</code> se taqseem karna hai. Dhyan rahe: denominator mein <b><code>2</code> hai aur norm SQUARE nahi hai</b> (<code>2&#8214;b&minus;a&#8214;</code>, na ke <code>&#8214;b&minus;a&#8214;&#178;</code>) &mdash; yehi sab se aam galti hai. "Signed" ka matlab nishan maani rakhta hai; <b>faasla poocha ho to <code>|s(x)|</code> likhein</b>, aur "kis taraf" poocha ho to nishan.</p>
+  </div>
+
+  <div class="qp" id="ff21" data-lec="8"><p class="qn"><span>F21</span><span class="mk">Lec 8 &mdash; "Multi-class loss functions"</span><span class="mk">dekhein memo</span></p>
+    <p><b>Multi-class losses</b> &mdash; jab classes do se zyada hon. (Paper mein kam imkaan, magar poora kar rahe hain.)</p>
+    <div class="math">sahi class k hai.  Pehle "sab se bara ghalat score" dekhein:
+
+    m  =  max  (&#375;&#11388; &minus; &#375;&#8342;)            m &lt; 0  &rarr;  sahi decode hua
+           j&ne;k
+
+NEYMAN-PEARSON loss     &ell;(&#375;, k)  =   0      agar  m &lt; 0
+                                     &kappa;&#8342;     warna
+
+HINGE loss              &ell;(&#375;, k)  =   &kappa;&#8342; &middot; max (1 + &#375;&#11388; &minus; &#375;&#8342;)&#8330;
+                                               j&ne;k
+
+                                             K
+LOGISTIC loss           &ell;(&#375;, k)  =   &kappa;&#8342; [ log &Sigma; e^(&#375;&#11388;)  &minus;  &#375;&#8342; ]
+                                            j=1
+
+hinge     &rarr;  convex, differentiable nahi   &rarr;  multi-class SVM
+logistic  &rarr;  convex AUR differentiable     &rarr;  multi-class logistic regression</div>
+    <p class="memo"><b>Imaandari se:</b> in teeno ka general roop slide par subscripts ke saath hai jo PDF extraction mein toot gaya tha. Maine inhe <b>slide ke apne Boolean reduction se verify kiya hai</b> &mdash; slide kehti hai ke <code>v&#8321; = &minus;1, v&#8322; = +1</code> embedding par ye wapas <code>&kappa;&#8321;(1+&#375;)&#8330;</code> / <code>&kappa;&#8322;(1&minus;&#375;)&#8330;</code> (hinge) aur <code>&kappa;&#8321;log(1+e<sup>&#375;</sup>)</code> / <code>&kappa;&#8322;log(1+e<sup>&minus;&#375;</sup>)</code> (logistic) ban jaate hain &mdash; aur oopar ke formulas bilkul yehi dete hain. <b>Agar paper mein aaye to ye reduction likh dena hi kafi hai.</b></p>
+  </div>
+
+  <div class="box warn" id="ftraps" style="margin-top:52px">
+    <p class="bt">Aath traps &mdash; formula yaad hone ke bawajood yahan marks katte hain</p>
+    <div class="tw" style="margin:0">
+      <table>
+        <thead><tr><th>Trap</th><th>Galat</th><th>Sahi</th></tr></thead>
+        <tbody>
+          <tr><td><b>1. <code>&kappa;</code> ki jagah</b><br><span class="mk">sab se aam</span></td><td>dono cases mein <code>&kappa;</code></td><td><code>&kappa;</code> <b>sirf <code>y = +1</code></b> par &mdash; <a href="#ff15">F15</a></td></tr>
+          <tr><td><b>2. false positive rate</b></td><td><code>fp/N</code></td><td><code>fp/n</code>. Jo <code>N</code> par taqseem hota hai uska naam <b>false alarm rate</b> hai &mdash; <a href="#ff10">F10</a>, <a href="#ff11">F11</a></td></tr>
+          <tr><td><b>3. false negative rate</b></td><td><code>fn/P</code></td><td><code>fn/n</code>. <code>fn/P</code> <b>miss rate</b> hai (= <code>1 &minus; recall</code>), slide par uska naam nahi &mdash; 10 guna farq</td></tr>
+          <tr><td><b>4. activation ki ginti</b></td><td><code>M &minus; 1</code></td><td><code>M</code> &mdash; <code>h</code> <b>har</b> layer ke andar hai, output layer par bhi. Sirf <b>hidden</b> layers <code>M&minus;1</code> &mdash; <a href="#ff2">F2</a></td></tr>
+          <tr><td><b>5. "without biases"</b></td><td><code>(d&#7522;&#8331;&#8321;+1)&middot;d&#7522;</code></td><td><code>d&#7522;&#8331;&#8321;&middot;d&#7522;</code> &mdash; <code>+1</code> hata dein. Sawal ki <b>pehli line</b> padhein &mdash; <a href="#ff3">F3</a></td></tr>
+          <tr><td><b>6. matrix ka rukh</b></td><td>row = haqeeqat<br><span class="mk">(sklearn ki aadat)</span></td><td>sir ki slide: <b>column = haqeeqat</b>. Slide khud kehti hai <em>"some people use the transpose"</em> &mdash; <a href="#ff9">F9</a></td></tr>
+          <tr><td><b>7. signed distance</b></td><td><code>&#8214;b&minus;a&#8214;&#178;</code> neeche</td><td><code>2&#8214;b&minus;a&#8214;</code> neeche &mdash; <code>2</code> hai aur square NAHI &mdash; <a href="#ff20">F20</a></td></tr>
+          <tr><td><b>8. perceptron <code>&eta;</code></b></td><td>apna <code>&eta;</code> daal dena</td><td>slide par <code>&eta;</code> nahi: <code>w &larr; w + yx</code>. <code>&eta;</code> <b>sirf tab</b> jab sawal mein diya ho &mdash; <a href="#ff5">F5</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="box hint" id="flookup">
+    <p class="bt">Paper mein ye lafz dikhe &rarr; ye formula kholein</p>
+    <div class="tw" style="margin:0">
+      <table>
+        <thead><tr><th>Sawal mein ye lafz</th><th>Formula</th><th>Lec</th></tr></thead>
+        <tbody>
+          <tr><td>"compute the output", "forward pass", "pre-activation"</td><td><a href="#ff1">F1</a>, <a href="#ff2">F2</a>, <a href="#ff4">F4</a></td><td>6</td></tr>
+          <tr><td>"how many parameters / scalar model parameters"</td><td><a href="#ff3">F3</a></td><td>6</td></tr>
+          <tr><td>"how many hidden layers / matrices / activations"</td><td><a href="#ff2">F2</a></td><td>6</td></tr>
+          <tr><td>"ReLU", "Leaky ReLU", "ELU", "sigmoid", "dead unit"</td><td><a href="#ff4">F4</a></td><td>6</td></tr>
+          <tr><td>"margin", "update the weights", "misclassified"</td><td><a href="#ff5">F5</a>, <a href="#ff6">F6</a></td><td>6</td></tr>
+          <tr><td>"distance from the origin to the decision boundary"</td><td><a href="#ff7">F7</a></td><td>6</td></tr>
+          <tr><td>"without an activation function", "why nonlinear"</td><td><a href="#ff8">F8</a></td><td>6</td></tr>
+          <tr><td>"confusion matrix", "tn / fp / fn / tp", "error rate"</td><td><a href="#ff9">F9</a>, <a href="#ff10">F10</a></td><td>7</td></tr>
+          <tr><td>"recall", "precision", "specificity", "sensitivity"</td><td><a href="#ff11">F11</a></td><td>7</td></tr>
+          <tr><td>"Neyman-Pearson", <code>&kappa;</code> ke saath <code>fn</code>/<code>fp</code></td><td><a href="#ff12">F12</a></td><td>7</td></tr>
+          <tr><td><code>3&times;3</code> matrix, "multi-class", "trace", "which class"</td><td><a href="#ff13">F13</a>, <a href="#ff14">F14</a></td><td>7</td></tr>
+          <tr><td>"hinge / logistic / square / sigmoid / hubristic loss"</td><td><a href="#ff15">F15</a>, <a href="#ff16">F16</a></td><td>8</td></tr>
+          <tr><td>"why is this loss undesirable / not used"</td><td><a href="#ff16">F16</a></td><td>8</td></tr>
+          <tr><td>"SVM", "logistic regression", "least squares classifier"</td><td><a href="#ff17">F17</a></td><td>8</td></tr>
+          <tr><td>"un-embed", "argmax", "one-hot", "which class is predicted"</td><td><a href="#ff18">F18</a></td><td>8</td></tr>
+          <tr><td>"closer to", "Voronoi", "hyperplane", "midpoint"</td><td><a href="#ff19">F19</a></td><td>8</td></tr>
+          <tr><td>"signed distance", "how far from the boundary"</td><td><a href="#ff20">F20</a></td><td>8</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-bottom:0;margin-top:12px"><b>Aakhri raat ka tareeqa:</b> ye tab <a href="#ff1">F1</a> se <a href="#ff21">F21</a> tak <b>ek baar</b> padh lein (15 minute), phir <a href="#ftraps">aath traps</a> dobara (5 minute). Uske baad <b>naya kuch na padhein</b> &mdash; seedha <a href="#cheat">cheat sheet</a> aur <a href="#panel-real">asli paper</a>.</p>
+  </div>
+</div>
+
 </main>
 
 <footer class="ft">
@@ -8068,7 +8709,8 @@ faida                       :  2.25 percentage points
     { btn: 'tab-real',     panel: 'panel-real',     token: 'real' },
     { btn: 'tab-solved',   panel: 'panel-solved',   token: 'solved' },
     { btn: 'tab-must',     panel: 'panel-must',     token: 'must' },
-    { btn: 'tab-prof',     panel: 'panel-prof',     token: 'prof' }
+    { btn: 'tab-prof',     panel: 'panel-prof',     token: 'prof' },
+    { btn: 'tab-form',     panel: 'panel-form',     token: 'form' }
   ];
 
   function show(token, scrollTop) {
